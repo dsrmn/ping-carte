@@ -42,7 +42,13 @@ class CardTraderClient:
 
     def get_yugioh_game_id(self):
         games = self.get_games()
+        # L'API a volte restituisce una lista, a volte un dict {id: {...}} o
+        # {"games": [...]}: normalizziamo a lista di dict prima di iterare.
+        if isinstance(games, dict):
+            games = games.get("games", list(games.values()))
         for g in games:
+            if not isinstance(g, dict):
+                continue
             name = g.get("name", "").lower()
             if "yu-gi-oh" in name or "yugioh" in name:
                 return g["id"]
@@ -51,13 +57,23 @@ class CardTraderClient:
             "Controlla manualmente la risposta API per il nome esatto."
         )
 
+    @staticmethod
+    def _as_list(data):
+        """Normalizza una risposta che può essere lista o dict a lista di dict."""
+        if isinstance(data, dict):
+            for key in ("expansions", "blueprints", "data"):
+                if key in data and isinstance(data[key], list):
+                    return data[key]
+            return list(data.values())
+        return data
+
     def get_expansions(self, game_id: int):
         """Ritorna tutte le espansioni/set per un gioco"""
-        return self._get("/expansions", params={"game_id": game_id})
+        return self._as_list(self._get("/expansions", params={"game_id": game_id}))
 
     def get_blueprints_for_expansion(self, expansion_id: int):
         """Ritorna tutte le 'blueprint' (= versioni astratte di carta) di un set"""
-        return self._get("/blueprints/export", params={"expansion_id": expansion_id})
+        return self._as_list(self._get("/blueprints/export", params={"expansion_id": expansion_id}))
 
     def get_marketplace_products(self, blueprint_id: int):
         """Ritorna tutte le inserzioni attive in vendita per una blueprint_id"""
