@@ -36,36 +36,33 @@ class CardTraderClient:
         resp.raise_for_status()
         return resp.json()
 
+    @staticmethod
+    def _as_list(data):
+        """Normalizza una risposta che può essere lista o dict a lista di dict."""
+        if isinstance(data, dict):
+            for key in ("array", "expansions", "blueprints", "games", "data"):
+                if key in data and isinstance(data[key], list):
+                    return data[key]
+            return list(data.values())
+        return data
+
     def get_games(self):
         """Ritorna la lista dei giochi supportati (Yu-Gi-Oh!, Magic, Pokemon, ecc.)"""
-        return self._get("/games")
+        return self._as_list(self._get("/games"))
 
     def get_yugioh_game_id(self):
         games = self.get_games()
-        # L'API a volte restituisce una lista, a volte un dict {id: {...}} o
-        # {"games": [...]}: normalizziamo a lista di dict prima di iterare.
-        if isinstance(games, dict):
-            games = games.get("games", list(games.values()))
         for g in games:
             if not isinstance(g, dict):
                 continue
             name = g.get("name", "").lower()
-            if "yu-gi-oh" in name or "yugioh" in name:
+            display_name = g.get("display_name", "").lower()
+            if "yu-gi-oh" in name or "yugioh" in name or "yu-gi-oh" in display_name:
                 return g["id"]
         raise RuntimeError(
             "Non trovo il gioco Yu-Gi-Oh! nella risposta di /games. "
             "Controlla manualmente la risposta API per il nome esatto."
         )
-
-    @staticmethod
-    def _as_list(data):
-        """Normalizza una risposta che può essere lista o dict a lista di dict."""
-        if isinstance(data, dict):
-            for key in ("expansions", "blueprints", "data"):
-                if key in data and isinstance(data[key], list):
-                    return data[key]
-            return list(data.values())
-        return data
 
     def get_expansions(self, game_id: int):
         """Ritorna tutte le espansioni/set per un gioco"""
