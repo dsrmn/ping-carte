@@ -1,13 +1,17 @@
-name: Build card index
+name: Monitor Cardtrader prices
 
+# Gira automaticamente ogni 20 minuti, e puoi anche lanciarlo a mano
+# dalla scheda "Actions" di GitHub.
 on:
+  schedule:
+    - cron: "*/20 * * * *"
   workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  build-index:
+  monitor:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -19,15 +23,11 @@ jobs:
       - name: Installa dipendenze
         run: pip install -r requirements.txt
 
-      - name: Costruisci indice carte
+      - name: Esegui scansione prezzi
         env:
           CARDTRADER_TOKEN: ${{ secrets.CARDTRADER_TOKEN }}
-        run: python build_card_index.py
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python monitor.py
 
-      - name: Salva cards_index.json nel repository
-        run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@users.noreply.github.com"
-          git add cards_index.json
-          git diff --staged --quiet || git commit -m "Aggiorna indice carte"
-          git push
+      - name: Salva lo storico delle notifiche
