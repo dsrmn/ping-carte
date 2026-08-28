@@ -4,10 +4,12 @@ su Telegram le occasioni trovate. Pensato per essere lanciato periodicamente
 da GitHub Actions (vedi .github/workflows/monitor.yml) — non contiene loop
 infiniti né sleep lunghi.
 
-Un'inserzione è considerata un'occasione se soddisfa ENTRAMBI i criteri:
-  1. prezzo <= soglia fissa (config: fixed_price_threshold_eur)
-  2. prezzo <= media delle altre inserzioni della stessa carta * (1 - sconto%)
-     (config: discount_below_average_pct)
+Un'inserzione è considerata un'occasione se:
+  - la media delle altre inserzioni della stessa carta è <= alla soglia
+    fissa (config: fixed_price_threshold_eur): allora basta che il prezzo
+    sia <= quella soglia fissa
+  - altrimenti (media sopra la soglia fissa): il prezzo deve essere
+    <= media * (1 - sconto%) (config: discount_below_average_pct)
 
 Legge i token da variabili d'ambiente:
   CARDTRADER_TOKEN, TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID
@@ -81,10 +83,18 @@ def check_card(client, card_name, blueprint_entries, criteria, min_listings, sen
         avg_price = statistics.mean(values)
 
         for price, product in prices:
-            below_fixed = price <= criteria["fixed_price_threshold_eur"]
-            below_avg = price <= avg_price * (1 - criteria["discount_below_average_pct"] / 100)
+            # Se la media delle inserzioni è già sotto la soglia fissa,
+            # basta rispettare quella (le percentuali diventano poco
+            # significative su prezzi già bassi). Se la media è sopra la
+            # soglia fissa, conta solo lo sconto percentuale rispetto alla
+            # media: altrimenti le carte con media alta non scatterebbero
+            # mai, perché lo sconto le porterebbe comunque sopra la soglia.
+            if avg_price > criteria["fixed_price_threshold_eur"]:
+                is_deal = price <= avg_price * (1 - criteria["discount_below_average_pct"] / 100)
+            else:
+                is_deal = price <= criteria["fixed_price_threshold_eur"]
 
-            if below_fixed and below_avg:
+            if is_deal:
                 product_id = product.get("id")
                 alert_key = f"{bp_id}:{product_id}"
                 if alert_key in sent_alerts:
