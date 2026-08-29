@@ -57,3 +57,102 @@ def send_telegram(bot_token: str, chat_id: str, text: str):
 
 
 def check_card(client, card_name, blueprint_entries, criteria, min_listings, sent_alerts):
+    """Controlla tutte le blueprint (edizioni) di una carta e ritorna eventuali occasioni."""
+    deals = []
+    for entry in blueprint_entries:
+        bp_id = entry["blueprint_id"]
+        try:
+            products = client.get_marketplace_products(bp_id)
+        except Exception as e:
+            print(f"  ! Errore recuperando listings per {card_name} ({bp_id}): {e}")
+            continue
+
+        prices = []
+        for p in products:
+            price_info = p.get("price", {})
+            cents = price_info.get("cents")
+            currency = price_info.get("currency", "EUR")
+            if cents is None or currency != "EUR":
+                continue
+            prices.append((cents / 100.0, p))
+
+        if len(prices) < min_listings:
+            continue
+
+        values = [pr for pr, _ in prices]
+        avg_price = statistics.mean(values)
+
+        for price, product in prices:
+            if avg_price > criteria["fixed_price_threshold_eur"]:
+                is_deal = price <= avg_price * (1 - criteria["discount_below_average_pct"] / 100)
+            else:
+                is_deal = price <= criteria["fixed_price_threshold_eur"]
+
+            if is_deal:
+                product_id = product.get("id")
+                alert_key = f"{bp_id}:{product_id}"
+                if alert_key in sent_alerts:
+                    continue
+                deals.append({
+                    "card_name": card_name,
+                    "expansion": entry["expansion"],
+                    "price": price,
+                    "avg_price": round(avg_price, 2),
+                    "seller": product.get("user", {}).get("username", "?"),
+                    "alert_key": alert_key,
+                })
+    return deals
+
+
+def main():
+    cardtrader_token = os.environ.get("CARDTRADER_TOKEN")
+    telegram_bot_token = os.environ.get("TELEGRAM_BOT_TOKEN")
+    telegram_chat_id = os.environ.get("TELEGRAM_CHAT_ID")
+
+    missing_env = [name for name, val in [
+        ("CARDTRADER_TOKEN", cardtrader_token),
+        ("TELEGRAM_BOT_TOKEN", telegram_bot_token),
+        ("TELEGRAM_CHAT_ID", telegram_chat_id),
+    ] if not val]
+    if missing_env:
+        sys.exit(f"Errore: variabili d'ambiente mancanti: {', '.join(missing_env)}")
+
+    config = load_json(CONFIG_FILE, None)
+    if config is None:
+        sys.exit("config.json non trovato!")
+
+    cards_index = load_json(INDEX_FILE, None)
+    if cards_index is None:
+        sys.exit("cards_index.json non trovato: esegui prima build_card_index.py")
+
+    sent_alerts = set(load_json(SENT_ALERTS_FILE, []))
+    client = CardTraderClient(cardtrader_token)
+    criteria = config["deal_criteria"]
+    min_listings = config.get("min_listings_for_average", 3)
+
+    print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Inizio scansione di {len(cards_index)} carte...")
+    total_deals = 0
+
+    for card_name, blueprint_entries in cards_index.items():
+        if not blueprint_entries:
+            continue
+        deals = check_card(client, card_name, blueprint_entries, criteria, min_listings, sent_alerts)
+
+        for deal in deals:
+            msg = (
+                f"🃏 <b>Occasione trovata!</b>\n"
+                f"<b>{deal['card_name']}</b> ({deal['expansion']})\n"
+                f"Prezzo: <b>{deal['price']:.2f}€</b> (media: {deal['avg_price']:.2f}€)\n"
+                f"Venditore: {deal['seller']}"
+            )
+            send_telegram(telegram_bot_token, telegram_chat_id, msg)
+            sent_alerts.add(deal["alert_key"])
+            total_deals += 1
+            print(f"  -> Notificata occasione: {deal['card_name']} a {deal['price']:.2f}€")
+
+    save_json(SENT_ALERTS_FILE, list(sent_alerts))
+    print(f"Scansione completata. Occasioni trovate: {total_deals}.")
+
+
+if __name__ == "__main__":
+    main()
