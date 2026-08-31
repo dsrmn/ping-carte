@@ -2,7 +2,7 @@ name: Monitor Cardtrader prices
 
 on:
   schedule:
-    - cron: "*/20 * * * *"
+    - cron: "*/59 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -33,5 +33,11 @@ jobs:
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
           git add sent_alerts.json
-          git diff --staged --quiet || git commit -m "Aggiorna alert inviati"
-          git push
+          if ! git diff --staged --quiet; then
+            git commit -m "Aggiorna alert inviati"
+            for i in 1 2 3 4 5; do
+              git pull --rebase origin main && git push && break
+              echo "Push fallito (tentativo $i), riprovo tra 5 secondi..."
+              sleep 5
+            done
+          fi
