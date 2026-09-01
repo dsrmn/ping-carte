@@ -3,7 +3,7 @@
     "fixed_price_threshold_eur": 3.0,
     "discount_below_average_pct": 30
   },
-  "min_listings_for_average": 3,
+  "min_listings_for_average": 1,
   "allowed_seller_countries": ["US", "CA"],
   "restricted_rarity_from_year": 2016,
   "allowed_rarities": [
