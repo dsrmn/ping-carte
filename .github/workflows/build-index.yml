@@ -48,7 +48,7 @@ jobs:
           if ! git diff --staged --quiet; then
             git commit -m "Aggiorna lista carte e indice"
             for i in 1 2 3 4 5; do
-              git pull --rebase origin main && git push && break
+              git pull --rebase && git push && break
               echo "Push fallito (tentativo $i), riprovo tra 5 secondi..."
               sleep 5
             done
