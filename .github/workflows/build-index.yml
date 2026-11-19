@@ -1,17 +1,25 @@
 name: Build card index
 
-# Si lancia manualmente dalla scheda "Actions" di GitHub (pulsante "Run workflow").
-# Va eseguito una volta all'inizio, e di nuovo solo se aggiungi carte nuove
-# a config.json.
+# Ricostruisce cards_index.json da zero.
+# - Si lancia a mano dalla scheda "Actions" (pulsante "Run workflow")
+# - Gira da solo ogni lunedì notte, per includere i set appena usciti
+#   (es. nuove espansioni Pokémon / One Piece)
 on:
   workflow_dispatch:
+  schedule:
+    - cron: "17 3 * * 1"
 
 permissions:
   contents: write
 
+concurrency:
+  group: monitor
+  cancel-in-progress: false
+
 jobs:
   build-index:
     runs-on: ubuntu-latest
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
 
