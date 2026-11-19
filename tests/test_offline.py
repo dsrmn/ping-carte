@@ -66,3 +66,42 @@ d2 = monitor.check_expansion(idx["expansions"]["200"], fake.get_marketplace_prod
 assert "Dark Armed Dragon" not in d2                                     # Common in set nuovo: escluse
 assert [d["alert_key"] for d in d2["Sangan"]] == ["3:20"], d2            # Played esclusa, 3:22 già inviata
 print("TUTTO OK")
+
+# --- Format Library finto -----------------------------------------------
+import update_card_list  # noqa: E402
+
+
+class FakeResp:
+    def __init__(self, data): self.data, self.status_code = data, 200
+    def raise_for_status(self): pass
+    def json(self): return self.data
+
+
+class FakeSession:
+    headers = {}
+    def get(self, url, params=None, timeout=None):
+        if url.endswith("/decks"):
+            page = params["page"]
+            assert params["filter"] == "format:eq:Edison,origin:eq:event"
+            n = 100 if page == 1 else 30
+            return FakeResp([{"id": (page - 1) * 100 + i + 1} for i in range(n)])
+        deck_id = int(url.rsplit("/", 1)[1])
+        main = [{"name": "Dark Armed Dragon"}] * 2 + [{"name": "Sangan"}]
+        if deck_id % 2:
+            main += [{"name": "Rara"}] * 3
+        return FakeResp({"main": main, "extra": [{"name": "Stardust Dragon"}], "side": []})
+
+
+update_card_list.REQUEST_DELAY = 0
+update_card_list.requests.Session = FakeSession
+cfg = json.load(open("config.json"))
+cfg["format_library"] = {"format": "Edison", "top_n": 3, "max_decks": 400,
+                         "extra_cards": ["Carta Mia"], "excluded_cards": ["Sangan"]}
+json.dump(cfg, open("config.json", "w"))
+update_card_list.main()
+cfg = json.load(open("config.json"))
+assert cfg["cards"] == ["Dark Armed Dragon", "Stardust Dragon", "Rara", "Carta Mia"], cfg["cards"]
+stats = json.load(open("format_library_stats.json"))
+assert stats["decks_read"] == 130 and stats["ranking"][0] == {"name": "Dark Armed Dragon", "decks": 130, "copies": 260}
+assert not build_card_index.index_is_current(cfg)   # lista cambiata -> l'indice va rifatto
+print("FORMAT LIBRARY OK")

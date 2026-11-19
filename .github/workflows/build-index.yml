@@ -1,9 +1,9 @@
 name: Build card index
 
-# Ricostruisce cards_index.json da zero.
+# 1) Aggiorna la lista carte con le più giocate in Edison su Format Library
+# 2) Ricostruisce cards_index.json da zero (versioni delle carte su Cardtrader)
 # - Si lancia a mano dalla scheda "Actions" (pulsante "Run workflow")
-# - Gira da solo ogni lunedì notte, per includere i set appena usciti
-#   (es. nuove espansioni Pokémon / One Piece)
+# - Gira da solo ogni lunedì notte
 on:
   workflow_dispatch:
   schedule:
@@ -30,18 +30,23 @@ jobs:
       - name: Installa dipendenze
         run: pip install -r requirements.txt
 
+      - name: Aggiorna la lista carte da Format Library
+        # Se Format Library non risponde si tiene la lista attuale
+        continue-on-error: true
+        run: python update_card_list.py
+
       - name: Costruisci indice carte
         env:
           CARDTRADER_TOKEN: ${{ secrets.CARDTRADER_TOKEN }}
         run: python build_card_index.py
 
-      - name: Salva cards_index.json nel repository
+      - name: Salva lista carte e indice nel repository
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
-          git add cards_index.json
+          for f in cards_index.json config.json format_library_stats.json; do if [ -f "$f" ]; then git add "$f"; fi; done
           if ! git diff --staged --quiet; then
-            git commit -m "Aggiorna indice carte"
+            git commit -m "Aggiorna lista carte e indice"
             for i in 1 2 3 4 5; do
               git pull --rebase origin main && git push && break
               echo "Push fallito (tentativo $i), riprovo tra 5 secondi..."
