@@ -52,17 +52,27 @@ class Telegram:
         resp = requests.post(API.format(token=self.token, method=method), json=payload, timeout=30)
         return resp
 
-    def send(self, text):
-        """True se inviato (o in dry-run)."""
+    def send(self, text, image_url=None):
+        """True se inviato (o in dry-run). Con image_url Telegram mostra una
+        piccola anteprima dell'immagine accanto al testo."""
         if self.dry_run:
-            print("----- [dry-run] messaggio Telegram -----\n" + text + "\n")
+            print("----- [dry-run] messaggio Telegram -----\n" + text
+                  + (f"\n[immagine: {image_url}]" if image_url else "") + "\n")
             return True
+        if image_url:
+            preview = {"url": image_url, "prefer_small_media": True, "show_above_text": False}
+        else:
+            preview = {"is_disabled": True}
         try:
             resp = self._call("sendMessage", chat_id=self.chat_id, text=text,
-                              parse_mode="HTML", disable_web_page_preview=True)
+                              parse_mode="HTML", link_preview_options=preview)
         except requests.RequestException as e:
             print(f"  ! Errore invio Telegram: {e}")
             return False
+        if resp.status_code == 400 and image_url:
+            # anteprima rifiutata (es. immagine non raggiungibile): riprova senza
+            print(f"  ! Anteprima immagine rifiutata, invio senza: {resp.text[:120]}")
+            return self.send(text)
         if resp.status_code != 200:
             print(f"  ! Errore invio Telegram: {resp.status_code} {resp.text}")
             return False

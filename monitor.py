@@ -36,7 +36,7 @@ from state import (CONFIG_FILE, BOT_STATE_FILE, SENT_ALERTS_FILE, HISTORY_FILE,
 from telegram_bot import Telegram
 
 INDEX_FILE = "cards_index.json"
-INDEX_VERSION = 2
+INDEX_VERSION = 3
 STATS_FILE = "format_library_stats.json"
 
 CONDITION_ORDER = ["Mint", "Near Mint", "Slightly Played", "Moderately Played", "Played", "Poor"]
@@ -189,6 +189,7 @@ def deals_for_group(bp_id, bp, exp, edition, eligible, settings, sent_alerts, hi
             "cheaper_than": cheaper_than,
             "alert_key": alert_key,
             "url": f"https://www.cardtrader.com/en/cards/{bp_id}",
+            "image": bp.get("image"),
         })
     return found
 
@@ -430,7 +431,8 @@ def main():
             if sent_msgs >= max_msgs:
                 print(f"  Limite di {max_msgs} messaggi raggiunto: il resto al prossimo giro.")
                 break
-            if not tg.send(format_message(card, deals, popularity.get(card))):
+            best = sorted(deals, key=lambda x: (x["discount"] >= SUSPICIOUS_DISCOUNT, -x["discount"]))[0]
+            if not tg.send(format_message(card, deals, popularity.get(card)), image_url=best.get("image")):
                 print("  Telegram ha rifiutato l'invio: il resto verrà ritentato al prossimo giro.")
                 break
             for x in deals:
