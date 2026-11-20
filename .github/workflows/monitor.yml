@@ -2,7 +2,8 @@ name: Monitor Cardtrader prices
 
 on:
   schedule:
-    - cron: "*/59 * * * *"
+    # Ogni 20 minuti, a minuti "tranquilli" (GitHub salta più spesso i giri a :00)
+    - cron: "7,27,47 * * * *"
   workflow_dispatch:
     inputs:
       dry_run:

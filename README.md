@@ -1,7 +1,7 @@
 # ping-carte
 
 Bot che cerca occasioni di prezzo su carte **Yu-Gi-Oh!** su **Cardtrader** e
-le manda su Telegram. Gira da solo su GitHub Actions circa una volta all'ora.
+le manda su Telegram. Gira da solo su GitHub Actions ogni 20 minuti circa.
 
 ## Come funziona
 
