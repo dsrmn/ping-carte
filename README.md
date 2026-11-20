@@ -35,7 +35,7 @@ almeno `notifications.renotify_if_cheaper_pct`%. Le inserzioni segnalate
 vengono dimenticate dopo `notifications.forget_after_days` giorni.
 
 Filtri: condizione minima (`min_condition`), solo inglese, Paesi del
-venditore (`allowed_seller_countries`, vuoto = tutti); nei set dopo Abyss
+venditore per il riferimento (`allowed_seller_countries`, vuoto = tutti) e Paesi dei venditori da segnalare (`deal_seller_countries`: solo USA e Canada); nei set dopo Abyss
 Rising solo le rarità in `allowed_rarities`.
 
 ## Riepilogo serale

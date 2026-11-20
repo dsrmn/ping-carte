@@ -6,6 +6,10 @@
   "ct_zero_only": true,
   "min_listings_for_average": 3,
   "allowed_seller_countries": [],
+  "deal_seller_countries": [
+    "US",
+    "CA"
+  ],
   "trim_pct": 0.1,
   "min_condition": "Moderately Played",
   "allowed_rarities": [

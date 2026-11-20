@@ -159,6 +159,8 @@ def deals_for_group(bp_id, bp, exp, edition, eligible, settings, sent_alerts, hi
     for price, p, hub in eligible:
         if settings["ct_zero_only"] and not hub:
             continue
+        if settings["deal_countries"] and (p.get("user") or {}).get("country_code") not in settings["deal_countries"]:
+            continue
         if price > max_price or ref - price < settings["min_saving"]:
             continue
         alert_key = f"{bp_id}:{p.get('id')}"
@@ -354,6 +356,8 @@ def main():
         "ct_zero_only": config.get("ct_zero_only", True),
         "min_listings": config.get("min_listings_for_average", 3),
         "countries": set(config.get("allowed_seller_countries", [])),
+        # Paesi dei venditori da SEGNALARE (il riferimento usa comunque tutti i Paesi sopra)
+        "deal_countries": set(config.get("deal_seller_countries", [])),
         "old_expansion_codes": {c.strip().lower() for c in config.get("old_expansion_codes", [])},
         "allowed_rarities": {r.strip().lower() for r in config.get("allowed_rarities", [])},
         "trim_pct": config.get("trim_pct", 0.1),
