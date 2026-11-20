@@ -132,13 +132,23 @@ def describe_listing(product):
     return " · ".join(parts)
 
 
+def price_line(d):
+    median = f"mediana {eur(d['ref'])} su {d['n_listings']} inserzioni"
+    if d.get("rule") == "soglia":
+        if d["discount"] > 0:
+            return f"💰 <b>{eur(d['price'])}</b> (−{d['discount']}%) · sotto la soglia di {eur(d['threshold'])} · {median}"
+        return f"💰 <b>{eur(d['price'])}</b> · sotto la soglia di {eur(d['threshold'])} · {median}"
+    return f"💰 <b>{eur(d['price'])}</b> invece di {eur(d['ref'])} (−{d['discount']}%) · mediana su {d['n_listings']} inserzioni"
+
+
 def format_message(card_name, deals):
     deals = sorted(deals, key=lambda d: d["price"])
     n = len(deals)
     best = deals[0]
+    best_discount = f" (−{best['discount']}%)" if best["discount"] > 0 else ""
     lines = [
         f"🃏 <b>{html.escape(card_name)}</b>",
-        f"{n} occasion{'e' if n == 1 else 'i'} · la migliore a <b>{eur(best['price'])}</b> (−{best['discount']}%)",
+        f"{n} occasion{'e' if n == 1 else 'i'} · la migliore a <b>{eur(best['price'])}</b>{best_discount}",
     ]
     for d in deals[:MAX_LISTINGS_PER_MESSAGE]:
         edition = " · ".join(html.escape(x) for x in (d["expansion"], d["number"], d["rarity"]) if x)
@@ -146,7 +156,7 @@ def format_message(card_name, deals):
         country = d.get("country") or ""
         lines += [
             "",
-            f"💰 <b>{eur(d['price'])}</b> invece di {eur(d['ref'])} (−{d['discount']}%, mediana di {d['n_listings']} inserzioni)",
+            price_line(d),
             f"📦 {edition}",
         ]
         if d["details"]:
@@ -229,8 +239,12 @@ def check_expansion(exp, products_by_bp, settings, sent_alerts):
                 continue
             user = p.get("user") or {}
             rarity = find_prop(p, "rarity") or bp.get("rarity")
+            threshold = settings["criteria"]["fixed_price_threshold_eur"]
             found.setdefault(bp["name"], []).append({
                 "price": price,
+                # "soglia" = scattata perché sotto la soglia fissa (carte economiche)
+                "rule": "sconto" if ref > threshold else "soglia",
+                "threshold": threshold,
                 "ref": round(ref, 2),
                 "discount": max(0, round((1 - price / ref) * 100)) if ref else 0,
                 "n_listings": len(prices),
@@ -308,7 +322,7 @@ def main():
             for d in deals:
                 sent_alerts.add(d["alert_key"])
             total_deals += len(deals)
-            print(f"  -> Notificata occasione: {card_name} ({len(deals)} inserzioni)")
+            print(f"  -> Notificata: {card_name} ({len(deals)} {'inserzione' if len(deals) == 1 else 'inserzioni'})")
             if not dry_run:
                 time.sleep(1)  # piccola pausa tra un messaggio e l'altro
         else:
