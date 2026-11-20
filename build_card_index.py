@@ -24,7 +24,7 @@ from cardtrader_api import CardTraderClient
 
 CONFIG_FILE = "config.json"
 INDEX_FILE = "cards_index.json"
-INDEX_VERSION = 2
+INDEX_VERSION = 3
 
 
 def normalize(name: str) -> str:
@@ -42,6 +42,32 @@ def find_prop(bp, *needles):
                     and not isinstance(value, (dict, list)):
                 return str(value).strip()
     return None
+
+
+IMAGE_EXT = (".jpg", ".jpeg", ".png", ".webp")
+
+
+def find_image(bp):
+    """URL dell'immagine della carta. Cardtrader la mette in campi come
+    'image_url' o 'image': {'url', 'show': {'url'}, 'preview': {'url'}}:
+    preferiamo la versione media ('show'), poi le altre."""
+    found = {}
+
+    def walk(obj, path):
+        if isinstance(obj, dict):
+            for k, v in obj.items():
+                walk(v, path + [k.lower()])
+        elif isinstance(obj, str) and obj.lower().split("?")[0].endswith(IMAGE_EXT):
+            found[".".join(path)] = obj
+
+    walk({k: v for k, v in bp.items() if "image" in k.lower()}, [])
+    if not found:
+        return None
+    order = ("show", "preview", "url")
+    best = sorted(found.items(), key=lambda kv: next((i for i, w in enumerate(order) if w in kv[0]), 9))[0][1]
+    if best.startswith("/"):
+        best = "https://www.cardtrader.com" + best
+    return best
 
 
 def cards_fingerprint(config) -> str:
@@ -108,6 +134,7 @@ def main():
                 "name": bp.get("name"),
                 "number": find_prop(bp, "collector_number", "card_number"),
                 "rarity": find_prop(bp, "rarity"),
+                "image": find_image(bp),
             }
         if kept:
             out[str(exp_id)] = {
@@ -121,6 +148,8 @@ def main():
     print("\n=== RISULTATO ===")
     print(f"Carte trovate: {len(wanted_names) - len(missing)}/{len(wanted_names)}")
     print(f"Versioni (blueprint): {total} in {len(out)} espansioni")
+    with_img = sum(1 for e in out.values() for b in e["blueprints"].values() if b.get("image"))
+    print(f"Versioni con immagine: {with_img}/{total}")
     if missing:
         print("Carte NON trovate (controlla il nome esatto in inglese):")
         for m in missing:

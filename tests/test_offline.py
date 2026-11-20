@@ -29,7 +29,8 @@ class FakeCT:
         return [{"id": 100, "game_id": 4, "name": "Phantom Darkness", "code": "ptdn"},
                 {"id": 200, "game_id": 4, "name": "Legendary Collection 2", "code": "lcgx"}]
     def get_blueprints_for_expansion(self, eid):
-        return {100: [{"id": 1, "name": "Dark Armed Dragon", "fixed_properties": {"collector_number": "PTDN-EN019"}}],
+        return {100: [{"id": 1, "name": "Dark Armed Dragon", "fixed_properties": {"collector_number": "PTDN-EN019"},
+                       "image": {"url": "/uploads/blueprints/image/1/dad.jpg", "show": {"url": "/uploads/blueprints/image/1/show_dad.jpg"}}}],
                 200: [{"id": 2, "name": "Dark Armed Dragon"}, {"id": 3, "name": "Sangan"}]}[eid]
     def get_marketplace_products_by_expansion(self, eid, language="en"):
         return MARKET.get(eid, {})
@@ -40,8 +41,10 @@ class FakeTG:
     def __init__(self, token, chat_id, dry_run=False):
         self.chat_id = str(chat_id)
         self.updates = []
-    def send(self, text):
+    images = []
+    def send(self, text, image_url=None):
         FakeTG.sent.append(text)
+        FakeTG.images.append(image_url)
         return True
     def get_updates(self, offset):
         return [u for u in self.updates if u["update_id"] >= offset]
@@ -75,6 +78,7 @@ assert "3:24" not in sent, "2,00 € su 2,20 € non è un'occasione"
 msgs = [m for m in FakeTG.sent if m.startswith("🃏")]
 assert len(msgs) == 2 and "Dark Armed Dragon" in msgs[0], msgs   # prima lo sconto più alto (−40%)
 assert any(m.startswith("📊") for m in FakeTG.sent), "manca il riepilogo"
+assert FakeTG.images[0] == "https://www.cardtrader.com/uploads/blueprints/image/1/show_dad.jpg", FakeTG.images
 hist = json.load(open("price_history.json"))
 assert hist["1:1st"][state.today()] == 1900
 print(msgs[0], "\n")
