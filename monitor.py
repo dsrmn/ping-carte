@@ -1,8 +1,10 @@
 """
-Esegue UNA scansione dei prezzi Cardtrader per la lista di carte, e notifica
-su Telegram le occasioni trovate. Pensato per essere lanciato periodicamente
-da GitHub Actions (vedi .github/workflows/monitor.yml) — non contiene loop
-infiniti né sleep lunghi.
+Esegue UNA scansione dei prezzi Cardtrader per la lista di carte Yu-Gi-Oh!
+e notifica su Telegram le occasioni trovate. Pensato per essere lanciato
+periodicamente da GitHub Actions (vedi .github/workflows/monitor.yml).
+
+Le inserzioni vengono scaricate per espansione (una richiesta per set invece
+di una per ogni versione di carta): la scansione è molto più veloce.
 
 Un'inserzione è considerata un'occasione se:
   - il prezzo di riferimento (mediana calcolata dopo aver rimosso gli
@@ -15,12 +17,14 @@ Un'inserzione è considerata un'occasione se:
 Legge i token da variabili d'ambiente:
   CARDTRADER_TOKEN, TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID
 
-Prima di lanciare questo script esegui build_card_index.py una volta.
+Opzioni:
+  --dry-run   non manda niente su Telegram, stampa i messaggi nel log
 """
+import html
 import json
 import os
-import sys
 import statistics
+import sys
 import time
 from datetime import datetime
 
@@ -30,17 +34,17 @@ from cardtrader_api import CardTraderClient
 
 CONFIG_FILE = "config.json"
 INDEX_FILE = "cards_index.json"
+INDEX_VERSION = 2
 SENT_ALERTS_FILE = "sent_alerts.json"  # per non notificare due volte la stessa occasione
 
 # Scala delle condizioni Cardtrader, dalla migliore alla peggiore.
-# Un'inserzione è accettata solo se la sua condizione è in questa lista
-# ed è alla posizione della soglia minima configurata o più in alto (indice minore o uguale).
 CONDITION_ORDER = ["Mint", "Near Mint", "Slightly Played", "Moderately Played", "Played", "Poor"]
+CONDITION_SHORT = {"Mint": "M", "Near Mint": "NM", "Slightly Played": "SP",
+                   "Moderately Played": "MP", "Played": "PL", "Poor": "PO"}
+MAX_LISTINGS_PER_MESSAGE = 5
 
 
 def condition_rank(condition_name):
-    """Ritorna la posizione della condizione nella scala (0 = migliore).
-    None se la condizione non è riconosciuta."""
     try:
         return CONDITION_ORDER.index(condition_name)
     except ValueError:
@@ -60,22 +64,6 @@ def save_json(path, data):
         json.dump(data, f, indent=2, ensure_ascii=False)
 
 
-def send_telegram(bot_token: str, chat_id: str, text: str):
-    """Ritorna True se l'invio è andato a buon fine, False altrimenti
-    (es. rate limit di Telegram)."""
-    url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
-    resp = requests.post(url, json={
-        "chat_id": chat_id,
-        "text": text,
-        "parse_mode": "HTML",
-        "disable_web_page_preview": True,
-    }, timeout=15)
-    if resp.status_code != 200:
-        print(f"  ! Errore invio Telegram: {resp.status_code} {resp.text}")
-        return False
-    return True
-
-
 def trimmed_median(values, trim_pct):
     """Rimuove trim_pct dei valori più bassi e più alti, poi calcola la
     mediana dei rimanenti. Se il taglio lascerebbe troppo pochi valori,
@@ -87,107 +75,201 @@ def trimmed_median(values, trim_pct):
     return statistics.median(trimmed)
 
 
-def get_rarity(product):
-    """Cardtrader nomina il campo rarità in modo diverso per ogni gioco
-    (es. 'mtg_rarity' per Magic). Cerchiamo qualsiasi chiave che contenga
-    'rarity' nelle properties_hash, invece di assumerne il nome esatto."""
+def find_prop(product, *needles):
+    """Cardtrader nomina le proprietà in modo diverso per ogni gioco
+    (es. 'yugioh_rarity'): cerchiamo qualsiasi chiave che contenga la parola."""
     props = product.get("properties_hash", {}) or {}
     for key, value in props.items():
-        if "rarity" in key.lower():
-            return str(value).strip().lower() if value else None
+        if any(n in key.lower() for n in needles):
+            return value
     return None
 
 
-def check_card(client, card_name, blueprint_entries, criteria, min_listings, sent_alerts, allowed_seller_countries, old_expansion_codes, allowed_rarities, trim_pct, min_condition_rank):
-    """Controlla tutte le blueprint (edizioni) di una carta e ritorna eventuali occasioni."""
-    deals = []
-    for entry in blueprint_entries:
-        bp_id = entry["blueprint_id"]
-        exp_code = (entry.get("expansion_code") or "").lower()
-        # Le espansioni nella lista old_expansion_codes (fino ad Abyss Rising
-        # incluso) vanno bene con qualsiasi rarità. Qualunque altra
-        # espansione (comprese quelle senza codice riconosciuto, per
-        # prudenza) richiede una delle rarità in allowed_rarities.
-        require_rarity_filter = exp_code not in old_expansion_codes
-        try:
-            # language="en" filtra lato API solo le inserzioni in inglese
-            products = client.get_marketplace_products(bp_id, language="en")
-        except Exception as e:
-            print(f"  ! Errore recuperando listings per {card_name} ({bp_id}): {e}")
-            continue
+def get_rarity(product):
+    value = find_prop(product, "rarity")
+    return str(value).strip().lower() if value else None
 
+
+def is_deal(price, ref, criteria):
+    # Se la media delle inserzioni è già sotto la soglia fissa, basta
+    # rispettare quella (le percentuali diventano poco significative su
+    # prezzi già bassi). Se la media è sopra la soglia fissa, conta solo lo
+    # sconto percentuale rispetto alla media.
+    if ref > criteria["fixed_price_threshold_eur"]:
+        return price <= ref * (1 - criteria["discount_below_average_pct"] / 100)
+    return price <= criteria["fixed_price_threshold_eur"]
+
+
+# ---------------------------------------------------------------------------
+# Messaggi Telegram
+# ---------------------------------------------------------------------------
+
+def eur(value):
+    return f"{value:.2f} €".replace(".", ",")
+
+
+def flag(country_code):
+    """'US' -> 🇺🇸"""
+    if not country_code or len(country_code) != 2 or not country_code.isalpha():
+        return ""
+    return "".join(chr(0x1F1E6 + ord(c) - ord("A")) for c in country_code.upper())
+
+
+def describe_listing(product):
+    """Dettagli dell'inserzione: condizione, edizione, lingua."""
+    parts = []
+    cond = (product.get("properties_hash") or {}).get("condition")
+    if cond:
+        parts.append(f"{cond} ({CONDITION_SHORT.get(cond, '?')})")
+    first = find_prop(product, "first_edition", "1st")
+    if first is True or str(first).lower() in ("true", "1", "yes"):
+        parts.append("1ª edizione")
+    elif first is False or str(first).lower() in ("false", "0", "no"):
+        parts.append("Unlimited")
+    lang = find_prop(product, "language")
+    if lang:
+        parts.append(str(lang).upper())
+    return " · ".join(parts)
+
+
+def price_line(d):
+    median = f"mediana {eur(d['ref'])} su {d['n_listings']} inserzioni"
+    if d.get("rule") == "soglia":
+        if d["discount"] > 0:
+            return f"💰 <b>{eur(d['price'])}</b> (−{d['discount']}%) · sotto la soglia di {eur(d['threshold'])} · {median}"
+        return f"💰 <b>{eur(d['price'])}</b> · sotto la soglia di {eur(d['threshold'])} · {median}"
+    return f"💰 <b>{eur(d['price'])}</b> invece di {eur(d['ref'])} (−{d['discount']}%) · mediana su {d['n_listings']} inserzioni"
+
+
+def format_message(card_name, deals):
+    deals = sorted(deals, key=lambda d: d["price"])
+    n = len(deals)
+    best = deals[0]
+    best_discount = f" (−{best['discount']}%)" if best["discount"] > 0 else ""
+    lines = [
+        f"🃏 <b>{html.escape(card_name)}</b>",
+        f"{n} occasion{'e' if n == 1 else 'i'} · la migliore a <b>{eur(best['price'])}</b>{best_discount}",
+    ]
+    for d in deals[:MAX_LISTINGS_PER_MESSAGE]:
+        edition = " · ".join(html.escape(x) for x in (d["expansion"], d["number"], d["rarity"]) if x)
+        seller = html.escape(str(d["seller"]))
+        country = d.get("country") or ""
+        lines += [
+            "",
+            price_line(d),
+            f"📦 {edition}",
+        ]
+        if d["details"]:
+            lines.append(f"✅ {html.escape(d['details'])}")
+        lines.append(f"👤 {seller} {flag(country)} {html.escape(country)}".rstrip())
+        lines.append(f"🔗 <a href=\"{html.escape(d['url'], quote=True)}\">Apri su Cardtrader</a>")
+    if n > MAX_LISTINGS_PER_MESSAGE:
+        lines += ["", f"…e altre {n - MAX_LISTINGS_PER_MESSAGE} inserzioni"]
+    return "\n".join(lines)
+
+
+def send_telegram(bot_token, chat_id, text, dry_run=False):
+    """Ritorna True se l'invio è andato a buon fine, False altrimenti
+    (es. rate limit di Telegram)."""
+    if dry_run:
+        print("----- [dry-run] messaggio Telegram -----\n" + text + "\n")
+        return True
+    url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
+    try:
+        resp = requests.post(url, json={
+            "chat_id": chat_id,
+            "text": text,
+            "parse_mode": "HTML",
+            "disable_web_page_preview": True,
+        }, timeout=15)
+    except requests.RequestException as e:
+        print(f"  ! Errore invio Telegram: {e}")
+        return False
+    if resp.status_code != 200:
+        print(f"  ! Errore invio Telegram: {resp.status_code} {resp.text}")
+        return False
+    return True
+
+
+# ---------------------------------------------------------------------------
+# Scansione
+# ---------------------------------------------------------------------------
+
+def check_expansion(exp, products_by_bp, settings, sent_alerts):
+    """Ritorna {nome carta: [occasioni]} per una espansione."""
+    found = {}
+    # Le espansioni nella lista old_expansion_codes (fino ad Abyss Rising
+    # incluso) vanno bene con qualsiasi rarità. Qualunque altra espansione
+    # (comprese quelle senza codice riconosciuto, per prudenza) richiede una
+    # delle rarità in allowed_rarities.
+    require_rarity_filter = exp.get("code", "") not in settings["old_expansion_codes"]
+
+    for bp_id, bp in exp["blueprints"].items():
         prices = []
-        for p in products:
-            price_info = p.get("price", {})
+        for p in products_by_bp.get(int(bp_id), []):
+            price_info = p.get("price", {}) or {}
             cents = price_info.get("cents")
-            currency = price_info.get("currency", "EUR")
-            if cents is None or currency != "EUR":
+            if cents is None or price_info.get("currency", "EUR") != "EUR":
                 continue
             # Filtra per Paese di spedizione del venditore (es. solo US/CA)
-            if allowed_seller_countries:
-                seller_country = p.get("user", {}).get("country_code")
-                if seller_country not in allowed_seller_countries:
+            if settings["countries"]:
+                if (p.get("user") or {}).get("country_code") not in settings["countries"]:
                     continue
-            # Filtra per condizione minima (es. solo MP o superiore).
-            # Condizioni non riconosciute vengono scartate per prudenza.
-            if min_condition_rank is not None:
-                cond = p.get("properties_hash", {}).get("condition")
-                rank = condition_rank(cond)
-                if rank is None or rank > min_condition_rank:
+            # Filtra per condizione minima. Condizioni non riconosciute
+            # vengono scartate per prudenza.
+            if settings["min_condition_rank"] is not None:
+                rank = condition_rank((p.get("properties_hash") or {}).get("condition"))
+                if rank is None or rank > settings["min_condition_rank"]:
                     continue
-            # Controllo di sicurezza aggiuntivo sulla rarità, per le
-            # espansioni dall'anno soglia in poi.
             if require_rarity_filter:
-                rarity = get_rarity(p)
-                if rarity is None or rarity not in allowed_rarities:
+                rarity = get_rarity(p) or (bp.get("rarity") or "").lower() or None
+                if rarity is None or rarity not in settings["allowed_rarities"]:
                     continue
             prices.append((cents / 100.0, p))
 
-        if len(prices) < min_listings:
+        if len(prices) < settings["min_listings"]:
             continue
+        ref = trimmed_median([x for x, _ in prices], settings["trim_pct"])
 
-        values = [pr for pr, _ in prices]
-        avg_price = trimmed_median(values, trim_pct)
-
-        for price, product in prices:
-            # Se la media delle inserzioni è già sotto la soglia fissa,
-            # basta rispettare quella (le percentuali diventano poco
-            # significative su prezzi già bassi). Se la media è sopra la
-            # soglia fissa, conta solo lo sconto percentuale rispetto alla
-            # media: altrimenti le carte con media alta non scatterebbero
-            # mai, perché lo sconto le porterebbe comunque sopra la soglia.
-            if avg_price > criteria["fixed_price_threshold_eur"]:
-                is_deal = price <= avg_price * (1 - criteria["discount_below_average_pct"] / 100)
-            else:
-                is_deal = price <= criteria["fixed_price_threshold_eur"]
-
-            if is_deal:
-                product_id = product.get("id")
-                alert_key = f"{bp_id}:{product_id}"
-                if alert_key in sent_alerts:
-                    continue
-                deals.append({
-                    "card_name": card_name,
-                    "expansion": entry["expansion"],
-                    "price": price,
-                    "avg_price": round(avg_price, 2),
-                    "seller": product.get("user", {}).get("username", "?"),
-                    "alert_key": alert_key,
-                    "url": f"https://www.cardtrader.com/en/cards/{bp_id}",
-                })
-    return deals
+        for price, p in prices:
+            if not is_deal(price, ref, settings["criteria"]):
+                continue
+            alert_key = f"{bp_id}:{p.get('id')}"
+            if alert_key in sent_alerts:
+                continue
+            user = p.get("user") or {}
+            rarity = find_prop(p, "rarity") or bp.get("rarity")
+            threshold = settings["criteria"]["fixed_price_threshold_eur"]
+            found.setdefault(bp["name"], []).append({
+                "price": price,
+                # "soglia" = scattata perché sotto la soglia fissa (carte economiche)
+                "rule": "sconto" if ref > threshold else "soglia",
+                "threshold": threshold,
+                "ref": round(ref, 2),
+                "discount": max(0, round((1 - price / ref) * 100)) if ref else 0,
+                "n_listings": len(prices),
+                "expansion": exp["name"],
+                "number": bp.get("number"),
+                "rarity": str(rarity) if rarity else None,
+                "details": describe_listing(p),
+                "seller": user.get("username", "?"),
+                "country": user.get("country_code"),
+                "alert_key": alert_key,
+                "url": f"https://www.cardtrader.com/en/cards/{bp_id}",
+            })
+    return found
 
 
 def main():
+    dry_run = "--dry-run" in sys.argv
     cardtrader_token = os.environ.get("CARDTRADER_TOKEN")
     telegram_bot_token = os.environ.get("TELEGRAM_BOT_TOKEN")
     telegram_chat_id = os.environ.get("TELEGRAM_CHAT_ID")
 
-    missing_env = [name for name, val in [
-        ("CARDTRADER_TOKEN", cardtrader_token),
-        ("TELEGRAM_BOT_TOKEN", telegram_bot_token),
-        ("TELEGRAM_CHAT_ID", telegram_chat_id),
-    ] if not val]
+    required = [("CARDTRADER_TOKEN", cardtrader_token)]
+    if not dry_run:
+        required += [("TELEGRAM_BOT_TOKEN", telegram_bot_token), ("TELEGRAM_CHAT_ID", telegram_chat_id)]
+    missing_env = [name for name, val in required if not val]
     if missing_env:
         sys.exit(f"Errore: variabili d'ambiente mancanti: {', '.join(missing_env)}")
 
@@ -195,74 +277,63 @@ def main():
     if config is None:
         sys.exit("config.json non trovato!")
 
-    cards_index = load_json(INDEX_FILE, None)
-    if cards_index is None:
-        sys.exit("cards_index.json non trovato: esegui prima build_card_index.py")
+    index = load_json(INDEX_FILE, None)
+    if not isinstance(index, dict) or index.get("version") != INDEX_VERSION:
+        sys.exit("cards_index.json mancante o nel formato vecchio: esegui build_card_index.py")
+
+    min_condition_name = config.get("min_condition", "Moderately Played")
+    settings = {
+        "criteria": config["deal_criteria"],
+        "min_listings": config.get("min_listings_for_average", 3),
+        "countries": set(config.get("allowed_seller_countries", [])),
+        "old_expansion_codes": {c.strip().lower() for c in config.get("old_expansion_codes", [])},
+        "allowed_rarities": {r.strip().lower() for r in config.get("allowed_rarities", [])},
+        "trim_pct": config.get("trim_pct", 0.1),
+        "min_condition_rank": condition_rank(min_condition_name),
+    }
+    if settings["min_condition_rank"] is None:
+        print(f"Attenzione: min_condition '{min_condition_name}' non riconosciuta, nessun filtro condizione applicato.")
 
     sent_alerts = set(load_json(SENT_ALERTS_FILE, []))
     client = CardTraderClient(cardtrader_token)
-    criteria = config["deal_criteria"]
-    min_listings = config.get("min_listings_for_average", 3)
-    allowed_seller_countries = set(config.get("allowed_seller_countries", []))
-    old_expansion_codes = {c.strip().lower() for c in config.get("old_expansion_codes", [])}
-    allowed_rarities = {r.strip().lower() for r in config.get("allowed_rarities", [])}
-    trim_pct = config.get("trim_pct", 0.1)
-    min_condition_name = config.get("min_condition", "Moderately Played")
-    min_condition_rank = condition_rank(min_condition_name)
-    if min_condition_rank is None:
-        print(f"Attenzione: min_condition '{min_condition_name}' non riconosciuta, nessun filtro condizione applicato.")
+    expansions = index["expansions"]
+    n_bp = sum(len(e["blueprints"]) for e in expansions.values())
 
-    print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Inizio scansione di {len(cards_index)} carte...")
+    start = time.time()
+    print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Scansione di {n_bp} versioni di carte in {len(expansions)} espansioni...")
+
+    # 1) raccogli tutte le occasioni, raggruppate per carta
+    deals_by_card = {}
+    for i, (exp_id, exp) in enumerate(expansions.items(), 1):
+        if i % 50 == 0 or i == len(expansions):
+            print(f"  ...controllate {i}/{len(expansions)} espansioni")
+        try:
+            products = client.get_marketplace_products_by_expansion(int(exp_id), language="en")
+        except Exception as e:
+            print(f"  ! Errore recuperando le inserzioni di {exp['name']}: {e}")
+            continue
+        for card_name, deals in check_expansion(exp, products, settings, sent_alerts).items():
+            deals_by_card.setdefault(card_name, []).extend(deals)
+
+    # 2) un messaggio per carta, con tutte le sue versioni in offerta
     total_deals = 0
-    telegram_blocked = False  # se Telegram ci rifiuta un invio, smettiamo di provare per questo giro
-
-    total_cards = len(cards_index)
-    for i, (card_name, blueprint_entries) in enumerate(cards_index.items(), 1):
-        if i % 20 == 0 or i == total_cards:
-            print(f"  ...controllate {i}/{total_cards} carte")
-        if not blueprint_entries:
-            continue
-        deals = check_card(client, card_name, blueprint_entries, criteria, min_listings, sent_alerts, allowed_seller_countries, old_expansion_codes, allowed_rarities, trim_pct, min_condition_rank)
-
-        if not deals:
-            continue
-
-        if telegram_blocked:
-            # Telegram ci ha già rifiutato un invio in questo giro: non
-            # segnamo queste occasioni come notificate, verranno ritentate
-            # al prossimo controllo.
-            continue
-
-        # Raggruppa tutte le occasioni della stessa carta in UN SOLO
-        # messaggio, invece di uno per ogni inserzione: evita di superare
-        # il limite anti-spam di Telegram quando ci sono molte inserzioni
-        # che soddisfano il criterio contemporaneamente.
-        deals.sort(key=lambda d: d["price"])
-        lines = [
-            f"🃏 <b>{card_name}</b> — {len(deals)} occasion{'e' if len(deals) == 1 else 'i'} trovat{'a' if len(deals) == 1 else 'e'}"
-        ]
-        for deal in deals[:10]:  # elenco al massimo 10 inserzioni per non fare messaggi enormi
-            lines.append(
-                f"• {deal['price']:.2f}€ (rif. {deal['avg_price']:.2f}€) — {deal['expansion']} — {deal['seller']} — <a href=\"{deal['url']}\">Apri</a>"
-            )
-        if len(deals) > 10:
-            lines.append(f"…e altre {len(deals) - 10}")
-        msg = "\n".join(lines)
-
-        if send_telegram(telegram_bot_token, telegram_chat_id, msg):
-            for deal in deals:
-                sent_alerts.add(deal["alert_key"])
+    for card_name, deals in sorted(deals_by_card.items()):
+        if send_telegram(telegram_bot_token, telegram_chat_id, format_message(card_name, deals), dry_run):
+            for d in deals:
+                sent_alerts.add(d["alert_key"])
             total_deals += len(deals)
-            print(f"  -> Notificata occasione: {card_name} ({len(deals)} inserzioni)")
+            print(f"  -> Notificata: {card_name} ({len(deals)} {'inserzione' if len(deals) == 1 else 'inserzioni'})")
+            if not dry_run:
+                time.sleep(1)  # piccola pausa tra un messaggio e l'altro
         else:
-            # Non riproviamo altri invii in questo giro: probabilmente è un
-            # rate limit di Telegram che richiede diversi minuti per sbloccarsi.
-            telegram_blocked = True
+            # Probabilmente un rate limit di Telegram: non segniamo queste
+            # occasioni come notificate, verranno ritentate al prossimo giro.
+            print("  Telegram ha rifiutato l'invio: le altre occasioni verranno ritentate al prossimo giro.")
+            break
 
-        time.sleep(1)  # piccola pausa tra un messaggio e l'altro, per sicurezza
-
-    save_json(SENT_ALERTS_FILE, list(sent_alerts))
-    print(f"Scansione completata. Occasioni trovate: {total_deals}.")
+    if not dry_run:  # in prova non segniamo nulla come già notificato
+        save_json(SENT_ALERTS_FILE, list(sent_alerts))
+    print(f"Scansione completata in {round(time.time() - start)}s. Occasioni notificate: {total_deals}.")
 
 
 if __name__ == "__main__":
