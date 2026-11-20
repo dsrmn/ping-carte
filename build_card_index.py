@@ -131,6 +131,7 @@ def main():
             "version": INDEX_VERSION,
             "fingerprint": cards_fingerprint(config),
             "built_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+            "missing": missing,
             "expansions": out,
         }, f, indent=1, ensure_ascii=False)
     print(f"\nSalvato in {INDEX_FILE}")

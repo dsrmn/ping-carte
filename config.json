@@ -1,13 +1,43 @@
 {
   "deal_criteria": {
-    "fixed_price_threshold_eur": 3.0,
-    "discount_below_average_pct": 30
+    "discount_below_average_pct": 30,
+    "min_saving_eur": 0.5
   },
-  "min_listings_for_average": 2,
-  "allowed_seller_countries": [
-    "US",
-    "CA"
+  "ct_zero_only": true,
+  "min_listings_for_average": 3,
+  "allowed_seller_countries": [],
+  "trim_pct": 0.1,
+  "min_condition": "Moderately Played",
+  "allowed_rarities": [
+    "super rare",
+    "ultra rare",
+    "secret rare",
+    "platinum secret rare",
+    "quarter century rare",
+    "ultimate rare"
   ],
+  "price_history": {
+    "keep_days": 60,
+    "min_days_for_reference": 7
+  },
+  "daily_summary": {
+    "hour": 20,
+    "min_reference_eur": 2,
+    "move_pct": 25,
+    "max_lines": 10
+  },
+  "notifications": {
+    "max_messages_per_run": 30,
+    "renotify_if_cheaper_pct": 10,
+    "forget_after_days": 60
+  },
+  "format_library": {
+    "format": "Edison",
+    "top_n": 200,
+    "max_decks": 400,
+    "extra_cards": [],
+    "excluded_cards": []
+  },
   "old_expansion_codes": [
     "5ds1",
     "5ds2",
@@ -248,23 +278,6 @@
     "ysdj",
     "ysds"
   ],
-  "allowed_rarities": [
-    "super rare",
-    "ultra rare",
-    "secret rare",
-    "platinum secret rare",
-    "quarter century rare",
-    "ultimate rare"
-  ],
-  "trim_pct": 0.1,
-  "min_condition": "Moderately Played",
-  "format_library": {
-    "format": "Edison",
-    "top_n": 200,
-    "max_decks": 400,
-    "extra_cards": [],
-    "excluded_cards": []
-  },
   "cards": [
     "Stardust Dragon",
     "Heavy Storm",
