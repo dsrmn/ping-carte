@@ -43,6 +43,7 @@ CONDITION_ORDER = ["Mint", "Near Mint", "Slightly Played", "Moderately Played", 
 CONDITION_SHORT = {"Mint": "M", "Near Mint": "NM", "Slightly Played": "SP",
                    "Moderately Played": "MP", "Played": "PL", "Poor": "PO"}
 MAX_LISTINGS_PER_MESSAGE = 5
+SUSPICIOUS_DISCOUNT = 80  # oltre questo sconto il riferimento è probabilmente falsato
 
 
 def condition_rank(condition_name):
@@ -251,7 +252,7 @@ def details_line(d):
 
 
 def format_message(card_name, deals, popularity):
-    deals = sorted(deals, key=lambda d: -d["discount"])
+    deals = sorted(deals, key=lambda d: (d["discount"] >= SUSPICIOUS_DISCOUNT, -d["discount"]))
     n = len(deals)
     best = deals[0]
     title = f"🃏 <b>{html.escape(card_name)}</b>"
@@ -263,6 +264,8 @@ def format_message(card_name, deals, popularity):
         edition = " · ".join(html.escape(x) for x in (d["expansion"], d["number"], d["rarity"]) if x)
         ref_note = "media ultime settimane" if d["ref_is_history"] else f"mediana su {d['n_listings']} inserzioni"
         lines += ["", f"💰 <b>{eur(d['price'])}</b> invece di {eur(d['ref'])} (−{d['discount']}%) · {ref_note}"]
+        if d["discount"] >= SUSPICIOUS_DISCOUNT:
+            lines.append("⚠️ Sconto sospetto: forse la mediana è falsata da inserzioni a prezzo esagerato, controlla")
         if d["cheaper_than"]:
             lines.append(f"⬇️ Ribassata: prima era {eur(d['cheaper_than'])}")
         lines.append(f"📦 {edition}")
@@ -412,8 +415,13 @@ def main():
     if bot_state["paused"]:
         print("Bot in pausa: nessuna notifica inviata.")
     else:
-        ordered = sorted(deals_by_card.items(),
-                         key=lambda kv: (-max(x["discount"] for x in kv[1]), popularity.get(kv[0], 9999)))
+        def priority(kv):
+            # prima gli sconti "credibili" più alti, in fondo quelli sospetti
+            best = max((x["discount"] for x in kv[1] if x["discount"] < SUSPICIOUS_DISCOUNT), default=None)
+            if best is None:
+                return (1, 0, popularity.get(kv[0], 9999))
+            return (0, -best, popularity.get(kv[0], 9999))
+        ordered = sorted(deals_by_card.items(), key=priority)
         for card, deals in ordered:
             if sent_msgs >= max_msgs:
                 print(f"  Limite di {max_msgs} messaggi raggiunto: il resto al prossimo giro.")
