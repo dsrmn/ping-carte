@@ -76,7 +76,7 @@ msgs = [m for m in FakeTG.sent if m.startswith("🃏")]
 assert len(msgs) == 2 and "Dark Armed Dragon" in msgs[0], msgs   # prima lo sconto più alto (−40%)
 assert any(m.startswith("📊") for m in FakeTG.sent), "manca il riepilogo"
 hist = json.load(open("price_history.json"))
-assert hist["1"][state.today()] == 1900
+assert hist["1:1st"][state.today()] == 1900
 print(msgs[0], "\n")
 
 # --- 2° giro: niente doppioni; ribasso di un'inserzione già notificata ------

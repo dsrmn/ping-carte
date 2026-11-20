@@ -132,6 +132,64 @@ def prune_history(history, keep_days):
 # Scansione
 # ---------------------------------------------------------------------------
 
+def edition_key(product):
+    fe = find_prop(product, "first_edition", "1st")
+    if fe is True or str(fe).lower() in ("true", "1", "yes"):
+        return "1st"
+    if fe is False or str(fe).lower() in ("false", "0", "no"):
+        return "unl"
+    return "?"
+
+
+def deals_for_group(bp_id, bp, exp, edition, eligible, settings, sent_alerts, history, d):
+    """Occasioni tra le inserzioni di UNA versione e UNA edizione."""
+    found = []
+    if len(eligible) < settings["min_listings"]:
+        return found
+    current = trimmed_median([x for x, _, _ in eligible], settings["trim_pct"])
+    hist_key = bp_id if edition == "?" else f"{bp_id}:{edition}"
+    series = history.setdefault(hist_key, {})
+    if d not in series:  # una registrazione al giorno (la prima del giorno)
+        series[d] = int(round(current * 100))
+    hist_ref = history_reference(series, settings["min_history_days"])
+    ref = min(current, hist_ref) if hist_ref else current
+    max_price = ref * (1 - settings["discount"] / 100)
+
+    for price, p, hub in eligible:
+        if settings["ct_zero_only"] and not hub:
+            continue
+        if price > max_price or ref - price < settings["min_saving"]:
+            continue
+        alert_key = f"{bp_id}:{p.get('id')}"
+        previous = sent_alerts.get(alert_key)
+        cheaper_than = None
+        if previous is not None:
+            prev_cents = previous.get("p")
+            if not prev_cents or price * 100 > prev_cents * (1 - settings["renotify_pct"] / 100):
+                continue
+            cheaper_than = prev_cents / 100
+        user = p.get("user") or {}
+        rarity = find_prop(p, "rarity") or bp.get("rarity")
+        found.append({
+            "price": price,
+            "ref": round(ref, 2),
+            "ref_is_history": bool(hist_ref) and hist_ref < current,
+            "discount": round((1 - price / ref) * 100),
+            "n_listings": len(eligible),
+            "expansion": exp["name"],
+            "number": bp.get("number"),
+            "rarity": str(rarity) if rarity else None,
+            "condition": (p.get("properties_hash") or {}).get("condition"),
+            "first_edition": find_prop(p, "first_edition", "1st"),
+            "seller": user.get("username", "?"),
+            "country": user.get("country_code"),
+            "cheaper_than": cheaper_than,
+            "alert_key": alert_key,
+            "url": f"https://www.cardtrader.com/en/cards/{bp_id}",
+        })
+    return found
+
+
 def check_expansion(exp, products_by_bp, settings, sent_alerts, history, stats):
     """Ritorna {nome carta: [occasioni]} per una espansione e aggiorna lo storico."""
     found = {}
@@ -164,48 +222,14 @@ def check_expansion(exp, products_by_bp, settings, sent_alerts, history, stats):
             stats["ct_zero"] += hub
             eligible.append((cents / 100.0, p, hub))
 
-        if len(eligible) < settings["min_listings"]:
-            continue
-        current = trimmed_median([x for x, _, _ in eligible], settings["trim_pct"])
-        series = history.setdefault(bp_id, {})
-        if d not in series:  # una registrazione al giorno (la prima del giorno)
-            series[d] = int(round(current * 100))
-        hist_ref = history_reference(series, settings["min_history_days"])
-        ref = min(current, hist_ref) if hist_ref else current
-        max_price = ref * (1 - settings["discount"] / 100)
-
-        for price, p, hub in eligible:
-            if settings["ct_zero_only"] and not hub:
-                continue
-            if price > max_price or ref - price < settings["min_saving"]:
-                continue
-            alert_key = f"{bp_id}:{p.get('id')}"
-            previous = sent_alerts.get(alert_key)
-            cheaper_than = None
-            if previous is not None:
-                prev_cents = previous.get("p")
-                if not prev_cents or price * 100 > prev_cents * (1 - settings["renotify_pct"] / 100):
-                    continue
-                cheaper_than = prev_cents / 100
-            user = p.get("user") or {}
-            rarity = find_prop(p, "rarity") or bp.get("rarity")
-            found.setdefault(bp["name"], []).append({
-                "price": price,
-                "ref": round(ref, 2),
-                "ref_is_history": bool(hist_ref) and hist_ref < current,
-                "discount": round((1 - price / ref) * 100),
-                "n_listings": len(eligible),
-                "expansion": exp["name"],
-                "number": bp.get("number"),
-                "rarity": str(rarity) if rarity else None,
-                "condition": (p.get("properties_hash") or {}).get("condition"),
-                "first_edition": find_prop(p, "first_edition", "1st"),
-                "seller": user.get("username", "?"),
-                "country": user.get("country_code"),
-                "cheaper_than": cheaper_than,
-                "alert_key": alert_key,
-                "url": f"https://www.cardtrader.com/en/cards/{bp_id}",
-            })
+        # Prima edizione e Unlimited hanno prezzi molto diversi: riferimento separato
+        by_edition = {}
+        for item in eligible:
+            by_edition.setdefault(edition_key(item[1]), []).append(item)
+        for edition, items in by_edition.items():
+            deals = deals_for_group(bp_id, bp, exp, edition, items, settings, sent_alerts, history, d)
+            if deals:
+                found.setdefault(bp["name"], []).extend(deals)
     return found
 
 
@@ -255,19 +279,23 @@ def build_daily_summary(index, history, sent_alerts, cfg):
     """Carte salite/scese di più rispetto a 7 giorni fa + occasioni del giorno."""
     d = today()
     moves = []
+    labels = {}
     for exp in index["expansions"].values():
         for bp_id, bp in exp["blueprints"].items():
-            series = history.get(bp_id, {})
-            if d not in series:
-                continue
-            cur = series[d] / 100
-            old = value_days_ago(series, 7)
-            if old is None or max(cur, old) < cfg["min_reference_eur"]:
-                continue
-            change = round((cur / old - 1) * 100)
-            if abs(change) >= cfg["move_pct"]:
-                label = " · ".join(x for x in (bp["name"], exp["name"], bp.get("rarity")) if x)
-                moves.append((change, label, old, cur))
+            labels[bp_id] = " · ".join(x for x in (bp["name"], exp["name"], bp.get("rarity")) if x)
+    ed_label = {"1st": "1ª ed.", "unl": "Unlimited"}
+    for key, series in history.items():
+        bp_id, _, edition = key.partition(":")
+        if bp_id not in labels or d not in series:
+            continue
+        cur = series[d] / 100
+        old = value_days_ago(series, 7)
+        if old is None or max(cur, old) < cfg["min_reference_eur"]:
+            continue
+        change = round((cur / old - 1) * 100)
+        if abs(change) >= cfg["move_pct"]:
+            label = labels[bp_id] + (f" · {ed_label[edition]}" if edition in ed_label else "")
+            moves.append((change, label, old, cur))
     n_today = sum(1 for v in sent_alerts.values() if v.get("d") == d and v.get("n"))
     lines = [f"📊 <b>Riepilogo del {now().strftime('%d/%m')}</b>",
              f"Occasioni notificate oggi: {n_today} (dettagli con /oggi)"]
