@@ -31,7 +31,7 @@
     "max_lines": 10
   },
   "notifications": {
-    "max_messages_per_run": 30,
+    "max_messages_per_run": 50,
     "renotify_if_cheaper_pct": 10,
     "forget_after_days": 60
   },
