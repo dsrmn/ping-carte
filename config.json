@@ -4,7 +4,7 @@
     "min_saving_eur": 0.5
   },
   "ct_zero_only": true,
-  "min_listings_for_average": 2,
+  "min_listings_for_average": 3,
   "allowed_seller_countries": [],
   "trim_pct": 0.1,
   "min_condition": "Moderately Played",

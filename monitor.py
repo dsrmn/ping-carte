@@ -53,11 +53,15 @@ def condition_rank(condition_name):
 
 
 def trimmed_median(values, trim_pct):
+    """Mediana dopo aver tolto trim_pct dei valori più bassi e più alti.
+    Con un numero pari di valori prende il più basso dei due centrali
+    (median_low): così un'inserzione a prezzo assurdo non gonfia il
+    riferimento quando le inserzioni sono poche."""
     sorted_vals = sorted(values)
     n = len(sorted_vals)
     k = int(n * trim_pct)
     trimmed = sorted_vals[k:n - k] if n - 2 * k >= 1 else sorted_vals
-    return statistics.median(trimmed)
+    return statistics.median_low(trimmed)
 
 
 def find_prop(product, *needles):
@@ -142,6 +146,8 @@ def check_expansion(exp, products_by_bp, settings, sent_alerts, history, stats):
             if cents is None or price_info.get("currency", "EUR") != "EUR":
                 continue
             if p.get("on_vacation") or (p.get("user") or {}).get("on_vacation"):
+                continue
+            if p.get("graded"):  # carte gradate: prezzi a parte
                 continue
             if settings["countries"] and (p.get("user") or {}).get("country_code") not in settings["countries"]:
                 continue
@@ -370,6 +376,8 @@ def main():
         print("ATTENZIONE: nessuna inserzione riconosciuta come CT Zero: controlla is_ct_zero() "
               "con i campi stampati sopra.")
 
+    pending = sum(len(v) for v in deals_by_card.values())
+    print(f"Occasioni da notificare: {pending} su {len(deals_by_card)} carte")
     sent_msgs = 0
     total = 0
     max_msgs = notif.get("max_messages_per_run", 30)
