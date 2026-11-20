@@ -1,14 +1,25 @@
-"""Test senza rete con un Cardtrader finto. Uso: python tests/test_offline.py"""
+"""Test senza rete con Cardtrader, Telegram e Format Library finti.
+Uso: python tests/test_offline.py"""
 import json, os, shutil, sys, tempfile
+from datetime import timedelta
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, ROOT)
-import build_card_index, monitor  # noqa: E402
+import build_card_index, monitor, telegram_bot, state  # noqa: E402
 
 
-def prod(pid, bp, eur, country="US", cond="Near Mint", rarity="Secret Rare", first=True):
+def prod(pid, bp, eur, country="US", cond="Near Mint", rarity="Secret Rare", hub=True):
     return {"id": pid, "blueprint_id": bp, "price": {"cents": int(round(eur * 100)), "currency": "EUR"},
-            "user": {"username": f"venditore{pid}", "country_code": country},
-            "properties_hash": {"condition": cond, "yugioh_rarity": rarity, "first_edition": first, "yugioh_language": "en"}}
+            "user": {"username": f"venditore{pid}", "country_code": country, "can_sell_via_hub": hub},
+            "properties_hash": {"condition": cond, "yugioh_rarity": rarity, "first_edition": True}}
+
+
+MARKET = {
+    # vecchio set: qualsiasi rarità. Mediana 20 €; 12 € CT Zero = occasione; 8 € NON CT Zero = no
+    100: {1: [prod(1, 1, 20), prod(2, 1, 21), prod(3, 1, 19), prod(4, 1, 12), prod(5, 1, 8, hub=False)]},
+    # set nuovo: Common esclusa; Sangan mediana ~2,2 €: 1,40 € (−36%, risparmio 0,80) sì; 2,00 € no
+    200: {2: [prod(10, 2, 2.0, rarity="Common"), prod(11, 2, 2.5, rarity="Common")],
+          3: [prod(20, 3, 2.2), prod(21, 3, 2.5, cond="Played"), prod(22, 3, 2.3), prod(23, 3, 1.4), prod(24, 3, 2.0)]},
+}
 
 
 class FakeCT:
@@ -16,56 +27,89 @@ class FakeCT:
     def get_yugioh_game_id(self): return 4
     def get_expansions(self, gid):
         return [{"id": 100, "game_id": 4, "name": "Phantom Darkness", "code": "ptdn"},
-                {"id": 200, "game_id": 4, "name": "Legendary Collection 2", "code": "lcgx"},
-                {"id": 300, "game_id": 4, "name": "Altro", "code": "xxx"}]
+                {"id": 200, "game_id": 4, "name": "Legendary Collection 2", "code": "lcgx"}]
     def get_blueprints_for_expansion(self, eid):
-        return {100: [{"id": 1, "name": "Dark Armed Dragon", "fixed_properties": {"collector_number": "PTDN-EN019", "yugioh_rarity": "Secret Rare"}}],
-                200: [{"id": 2, "name": "Dark Armed Dragon", "fixed_properties": {"collector_number": "LCGX-EN198"}},
-                      {"id": 3, "name": "Sangan", "fixed_properties": {"collector_number": "LCGX-EN999"}}],
-                300: [{"id": 4, "name": "Non in lista"}]}[eid]
+        return {100: [{"id": 1, "name": "Dark Armed Dragon", "fixed_properties": {"collector_number": "PTDN-EN019"}}],
+                200: [{"id": 2, "name": "Dark Armed Dragon"}, {"id": 3, "name": "Sangan"}]}[eid]
     def get_marketplace_products_by_expansion(self, eid, language="en"):
-        if eid == 100:  # vecchio set: qualsiasi rarità; rif 20€, una a 12€ (-40%)
-            return {1: [prod(1, 1, 20), prod(2, 1, 21), prod(3, 1, 19), prod(4, 1, 12), prod(5, 1, 8, country="IT")]}
-        if eid == 200:  # set nuovo: serve rarità ammessa
-            return {2: [prod(10, 2, 2.0, rarity="Common"), prod(11, 2, 2.5, rarity="Common"), prod(12, 2, 3.0, rarity="Common")],
-                    3: [prod(20, 3, 2.0), prod(21, 3, 2.5, cond="Played"), prod(22, 3, 2.2)]}
-        return {}
+        return MARKET.get(eid, {})
+
+
+class FakeTG:
+    sent = []
+    def __init__(self, token, chat_id, dry_run=False):
+        self.chat_id = str(chat_id)
+        self.updates = []
+    def send(self, text):
+        FakeTG.sent.append(text)
+        return True
+    def get_updates(self, offset):
+        return [u for u in self.updates if u["update_id"] >= offset]
 
 
 tmp = tempfile.mkdtemp()
-for f in ("config.json",):
-    shutil.copy(os.path.join(ROOT, f), tmp)
+shutil.copy(os.path.join(ROOT, "config.json"), tmp)
 os.chdir(tmp)
 cfg = json.load(open("config.json"))
 cfg["cards"] = ["Dark Armed Dragon", "Sangan"]
 cfg["old_expansion_codes"] = ["ptdn"]
+cfg["daily_summary"]["hour"] = 0          # riepilogo subito, per il test
 json.dump(cfg, open("config.json", "w"))
-
 build_card_index.CardTraderClient = FakeCT
 monitor.CardTraderClient = FakeCT
-os.environ["CARDTRADER_TOKEN"] = "x"
+monitor.Telegram = FakeTG
+monitor.time.sleep = lambda s: None
+os.environ.update({"CARDTRADER_TOKEN": "x", "TELEGRAM_BOT_TOKEN": "t", "TELEGRAM_CHAT_ID": "42"})
 
 sys.argv = ["build_card_index.py"]
 build_card_index.main()
-idx = json.load(open("cards_index.json"))
-assert idx["version"] == 2 and set(idx["expansions"]) == {"100", "200"}
-assert build_card_index.index_is_current(cfg)
 
+# --- 1° giro: vecchio storico in formato lista ------------------------------
 json.dump(["3:22"], open("sent_alerts.json", "w"))
-sys.argv = ["monitor.py", "--dry-run"]
+sys.argv = ["monitor.py"]
 monitor.main()
-assert json.load(open("sent_alerts.json")) == ["3:22"], "il dry-run non deve toccare lo storico"
+sent = json.load(open("sent_alerts.json"))
+assert set(k for k, v in sent.items() if v.get("n")) == {"1:4", "3:23"}, sent
+assert "1:5" not in sent, "inserzione non CT Zero non deve essere notificata"
+assert "3:24" not in sent, "2,00 € su 2,20 € non è un'occasione"
+msgs = [m for m in FakeTG.sent if m.startswith("🃏")]
+assert len(msgs) == 2 and "Dark Armed Dragon" in msgs[0], msgs   # prima lo sconto più alto (−40%)
+assert any(m.startswith("📊") for m in FakeTG.sent), "manca il riepilogo"
+hist = json.load(open("price_history.json"))
+assert hist["1"][state.today()] == 1900
+print(msgs[0], "\n")
 
-settings = {"criteria": cfg["deal_criteria"], "min_listings": 2, "countries": {"US", "CA"},
-            "old_expansion_codes": {"ptdn"}, "allowed_rarities": {"secret rare"}, "trim_pct": 0.1,
-            "min_condition_rank": 3}
-fake = FakeCT()
-d1 = monitor.check_expansion(idx["expansions"]["100"], fake.get_marketplace_products_by_expansion(100), settings, set())
-assert [d["alert_key"] for d in d1["Dark Armed Dragon"]] == ["1:4"], d1   # quella IT a 8€ esclusa
-d2 = monitor.check_expansion(idx["expansions"]["200"], fake.get_marketplace_products_by_expansion(200), settings, {"3:22"})
-assert "Dark Armed Dragon" not in d2                                     # Common in set nuovo: escluse
-assert [d["alert_key"] for d in d2["Sangan"]] == ["3:20"], d2            # Played esclusa, 3:22 già inviata
-print("TUTTO OK")
+# --- 2° giro: niente doppioni; ribasso di un'inserzione già notificata ------
+FakeTG.sent = []
+MARKET[100][1][3] = prod(4, 1, 10)          # da 12 € a 10 € (−17%)
+monitor.main()
+msgs = [m for m in FakeTG.sent if m.startswith("🃏")]
+assert len(msgs) == 1 and "Ribassata: prima era 12,00 €" in msgs[0], FakeTG.sent
+assert not any(m.startswith("📊") for m in FakeTG.sent), "riepilogo già inviato oggi"
+
+# --- storico: riferimento dalle settimane precedenti ------------------------
+series = {(state.now() - timedelta(days=i)).date().isoformat(): 1500 for i in range(1, 10)}
+assert monitor.history_reference(series, 7) == 15.0
+assert monitor.history_reference(dict(list(series.items())[:3]), 7) is None
+
+# --- comandi Telegram -------------------------------------------------------
+bs = state.load_bot_state()
+sa = state.load_sent_alerts()
+c = json.load(open("config.json"))
+r, ch = telegram_bot.handle_command("/sconto 40", c, bs, sa); assert bs["overrides"]["discount_below_average_pct"] == 40
+r, ch = telegram_bot.handle_command("/pausa", c, bs, sa); assert bs["paused"]
+r, ch = telegram_bot.handle_command("/aggiungi Jinzo", c, bs, sa); assert ch and "Jinzo" in c["cards"]
+r, ch = telegram_bot.handle_command("/rimuovi sangan", c, bs, sa); assert ch and "Sangan" not in c["cards"]
+assert "Sangan" in c["format_library"]["excluded_cards"]
+r, ch = telegram_bot.handle_command("/oggi", c, bs, sa); assert "Dark Armed Dragon" in r, r
+r, ch = telegram_bot.handle_command("/stato", c, bs, sa); assert "in pausa" in r and "40%" in r
+tg = FakeTG("t", "42")
+tg.updates = [{"update_id": 5, "message": {"chat": {"id": 999}, "text": "/pausa"}},     # altra chat: ignorato
+              {"update_id": 6, "message": {"chat": {"id": 42}, "text": "/riprendi"}}]
+FakeTG.sent = []
+telegram_bot.process_commands(tg, c, bs, sa)
+assert bs["telegram_offset"] == 7 and not bs["paused"] and len(FakeTG.sent) == 1
+print("MONITOR E COMANDI OK")
 
 # --- Format Library finto -----------------------------------------------
 import update_card_list  # noqa: E402
