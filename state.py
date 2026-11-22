@@ -1,18 +1,25 @@
-"""File di stato del bot, salvati nel repository dal workflow a ogni giro.
+"""File di stato del bot. Stanno nella cartella STATE_DIR (variabile
+d'ambiente, default: cartella corrente). Nel workflow è la cartella "stato",
+cioè il ramo "stato" del repository, che viene sovrascritto a ogni giro con
+un solo commit: così la storia di Git non si gonfia.
 
-  bot_state.json      pausa, impostazioni cambiate da Telegram, ultimo riepilogo
+  bot_state.json      pausa, impostazioni cambiate da Telegram, controlli di salute
   sent_alerts.json    inserzioni già notificate (con prezzo e data)
   price_history.json  una mediana al giorno per ogni versione di carta
+  wishlist.json       lista dei desideri con prezzo obiettivo
 """
 import json
+import os
 from datetime import datetime, timedelta
 from zoneinfo import ZoneInfo
 
 TZ = ZoneInfo("Europe/Rome")
 CONFIG_FILE = "config.json"
-BOT_STATE_FILE = "bot_state.json"
-SENT_ALERTS_FILE = "sent_alerts.json"
-HISTORY_FILE = "price_history.json"
+STATE_DIR = os.environ.get("STATE_DIR", ".")
+BOT_STATE_FILE = os.path.join(STATE_DIR, "bot_state.json")
+SENT_ALERTS_FILE = os.path.join(STATE_DIR, "sent_alerts.json")
+HISTORY_FILE = os.path.join(STATE_DIR, "price_history.json")
+WISHLIST_FILE = os.path.join(STATE_DIR, "wishlist.json")
 
 
 def now():
@@ -52,6 +59,11 @@ def load_bot_state():
 def effective_discount(config, bot_state):
     return bot_state["overrides"].get(
         "discount_below_average_pct", config["deal_criteria"]["discount_below_average_pct"])
+
+
+def load_wishlist():
+    """{nome_minuscolo: {"name": nome, "max": prezzo_euro, "since": data}}"""
+    return load_json(WISHLIST_FILE, {})
 
 
 def load_sent_alerts():

@@ -153,3 +153,50 @@ stats = json.load(open("format_library_stats.json"))
 assert stats["decks_read"] == 130 and stats["ranking"][0] == {"name": "Dark Armed Dragon", "decks": 130, "copies": 260}
 assert not build_card_index.index_is_current(cfg)   # lista cambiata -> l'indice va rifatto
 print("FORMAT LIBRARY OK")
+
+# --- riferimento per condizione, quasi occasioni, desideri -----------------
+settings = {"discount": 30, "min_saving": 0.5, "ct_zero_only": True, "min_listings": 3,
+            "countries": set(), "deal_countries": {"US", "CA"}, "old_expansion_codes": {"ptdn"},
+            "allowed_rarities": {"secret rare"}, "trim_pct": 0.1, "min_condition_rank": 3,
+            "min_history_days": 7, "renotify_pct": 10, "near_min": 20}
+exp = {"name": "Phantom Darkness", "code": "ptdn",
+       "blueprints": {"1": {"name": "Dark Armed Dragon", "number": "PTDN-EN019", "rarity": "Secret Rare"}}}
+products = {1: [prod(1, 1, 20), prod(2, 1, 21), prod(3, 1, 22),                       # NM ~21
+                prod(4, 1, 12, cond="Moderately Played"), prod(5, 1, 13, cond="Moderately Played"),
+                prod(6, 1, 12.5, cond="Moderately Played"),                          # MP ~12,5: nessuna occasione
+                prod(7, 1, 15.5),                                                    # NM −26%: quasi occasione
+                prod(8, 1, 9, cond="Slightly Played")]}                              # SP sola: niente riferimento
+stats = {"listings": 0, "ct_zero": 0}
+wl = {"dark armed dragon": {"name": "Dark Armed Dragon", "max": 13, "since": "x"}}
+found = monitor.check_expansion(exp, products, settings, {}, {}, stats, wl)
+assert found == {}, found                       # le MP a 12 € non sono occasioni contro le MP
+assert [n["price"] for n in stats["near"]] == [15.5], stats["near"]
+wish = stats["wishes"]["Dark Armed Dragon"]
+assert sorted(h["price"] for h in wish) == [9, 12, 12.5, 13], wish   # tutte quelle fino a 13 €
+products[1].append(prod(9, 1, 13.0))           # NM a 13 € contro mediana NM: −38%
+found = monitor.check_expansion(exp, products, settings, {}, {}, {"listings": 0, "ct_zero": 0}, {})
+d = found["Dark Armed Dragon"][0]
+assert d["alert_key"] == "1:9" and d["ref_condition"] == "NM", d
+print(monitor.format_wish_message("Dark Armed Dragon", wish).splitlines()[:2])
+summary = monitor.build_daily_summary({"expansions": {}}, {}, {}, {"min_reference_eur": 2, "move_pct": 25, "max_lines": 10},
+                                      stats["near"], settings)
+assert "Quasi occasioni" in summary and "15,50 €" in summary, summary
+
+# --- comandi lista desideri / scadenza ---------------------------------------
+c = json.load(open("config.json")); bs = state.load_bot_state(); wl2 = {}
+r, ch = telegram_bot.handle_command("/voglio Dark Armed Dragon 15,50", c, bs, {}, wl2)
+assert wl2["dark armed dragon"]["max"] == 15.5 and not ch, r
+r, ch = telegram_bot.handle_command("/voglio Nuova Carta 3", c, bs, {}, wl2)
+assert ch and "Nuova Carta" in c["cards"]
+r, ch = telegram_bot.handle_command("/desideri", c, bs, {}, wl2); assert "15,50 €" in r
+r, ch = telegram_bot.handle_command("/nonvoglio nuova carta", c, bs, {}, wl2); assert "nuova carta" not in wl2
+r, ch = telegram_bot.handle_command("/scadenza 2026-11-25", c, bs, {}, wl2); assert bs["cron_token_expires"] == "2026-11-25"
+
+# --- salute ------------------------------------------------------------------
+bs = {"last_run_at": (state.now() - timedelta(minutes=95)).isoformat(),
+      "cron_token_expires": (state.now() + timedelta(days=3)).date().isoformat()}
+msgs = monitor.health_messages(bs, {"max_gap_minutes": 60, "token_warning_days": 7})
+assert len(msgs) == 2 and "fermo per 1 h 35 min" in msgs[0] and "tra 3 giorni" in msgs[1], msgs
+bs = {"last_run_at": (state.now() - timedelta(minutes=16)).isoformat()}
+assert monitor.health_messages(bs, {"max_gap_minutes": 60}) == []
+print("CONDIZIONI, DESIDERI, SALUTE OK")

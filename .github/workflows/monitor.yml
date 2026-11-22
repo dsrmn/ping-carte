@@ -1,8 +1,9 @@
 name: Monitor Cardtrader prices
 
+# Avviato da cron-job.org ogni 15 minuti (workflow_dispatch). L'orario qui
+# sotto è solo una riserva: GitHub spesso lo salta.
 on:
   schedule:
-    # Ogni 20 minuti, a minuti "tranquilli" (GitHub salta più spesso i giri a :00)
     - cron: "7,27,47 * * * *"
   workflow_dispatch:
     inputs:
@@ -19,12 +20,34 @@ concurrency:
   group: monitor
   cancel-in-progress: false
 
+env:
+  # File di stato (notifiche inviate, storico prezzi, desideri...): stanno nel
+  # ramo "stato", scaricato nella cartella stato/ e sovrascritto a ogni giro
+  # con un solo commit, così la storia del repository non cresce.
+  STATE_DIR: stato
+
 jobs:
   monitor:
     runs-on: ubuntu-latest
     timeout-minutes: 55
     steps:
       - uses: actions/checkout@v4
+
+      - name: Scarica gli stati (ramo "stato")
+        id: stato
+        continue-on-error: true
+        uses: actions/checkout@v4
+        with:
+          ref: stato
+          path: stato
+
+      - name: Prima volta, crea la cartella degli stati
+        if: steps.stato.outcome != 'success'
+        run: |
+          mkdir -p stato
+          for f in sent_alerts.json price_history.json bot_state.json wishlist.json; do
+            if [ -f "$f" ]; then cp "$f" stato/; fi
+          done
 
       - uses: actions/setup-python@v5
         with:
@@ -34,7 +57,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Leggi i comandi Telegram
-        # es. /pausa, /sconto 35, /aggiungi ... (vedi telegram_bot.py)
+        # es. /pausa, /sconto 35, /voglio ... (vedi telegram_bot.py)
         if: ${{ inputs.dry_run != true }}
         continue-on-error: true
         env:
@@ -59,19 +82,39 @@ jobs:
             python monitor.py
           fi
 
-      - name: Salva lo storico delle notifiche e l'indice
-        if: always()
+      - name: Avvisa su Telegram se qualcosa è andato storto
+        if: ${{ failure() && inputs.dry_run != true }}
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python health.py
+
+      - name: Salva lista carte e indice (ramo principale)
+        if: ${{ always() && inputs.dry_run != true }}
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
-          for f in sent_alerts.json cards_index.json config.json bot_state.json price_history.json; do
+          for f in cards_index.json config.json; do
             if [ -f "$f" ]; then git add "$f"; fi
           done
           if ! git diff --staged --quiet; then
-            git commit -m "Aggiorna stato bot"
+            git commit -m "Aggiorna lista carte / indice"
             for i in 1 2 3 4 5; do
               git pull --rebase && git push && break
               echo "Push fallito (tentativo $i), riprovo tra 5 secondi..."
               sleep 5
             done
           fi
+
+      - name: Salva gli stati (ramo "stato", un solo commit)
+        if: ${{ always() && inputs.dry_run != true }}
+        run: |
+          # Crea un commit SENZA genitori con il contenuto di stato/ e lo
+          # sostituisce al ramo "stato": la storia di quel ramo resta di 1 commit.
+          export GIT_WORK_TREE="$PWD/stato" GIT_INDEX_FILE="$PWD/.git/stato-index"
+          rm -f "$GIT_INDEX_FILE"
+          git add -A
+          tree=$(git write-tree)
+          commit=$(git -c user.name=github-actions -c user.email=github-actions@users.noreply.github.com \
+                   commit-tree "$tree" -m "Stato del bot al $(date -u +%Y-%m-%dT%H:%MZ)")
+          git push -f origin "$commit:refs/heads/stato"
