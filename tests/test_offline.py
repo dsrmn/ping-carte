@@ -130,11 +130,14 @@ class FakeSession:
     def get(self, url, params=None, timeout=None):
         if url.endswith("/decks"):
             page = params["page"]
-            assert params["filter"] == "format:eq:Edison,origin:eq:event"
+            assert params["filter"].endswith(",origin:eq:event")
             n = 100 if page == 1 else 30
-            return FakeResp([{"id": (page - 1) * 100 + i + 1} for i in range(n)])
+            base = 1000 if "Goat" in params["filter"] else 0
+            return FakeResp([{"id": base + (page - 1) * 100 + i + 1} for i in range(n)])
         deck_id = int(url.rsplit("/", 1)[1])
         main = [{"name": "Dark Armed Dragon"}] * 2 + [{"name": "Sangan"}]
+        if deck_id > 1000:  # mazzi "Goat"
+            main = [{"name": "Sangan"}, {"name": "Black Luster Soldier - Envoy of the Beginning"}]
         if deck_id % 2:
             main += [{"name": "Rara"}] * 3
         return FakeResp({"main": main, "extra": [{"name": "Stardust Dragon"}], "side": []})
@@ -150,7 +153,9 @@ update_card_list.main()
 cfg = json.load(open("config.json"))
 assert cfg["cards"] == ["Dark Armed Dragon", "Stardust Dragon", "Rara", "Carta Mia"], cfg["cards"]
 stats = json.load(open("format_library_stats.json"))
-assert stats["decks_read"] == 130 and stats["ranking"][0] == {"name": "Dark Armed Dragon", "decks": 130, "copies": 260}
+ed = stats["formats"]["Edison"]
+assert ed["decks_read"] == 130 and ed["ranking"][0] == {"name": "Dark Armed Dragon", "decks": 130, "copies": 260}
+assert monitor.load_popularity()["Dark Armed Dragon"] == [("Edison", 1)]
 assert not build_card_index.index_is_current(cfg)   # lista cambiata -> l'indice va rifatto
 print("FORMAT LIBRARY OK")
 
@@ -200,3 +205,19 @@ assert len(msgs) == 2 and "fermo per 1 h 35 min" in msgs[0] and "tra 3 giorni" i
 bs = {"last_run_at": (state.now() - timedelta(minutes=16)).isoformat()}
 assert monitor.health_messages(bs, {"max_gap_minutes": 60}) == []
 print("CONDIZIONI, DESIDERI, SALUTE OK")
+
+# --- più formati ------------------------------------------------------------
+cfg = json.load(open("config.json"))
+cfg["format_library"] = {"formats": [{"format": "Edison", "top_n": 2}, {"format": "Goat", "top_n": 2}],
+                         "max_decks": 400, "extra_cards": [], "excluded_cards": []}
+json.dump(cfg, open("config.json", "w"))
+update_card_list.main()
+cfg = json.load(open("config.json"))
+assert cfg["cards"] == ["Dark Armed Dragon", "Sangan", "Black Luster Soldier - Envoy of the Beginning"], cfg["cards"]
+pop = monitor.load_popularity()
+assert pop["Sangan"] == [("Edison", 2), ("Goat", 2)], pop
+msg = monitor.format_message("Sangan", [{"price": 1, "ref": 2, "discount": 50, "ref_is_history": False, "n_listings": 3,
+        "expansion": "X", "number": None, "rarity": None, "condition": "Near Mint", "first_edition": None,
+        "seller": "s", "country": "US", "cheaper_than": None, "url": "u"}], pop["Sangan"])
+assert "⭐ n° 2 in Edison · n° 2 in Goat" in msg, msg
+print("PIÙ FORMATI OK")

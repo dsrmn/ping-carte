@@ -1,2022 +1,7018 @@
 {
- "format": "Edison",
- "decks_read": 399,
- "updated_at": "2026-11-20T05:22:22+00:00",
- "ranking": [
-  {
-   "name": "Stardust Dragon",
-   "decks": 399,
-   "copies": 445
-  },
-  {
-   "name": "Heavy Storm",
-   "decks": 398,
-   "copies": 398
-  },
-  {
-   "name": "Black Rose Dragon",
-   "decks": 386,
-   "copies": 386
-  },
-  {
-   "name": "Brionac, Dragon of the Ice Barrier",
-   "decks": 386,
-   "copies": 386
-  },
-  {
-   "name": "Goyo Guardian",
-   "decks": 384,
-   "copies": 384
-  },
-  {
-   "name": "Ally of Justice Catastor",
-   "decks": 375,
-   "copies": 383
-  },
-  {
-   "name": "Mirror Force",
-   "decks": 373,
-   "copies": 373
-  },
-  {
-   "name": "Mystical Space Typhoon",
-   "decks": 369,
-   "copies": 369
-  },
-  {
-   "name": "Torrential Tribute",
-   "decks": 355,
-   "copies": 355
-  },
-  {
-   "name": "D.D. Crow",
-   "decks": 346,
-   "copies": 647
-  },
-  {
-   "name": "Trap Dustshoot",
-   "decks": 337,
-   "copies": 337
-  },
-  {
-   "name": "Brain Control",
-   "decks": 335,
-   "copies": 335
-  },
-  {
-   "name": "Colossal Fighter",
-   "decks": 330,
-   "copies": 353
-  },
-  {
-   "name": "Gorz the Emissary of Darkness",
-   "decks": 320,
-   "copies": 320
-  },
-  {
-   "name": "Thought Ruler Archfiend",
-   "decks": 314,
-   "copies": 314
-  },
-  {
-   "name": "Dimensional Prison",
-   "decks": 313,
-   "copies": 644
-  },
-  {
-   "name": "Chimeratech Fortress Dragon",
-   "decks": 296,
-   "copies": 422
-  },
-  {
-   "name": "Cyber Dragon",
-   "decks": 288,
-   "copies": 529
-  },
-  {
-   "name": "Bottomless Trap Hole",
-   "decks": 287,
-   "copies": 561
-  },
-  {
-   "name": "Dust Tornado",
-   "decks": 272,
-   "copies": 601
-  },
-  {
-   "name": "Solemn Judgment",
-   "decks": 272,
-   "copies": 272
-  },
-  {
-   "name": "Dark End Dragon",
-   "decks": 240,
-   "copies": 240
-  },
-  {
-   "name": "Armory Arm",
-   "decks": 226,
-   "copies": 257
-  },
-  {
-   "name": "Royal Oppression",
-   "decks": 224,
-   "copies": 425
-  },
-  {
-   "name": "Magical Android",
-   "decks": 222,
-   "copies": 223
-  },
-  {
-   "name": "Dark Armed Dragon",
-   "decks": 219,
-   "copies": 219
-  },
-  {
-   "name": "Allure of Darkness",
-   "decks": 215,
-   "copies": 215
-  },
-  {
-   "name": "Caius the Shadow Monarch",
-   "decks": 200,
-   "copies": 453
-  },
-  {
-   "name": "Blackwing - Gale the Whirlwind",
-   "decks": 188,
-   "copies": 188
-  },
-  {
-   "name": "Reinforcement of the Army",
-   "decks": 187,
-   "copies": 187
-  },
-  {
-   "name": "Blackwing Armor Master",
-   "decks": 184,
-   "copies": 313
-  },
-  {
-   "name": "Blackwing - Sirocco the Dawn",
-   "decks": 182,
-   "copies": 535
-  },
-  {
-   "name": "Blackwing Armed Wing",
-   "decks": 175,
-   "copies": 361
-  },
-  {
-   "name": "Blackwing - Vayu the Emblem of Honor",
-   "decks": 174,
-   "copies": 404
-  },
-  {
-   "name": "Blackwing - Silverwind the Ascendant",
-   "decks": 172,
-   "copies": 183
-  },
-  {
-   "name": "Deck Devastation Virus",
-   "decks": 171,
-   "copies": 283
-  },
-  {
-   "name": "Fossil Dyna Pachycephalo",
-   "decks": 170,
-   "copies": 267
-  },
-  {
-   "name": "Pulling the Rug",
-   "decks": 169,
-   "copies": 330
-  },
-  {
-   "name": "Mist Wurm",
-   "decks": 156,
-   "copies": 156
-  },
-  {
-   "name": "Plaguespreader Zombie",
-   "decks": 151,
-   "copies": 151
-  },
-  {
-   "name": "Book of Moon",
-   "decks": 144,
-   "copies": 290
-  },
-  {
-   "name": "Card Trooper",
-   "decks": 143,
-   "copies": 143
-  },
-  {
-   "name": "Ryko, Lightsworn Hunter",
-   "decks": 142,
-   "copies": 352
-  },
-  {
-   "name": "Necro Gardna",
-   "decks": 142,
-   "copies": 142
-  },
-  {
-   "name": "Lightning Vortex",
-   "decks": 133,
-   "copies": 144
-  },
-  {
-   "name": "Mind Control",
-   "decks": 127,
-   "copies": 127
-  },
-  {
-   "name": "Kycoo the Ghost Destroyer",
-   "decks": 125,
-   "copies": 153
-  },
-  {
-   "name": "Starlight Road",
-   "decks": 120,
-   "copies": 129
-  },
-  {
-   "name": "Dark Grepher",
-   "decks": 119,
-   "copies": 280
-  },
-  {
-   "name": "Return from the Different Dimension",
-   "decks": 119,
-   "copies": 119
-  },
-  {
-   "name": "Armageddon Knight",
-   "decks": 116,
-   "copies": 226
-  },
-  {
-   "name": "Icarus Attack",
-   "decks": 111,
-   "copies": 278
-  },
-  {
-   "name": "Flamvell Uruquizas",
-   "decks": 106,
-   "copies": 106
-  },
-  {
-   "name": "Burial from a Different Dimension",
-   "decks": 102,
-   "copies": 102
-  },
-  {
-   "name": "Trap Stun",
-   "decks": 101,
-   "copies": 220
-  },
-  {
-   "name": "Compulsory Evacuation Device",
-   "decks": 95,
-   "copies": 182
-  },
-  {
-   "name": "Legacy of Yata-Garasu",
-   "decks": 91,
-   "copies": 178
-  },
-  {
-   "name": "Charge of the Light Brigade",
-   "decks": 90,
-   "copies": 90
-  },
-  {
-   "name": "Breaker the Magical Warrior",
-   "decks": 89,
-   "copies": 136
-  },
-  {
-   "name": "Blackwing - Shura the Blue Flame",
-   "decks": 86,
-   "copies": 248
-  },
-  {
-   "name": "Super-Nimble Mega Hamster",
-   "decks": 86,
-   "copies": 134
-  },
-  {
-   "name": "Elemental HERO Stratos",
-   "decks": 85,
-   "copies": 85
-  },
-  {
-   "name": "Foolish Burial",
-   "decks": 83,
-   "copies": 83
-  },
-  {
-   "name": "Blackwing - Kalut the Moon Shadow",
-   "decks": 81,
-   "copies": 235
-  },
-  {
-   "name": "Vanity's Fiend",
-   "decks": 81,
-   "copies": 167
-  },
-  {
-   "name": "Blackwing - Blizzard the Far North",
-   "decks": 80,
-   "copies": 224
-  },
-  {
-   "name": "Blackwing - Bora the Spear",
-   "decks": 80,
-   "copies": 218
-  },
-  {
-   "name": "Black Whirlwind",
-   "decks": 80,
-   "copies": 160
-  },
-  {
-   "name": "Substitoad",
-   "decks": 78,
-   "copies": 234
-  },
-  {
-   "name": "Swap Frog",
-   "decks": 78,
-   "copies": 228
-  },
-  {
-   "name": "Raigeki Break",
-   "decks": 78,
-   "copies": 197
-  },
-  {
-   "name": "Treeborn Frog",
-   "decks": 78,
-   "copies": 154
-  },
-  {
-   "name": "Pot of Avarice",
-   "decks": 78,
-   "copies": 153
-  },
-  {
-   "name": "Dupe Frog",
-   "decks": 77,
-   "copies": 190
-  },
-  {
-   "name": "Smashing Ground",
-   "decks": 74,
-   "copies": 129
-  },
-  {
-   "name": "Red Dragon Archfiend",
-   "decks": 72,
-   "copies": 72
-  },
-  {
-   "name": "Unifrog",
-   "decks": 72,
-   "copies": 72
-  },
-  {
-   "name": "One for One",
-   "decks": 69,
-   "copies": 69
-  },
-  {
-   "name": "Call of the Haunted",
-   "decks": 66,
-   "copies": 66
-  },
-  {
-   "name": "Soul Exchange",
-   "decks": 62,
-   "copies": 114
-  },
-  {
-   "name": "Giant Trunade",
-   "decks": 61,
-   "copies": 61
-  },
-  {
-   "name": "Consecrated Light",
-   "decks": 59,
-   "copies": 114
-  },
-  {
-   "name": "Chaos Sorcerer",
-   "decks": 58,
-   "copies": 58
-  },
-  {
-   "name": "Mask of Restrict",
-   "decks": 57,
-   "copies": 107
-  },
-  {
-   "name": "Nobleman of Crossout",
-   "decks": 55,
-   "copies": 75
-  },
-  {
-   "name": "Elemental HERO Absolute Zero",
-   "decks": 54,
-   "copies": 141
-  },
-  {
-   "name": "My Body as a Shield",
-   "decks": 52,
-   "copies": 56
-  },
-  {
-   "name": "Gladiator Beast Gyzarus",
-   "decks": 51,
-   "copies": 143
-  },
-  {
-   "name": "Spiritual Water Art - Aoi",
-   "decks": 50,
-   "copies": 110
-  },
-  {
-   "name": "Dandylion",
-   "decks": 50,
-   "copies": 86
-  },
-  {
-   "name": "Gladiator Beast Bestiari",
-   "decks": 50,
-   "copies": 50
-  },
-  {
-   "name": "Gladiator Beast Laquari",
-   "decks": 48,
-   "copies": 94
-  },
-  {
-   "name": "Raiza the Storm Monarch",
-   "decks": 48,
-   "copies": 92
-  },
-  {
-   "name": "Rescue Cat",
-   "decks": 48,
-   "copies": 48
-  },
-  {
-   "name": "Gladiator Beast Heraklinos",
-   "decks": 47,
-   "copies": 131
-  },
-  {
-   "name": "Cold Wave",
-   "decks": 47,
-   "copies": 47
-  },
-  {
-   "name": "Test Tiger",
-   "decks": 46,
-   "copies": 138
-  },
-  {
-   "name": "Gladiator Beast War Chariot",
-   "decks": 46,
-   "copies": 127
-  },
-  {
-   "name": "Salvage",
-   "decks": 46,
-   "copies": 120
-  },
-  {
-   "name": "Gladiator Beast Equeste",
-   "decks": 46,
-   "copies": 92
-  },
-  {
-   "name": "Elemental HERO Prisma",
-   "decks": 46,
-   "copies": 90
-  },
-  {
-   "name": "Lyla, Lightsworn Sorceress",
-   "decks": 46,
-   "copies": 89
-  },
-  {
-   "name": "Gladiator Beast Retiari",
-   "decks": 46,
-   "copies": 88
-  },
-  {
-   "name": "Gladiator Beast Darius",
-   "decks": 46,
-   "copies": 59
-  },
-  {
-   "name": "Gladiator Beast Murmillo",
-   "decks": 46,
-   "copies": 47
-  },
-  {
-   "name": "Gladiator Beast Secutor",
-   "decks": 46,
-   "copies": 46
-  },
-  {
-   "name": "Reckless Greed",
-   "decks": 45,
-   "copies": 135
-  },
-  {
-   "name": "Gladiator Beast Samnite",
-   "decks": 45,
-   "copies": 79
-  },
-  {
-   "name": "Elemental HERO Gaia",
-   "decks": 45,
-   "copies": 50
-  },
-  {
-   "name": "Miracle Fusion",
-   "decks": 44,
-   "copies": 128
-  },
-  {
-   "name": "Fissure",
-   "decks": 44,
-   "copies": 66
-  },
-  {
-   "name": "E - Emergency Call",
-   "decks": 43,
-   "copies": 49
-  },
-  {
-   "name": "Flip Flop Frog",
-   "decks": 43,
-   "copies": 43
-  },
-  {
-   "name": "Future Fusion",
-   "decks": 42,
-   "copies": 42
-  },
-  {
-   "name": "Trap Hole",
-   "decks": 41,
-   "copies": 78
-  },
-  {
-   "name": "Phoenix Wing Wind Blast",
-   "decks": 41,
-   "copies": 75
-  },
-  {
-   "name": "Upstart Goblin",
-   "decks": 40,
-   "copies": 111
-  },
-  {
-   "name": "Light-Imprisoning Mirror",
-   "decks": 39,
-   "copies": 63
-  },
-  {
-   "name": "Junk Synchron",
-   "decks": 39,
-   "copies": 53
-  },
-  {
-   "name": "Evil HERO Infernal Prodigy",
-   "decks": 39,
-   "copies": 43
-  },
-  {
-   "name": "Soul Release",
-   "decks": 39,
-   "copies": 42
-  },
-  {
-   "name": "Elemental HERO Neos Alius",
-   "decks": 38,
-   "copies": 43
-  },
-  {
-   "name": "Des Frog",
-   "decks": 37,
-   "copies": 82
-  },
-  {
-   "name": "Elemental HERO Ocean",
-   "decks": 37,
-   "copies": 41
-  },
-  {
-   "name": "Junk Warrior",
-   "decks": 36,
-   "copies": 40
-  },
-  {
-   "name": "Tragoedia",
-   "decks": 36,
-   "copies": 36
-  },
-  {
-   "name": "X-Saber Urbellum",
-   "decks": 36,
-   "copies": 36
-  },
-  {
-   "name": "Seven Tools of the Bandit",
-   "decks": 35,
-   "copies": 40
-  },
-  {
-   "name": "XX-Saber Gottoms",
-   "decks": 35,
-   "copies": 35
-  },
-  {
-   "name": "Ancient Fairy Dragon",
-   "decks": 34,
-   "copies": 36
-  },
-  {
-   "name": "The Transmigration Prophecy",
-   "decks": 34,
-   "copies": 34
-  },
-  {
-   "name": "Tempest Magician",
-   "decks": 33,
-   "copies": 33
-  },
-  {
-   "name": "Fishborg Blaster",
-   "decks": 32,
-   "copies": 77
-  },
-  {
-   "name": "Royal Decree",
-   "decks": 32,
-   "copies": 60
-  },
-  {
-   "name": "Gaia Knight, the Force of Earth",
-   "decks": 32,
-   "copies": 32
-  },
-  {
-   "name": "Sangan",
-   "decks": 32,
-   "copies": 32
-  },
-  {
-   "name": "Gold Sarcophagus",
-   "decks": 30,
-   "copies": 56
-  },
-  {
-   "name": "Battle Fader",
-   "decks": 29,
-   "copies": 36
-  },
-  {
-   "name": "Honest",
-   "decks": 28,
-   "copies": 56
-  },
-  {
-   "name": "Enemy Controller",
-   "decks": 28,
-   "copies": 42
-  },
-  {
-   "name": "Jain, Lightsworn Paladin",
-   "decks": 26,
-   "copies": 32
-  },
-  {
-   "name": "Evil HERO Malicious Edge",
-   "decks": 26,
-   "copies": 26
-  },
-  {
-   "name": "Solar Recharge",
-   "decks": 25,
-   "copies": 75
-  },
-  {
-   "name": "Wulf, Lightsworn Beast",
-   "decks": 25,
-   "copies": 60
-  },
-  {
-   "name": "Threatening Roar",
-   "decks": 25,
-   "copies": 49
-  },
-  {
-   "name": "Skill Drain",
-   "decks": 25,
-   "copies": 37
-  },
-  {
-   "name": "Dark Dust Spirit",
-   "decks": 25,
-   "copies": 29
-  },
-  {
-   "name": "Judgment Dragon",
-   "decks": 24,
-   "copies": 48
-  },
-  {
-   "name": "Celestia, Lightsworn Angel",
-   "decks": 24,
-   "copies": 40
-  },
-  {
-   "name": "Aurkus, Lightsworn Druid",
-   "decks": 24,
-   "copies": 29
-  },
-  {
-   "name": "Ehren, Lightsworn Monk",
-   "decks": 24,
-   "copies": 24
-  },
-  {
-   "name": "Garoth, Lightsworn Warrior",
-   "decks": 24,
-   "copies": 24
-  },
-  {
-   "name": "Lumina, Lightsworn Summoner",
-   "decks": 24,
-   "copies": 24
-  },
-  {
-   "name": "Jar of Greed",
-   "decks": 23,
-   "copies": 33
-  },
-  {
-   "name": "Iron Chain Dragon",
-   "decks": 23,
-   "copies": 23
-  },
-  {
-   "name": "Moray of Greed",
-   "decks": 21,
-   "copies": 63
-  },
-  {
-   "name": "Machina Gearframe",
-   "decks": 20,
-   "copies": 60
-  },
-  {
-   "name": "Machina Fortress",
-   "decks": 20,
-   "copies": 58
-  },
-  {
-   "name": "Machina Force",
-   "decks": 20,
-   "copies": 32
-  },
-  {
-   "name": "Debris Dragon",
-   "decks": 19,
-   "copies": 55
-  },
-  {
-   "name": "Power Tool Dragon",
-   "decks": 19,
-   "copies": 33
-  },
-  {
-   "name": "Instant Fusion",
-   "decks": 19,
-   "copies": 31
-  },
-  {
-   "name": "Card Destruction",
-   "decks": 19,
-   "copies": 19
-  },
-  {
-   "name": "Lonefire Blossom",
-   "decks": 18,
-   "copies": 36
-  },
-  {
-   "name": "Tytannial, Princess of Camellias",
-   "decks": 18,
-   "copies": 18
-  },
-  {
-   "name": "Deep Sea Diva",
-   "decks": 17,
-   "copies": 49
-  },
-  {
-   "name": "D.D.R. - Different Dimension Reincarnation",
-   "decks": 17,
-   "copies": 28
-  },
-  {
-   "name": "Shrink",
-   "decks": 17,
-   "copies": 17
-  },
-  {
-   "name": "Trident Dragion",
-   "decks": 17,
-   "copies": 17
-  },
-  {
-   "name": "Red-Eyes Darkness Metal Dragon",
-   "decks": 16,
-   "copies": 48
-  },
-  {
-   "name": "Legendary Jujitsu Master",
-   "decks": 16,
-   "copies": 35
-  },
-  {
-   "name": "Darkfire Dragon",
-   "decks": 16,
-   "copies": 26
-  },
-  {
-   "name": "Koa'ki Meiru Drago",
-   "decks": 16,
-   "copies": 25
-  },
-  {
-   "name": "Waboku",
-   "decks": 16,
-   "copies": 21
-  },
-  {
-   "name": "Five-Headed Dragon",
-   "decks": 16,
-   "copies": 16
-  },
-  {
-   "name": "Prime Material Dragon",
-   "decks": 16,
-   "copies": 16
-  },
-  {
-   "name": "Hidden Armory",
-   "decks": 15,
-   "copies": 43
-  },
-  {
-   "name": "Destiny HERO - Malicious",
-   "decks": 15,
-   "copies": 30
-  },
-  {
-   "name": "Mark of the Rose",
-   "decks": 15,
-   "copies": 29
-  },
-  {
-   "name": "Black Brutdrago",
-   "decks": 15,
-   "copies": 21
-  },
-  {
-   "name": "Blackwing - Elphin the Raven",
-   "decks": 15,
-   "copies": 15
-  },
-  {
-   "name": "Blue-Eyes White Dragon",
-   "decks": 14,
-   "copies": 42
-  },
-  {
-   "name": "Cards of Consonance",
-   "decks": 14,
-   "copies": 42
-  },
-  {
-   "name": "Supervise",
-   "decks": 14,
-   "copies": 42
-  },
-  {
-   "name": "The White Stone of Legend",
-   "decks": 14,
-   "copies": 42
-  },
-  {
-   "name": "Trade-In",
-   "decks": 14,
-   "copies": 42
-  },
-  {
-   "name": "Super Solar Nutrient",
-   "decks": 14,
-   "copies": 41
-  },
-  {
-   "name": "Miracle Fertilizer",
-   "decks": 14,
-   "copies": 34
-  },
-  {
-   "name": "Jinzo",
-   "decks": 14,
-   "copies": 32
-  },
-  {
-   "name": "Vortex Trooper",
-   "decks": 14,
-   "copies": 32
-  },
-  {
-   "name": "Gigaplant",
-   "decks": 14,
-   "copies": 28
-  },
-  {
-   "name": "Karma Cut",
-   "decks": 14,
-   "copies": 19
-  },
-  {
-   "name": "Copy Plant",
-   "decks": 14,
-   "copies": 16
-  },
-  {
-   "name": "Limiter Removal",
-   "decks": 14,
-   "copies": 14
-  },
-  {
-   "name": "Nettles",
-   "decks": 14,
-   "copies": 14
-  },
-  {
-   "name": "Super Rejuvenation",
-   "decks": 13,
-   "copies": 39
-  },
-  {
-   "name": "Magical Stone Excavation",
-   "decks": 13,
-   "copies": 26
-  },
-  {
-   "name": "Monster Reincarnation",
-   "decks": 13,
-   "copies": 26
-  },
-  {
-   "name": "Spined Gillman",
-   "decks": 13,
-   "copies": 14
-  },
-  {
-   "name": "Dragoness the Wicked Knight",
-   "decks": 13,
-   "copies": 13
-  },
-  {
-   "name": "Nobleman of Extermination",
-   "decks": 12,
-   "copies": 15
-  },
-  {
-   "name": "Elemental HERO Mariner",
-   "decks": 12,
-   "copies": 12
-  },
-  {
-   "name": "Beckoning Light",
-   "decks": 11,
-   "copies": 26
-  },
-  {
-   "name": "Krebons",
-   "decks": 11,
-   "copies": 25
-  },
-  {
-   "name": "UFO Turtle",
-   "decks": 11,
-   "copies": 24
-  },
-  {
-   "name": "Goblin Zombie",
-   "decks": 11,
-   "copies": 22
-  },
-  {
-   "name": "Light and Darkness Dragon",
-   "decks": 11,
-   "copies": 20
-  },
-  {
-   "name": "Possessed Dark Soul",
-   "decks": 11,
-   "copies": 14
-  },
-  {
-   "name": "Needle Ceiling",
-   "decks": 11,
-   "copies": 12
-  },
-  {
-   "name": "Dark Illusion",
-   "decks": 11,
-   "copies": 11
-  },
-  {
-   "name": "Emergency Teleport",
-   "decks": 11,
-   "copies": 11
-  },
-  {
-   "name": "Mezuki",
-   "decks": 11,
-   "copies": 11
-  },
-  {
-   "name": "Revived King Ha Des",
-   "decks": 11,
-   "copies": 11
-  },
-  {
-   "name": "Spirit Reaper",
-   "decks": 11,
-   "copies": 11
-  },
-  {
-   "name": "Herald of Orange Light",
-   "decks": 10,
-   "copies": 26
-  },
-  {
-   "name": "Thestalos the Firestorm Monarch",
-   "decks": 10,
-   "copies": 20
-  },
-  {
-   "name": "Avenging Knight Parshath",
-   "decks": 10,
-   "copies": 10
-  },
-  {
-   "name": "Chimeratech Overdragon",
-   "decks": 10,
-   "copies": 10
-  },
-  {
-   "name": "Neo-Spacian Grand Mole",
-   "decks": 10,
-   "copies": 10
-  },
-  {
-   "name": "Scapegoat",
-   "decks": 10,
-   "copies": 10
-  },
-  {
-   "name": "Archlord Kristya",
-   "decks": 9,
-   "copies": 20
-  },
-  {
-   "name": "Divine Wrath",
-   "decks": 9,
-   "copies": 14
-  },
-  {
-   "name": "Arcanite Magician",
-   "decks": 9,
-   "copies": 12
-  },
-  {
-   "name": "Autonomous Action Unit",
-   "decks": 9,
-   "copies": 9
-  },
-  {
-   "name": "Gladiator Beast Hoplomus",
-   "decks": 9,
-   "copies": 9
-  },
-  {
-   "name": "Mind Crush",
-   "decks": 9,
-   "copies": 9
-  },
-  {
-   "name": "Psychic Lifetrancer",
-   "decks": 9,
-   "copies": 9
-  },
-  {
-   "name": "Zombie Master",
-   "decks": 9,
-   "copies": 9
-  },
-  {
-   "name": "Jinzo - Returner",
-   "decks": 8,
-   "copies": 24
-  },
-  {
-   "name": "Pyramid Turtle",
-   "decks": 8,
-   "copies": 21
-  },
-  {
-   "name": "Mother Grizzly",
-   "decks": 8,
-   "copies": 15
-  },
-  {
-   "name": "D.D. Warrior Lady",
-   "decks": 8,
-   "copies": 9
-  },
-  {
-   "name": "Ancient Sacred Wyvern",
-   "decks": 8,
-   "copies": 8
-  },
-  {
-   "name": "Morphing Jar",
-   "decks": 8,
-   "copies": 8
-  },
-  {
-   "name": "Snipe Hunter",
-   "decks": 8,
-   "copies": 8
-  },
-  {
-   "name": "Book of Life",
-   "decks": 7,
-   "copies": 17
-  },
-  {
-   "name": "Ancient Forest",
-   "decks": 7,
-   "copies": 11
-  },
-  {
-   "name": "Offerings to the Doomed",
-   "decks": 7,
-   "copies": 9
-  },
-  {
-   "name": "Beelze Frog",
-   "decks": 7,
-   "copies": 7
-  },
-  {
-   "name": "Cyber Valley",
-   "decks": 7,
-   "copies": 7
-  },
-  {
-   "name": "Doomkaiser Dragon",
-   "decks": 7,
-   "copies": 7
-  },
-  {
-   "name": "Flamvell Guard",
-   "decks": 7,
-   "copies": 7
-  },
-  {
-   "name": "Cyber Eltanin",
-   "decks": 6,
-   "copies": 14
-  },
-  {
-   "name": "Ultimate Offering",
-   "decks": 6,
-   "copies": 12
-  },
-  {
-   "name": "Imperial Iron Wall",
-   "decks": 6,
-   "copies": 11
-  },
-  {
-   "name": "Shadow-Imprisoning Mirror",
-   "decks": 6,
-   "copies": 11
-  },
-  {
-   "name": "Eradicator Epidemic Virus",
-   "decks": 6,
-   "copies": 8
-  },
-  {
-   "name": "System Down",
-   "decks": 6,
-   "copies": 7
-  },
-  {
-   "name": "D.D. Assailant",
-   "decks": 6,
-   "copies": 6
-  },
-  {
-   "name": "Anti-Spell Fragrance",
-   "decks": 5,
-   "copies": 8
-  },
-  {
-   "name": "Destiny HERO - Plasma",
-   "decks": 5,
-   "copies": 5
-  },
-  {
-   "name": "Ojama Knight",
-   "decks": 5,
-   "copies": 5
-  },
-  {
-   "name": "Reaper on the Nightmare",
-   "decks": 5,
-   "copies": 5
-  },
-  {
-   "name": "Telekinetic Power Well",
-   "decks": 4,
-   "copies": 11
-  },
-  {
-   "name": "Terraforming",
-   "decks": 4,
-   "copies": 11
-  },
-  {
-   "name": "Gladiator Beast's Respite",
-   "decks": 4,
-   "copies": 10
-  },
-  {
-   "name": "Gravekeeper's Spy",
-   "decks": 4,
-   "copies": 10
-  },
-  {
-   "name": "Sphere of Chaos",
-   "decks": 4,
-   "copies": 9
-  },
-  {
-   "name": "Mystic Tomato",
-   "decks": 4,
-   "copies": 8
-  },
-  {
-   "name": "Red-Eyes Wyvern",
-   "decks": 4,
-   "copies": 8
-  },
-  {
-   "name": "Chain Disappearance",
-   "decks": 4,
-   "copies": 6
-  },
-  {
-   "name": "Snowman Eater",
-   "decks": 4,
-   "copies": 6
-  },
-  {
-   "name": "Swallow Flip",
-   "decks": 4,
-   "copies": 5
-  },
-  {
-   "name": "Cyber Twin Dragon",
-   "decks": 4,
-   "copies": 4
-  },
-  {
-   "name": "Exploder Dragonwing",
-   "decks": 4,
-   "copies": 4
-  },
-  {
-   "name": "Light End Dragon",
-   "decks": 4,
-   "copies": 4
-  },
-  {
-   "name": "Magic Cylinder",
-   "decks": 4,
-   "copies": 4
-  },
-  {
-   "name": "Mausoleum of the Emperor",
-   "decks": 4,
-   "copies": 4
-  },
-  {
-   "name": "Mermaid Archer",
-   "decks": 4,
-   "copies": 4
-  },
-  {
-   "name": "Musician King",
-   "decks": 4,
-   "copies": 4
-  },
-  {
-   "name": "Psychic Commander",
-   "decks": 4,
-   "copies": 4
-  },
-  {
-   "name": "Shire, Lightsworn Spirit",
-   "decks": 4,
-   "copies": 4
-  },
-  {
-   "name": "Soul of Purity and Light",
-   "decks": 4,
-   "copies": 4
-  },
-  {
-   "name": "Thunder King Rai-Oh",
-   "decks": 4,
-   "copies": 4
-  },
-  {
-   "name": "Twister",
-   "decks": 4,
-   "copies": 4
-  },
-  {
-   "name": "Gallis the Star Beast",
-   "decks": 3,
-   "copies": 9
-  },
-  {
-   "name": "Geartown",
-   "decks": 3,
-   "copies": 9
-  },
-  {
-   "name": "Magical Merchant",
-   "decks": 3,
-   "copies": 9
-  },
-  {
-   "name": "X-Saber Airbellum",
-   "decks": 3,
-   "copies": 9
-  },
-  {
-   "name": "Ancient Gear Beast",
-   "decks": 3,
-   "copies": 8
-  },
-  {
-   "name": "Ancient Gear Gadjiltron Dragon",
-   "decks": 3,
-   "copies": 7
-  },
-  {
-   "name": "Green Gadget",
-   "decks": 3,
-   "copies": 7
-  },
-  {
-   "name": "Quickdraw Synchron",
-   "decks": 3,
-   "copies": 7
-  },
-  {
-   "name": "Red Gadget",
-   "decks": 3,
-   "copies": 7
-  },
-  {
-   "name": "Drill Warrior",
-   "decks": 3,
-   "copies": 6
-  },
-  {
-   "name": "Fusilier Dragon, the Dual-Mode Beast",
-   "decks": 3,
-   "copies": 6
-  },
-  {
-   "name": "Hedge Guard",
-   "decks": 3,
-   "copies": 6
-  },
-  {
-   "name": "Shining Angel",
-   "decks": 3,
-   "copies": 6
-  },
-  {
-   "name": "Yellow Gadget",
-   "decks": 3,
-   "copies": 6
-  },
-  {
-   "name": "Super Polymerization",
-   "decks": 3,
-   "copies": 5
-  },
-  {
-   "name": "Doomcaliber Knight",
-   "decks": 3,
-   "copies": 4
-  },
-  {
-   "name": "G.B. Hunter",
-   "decks": 3,
-   "copies": 4
-  },
-  {
-   "name": "Dark Bribe",
-   "decks": 3,
-   "copies": 3
-  },
-  {
-   "name": "Destructotron",
-   "decks": 3,
-   "copies": 3
-  },
-  {
-   "name": "Dragon Ice",
-   "decks": 3,
-   "copies": 3
-  },
-  {
-   "name": "Gravekeeper's Descendant",
-   "decks": 3,
-   "copies": 3
-  },
-  {
-   "name": "Junk Archer",
-   "decks": 3,
-   "copies": 3
-  },
-  {
-   "name": "Mind Master",
-   "decks": 3,
-   "copies": 3
-  },
-  {
-   "name": "Mobius the Frost Monarch",
-   "decks": 3,
-   "copies": 3
-  },
-  {
-   "name": "Nitro Warrior",
-   "decks": 3,
-   "copies": 3
-  },
-  {
-   "name": "Road Warrior",
-   "decks": 3,
-   "copies": 3
-  },
-  {
-   "name": "Sea Dragon Lord Gishilnodon",
-   "decks": 3,
-   "copies": 3
-  },
-  {
-   "name": "Turbo Warrior",
-   "decks": 3,
-   "copies": 3
-  },
-  {
-   "name": "Zombie World",
-   "decks": 3,
-   "copies": 3
-  },
-  {
-   "name": "Gemini Spark",
-   "decks": 2,
-   "copies": 6
-  },
-  {
-   "name": "Dimensional Fissure",
-   "decks": 2,
-   "copies": 5
-  },
-  {
-   "name": "Beast King Barbaros",
-   "decks": 2,
-   "copies": 4
-  },
-  {
-   "name": "Dimensional Alchemist",
-   "decks": 2,
-   "copies": 4
-  },
-  {
-   "name": "Lord British Space Fighter",
-   "decks": 2,
-   "copies": 4
-  },
-  {
-   "name": "Prohibition",
-   "decks": 2,
-   "copies": 4
-  },
-  {
-   "name": "Witch of the Black Rose",
-   "decks": 2,
-   "copies": 4
-  },
-  {
-   "name": "Creature Swap",
-   "decks": 2,
-   "copies": 3
-  },
-  {
-   "name": "Exodius the Ultimate Forbidden Lord",
-   "decks": 2,
-   "copies": 3
-  },
-  {
-   "name": "Herald of Purple Light",
-   "decks": 2,
-   "copies": 3
-  },
-  {
-   "name": "Soul Taker",
-   "decks": 2,
-   "copies": 3
-  },
-  {
-   "name": "Superalloy Beast Raptinus",
-   "decks": 2,
-   "copies": 3
-  },
-  {
-   "name": "Cyber End Dragon",
-   "decks": 2,
-   "copies": 2
-  },
-  {
-   "name": "Delta Crow - Anti Reverse",
-   "decks": 2,
-   "copies": 2
-  },
-  {
-   "name": "Elemental HERO Magma Neos",
-   "decks": 2,
-   "copies": 2
-  },
-  {
-   "name": "Exploder Dragon",
-   "decks": 2,
-   "copies": 2
-  },
-  {
-   "name": "Fiend Comedian",
-   "decks": 2,
-   "copies": 2
-  },
-  {
-   "name": "Injection Fairy Lily",
-   "decks": 2,
-   "copies": 2
-  },
-  {
-   "name": "Karbonala Warrior",
-   "decks": 2,
-   "copies": 2
-  },
-  {
-   "name": "King Tiger Wanghu",
-   "decks": 2,
-   "copies": 2
-  },
-  {
-   "name": "Marionette Mite",
-   "decks": 2,
-   "copies": 2
-  },
-  {
-   "name": "Power Filter",
-   "decks": 2,
-   "copies": 2
-  },
-  {
-   "name": "Proof of Powerlessness",
-   "decks": 2,
-   "copies": 2
-  },
-  {
-   "name": "Summoner Monk",
-   "decks": 2,
-   "copies": 2
-  },
-  {
-   "name": "Swords of Revealing Light",
-   "decks": 2,
-   "copies": 2
-  },
-  {
-   "name": "Treacherous Trap Hole",
-   "decks": 2,
-   "copies": 2
-  },
-  {
-   "name": "Venom Swamp",
-   "decks": 2,
-   "copies": 2
-  },
-  {
-   "name": "Blue Thunder T-45",
-   "decks": 1,
-   "copies": 3
-  },
-  {
-   "name": "Blue-Eyes Ultimate Dragon",
-   "decks": 1,
-   "copies": 3
-  },
-  {
-   "name": "D.D. Survivor",
-   "decks": 1,
-   "copies": 3
-  },
-  {
-   "name": "Fiendish Chain",
-   "decks": 1,
-   "copies": 3
-  },
-  {
-   "name": "Flamvell Firedog",
-   "decks": 1,
-   "copies": 3
-  },
-  {
-   "name": "Gladiator Beast Gaiodiaz",
-   "decks": 1,
-   "copies": 3
-  },
-  {
-   "name": "Gladiator Proving Ground",
-   "decks": 1,
-   "copies": 3
-  },
-  {
-   "name": "Hecatrice",
-   "decks": 1,
-   "copies": 3
-  },
-  {
-   "name": "Interdimensional Matter Transporter",
-   "decks": 1,
-   "copies": 3
-  },
-  {
-   "name": "King of the Swamp",
-   "decks": 1,
-   "copies": 3
-  },
-  {
-   "name": "Ojama King",
-   "decks": 1,
-   "copies": 3
-  },
-  {
-   "name": "Scrap-Iron Scarecrow",
-   "decks": 1,
-   "copies": 3
-  },
-  {
-   "name": "Skill Successor",
-   "decks": 1,
-   "copies": 3
-  },
-  {
-   "name": "Valhalla, Hall of the Fallen",
-   "decks": 1,
-   "copies": 3
-  },
-  {
-   "name": "Arcane Apprentice",
-   "decks": 1,
-   "copies": 2
-  },
-  {
-   "name": "Des Lacooda",
-   "decks": 1,
-   "copies": 2
-  },
-  {
-   "name": "Flamvell Magician",
-   "decks": 1,
-   "copies": 2
-  },
-  {
-   "name": "Gellenduo",
-   "decks": 1,
-   "copies": 2
-  },
-  {
-   "name": "Hero Blast",
-   "decks": 1,
-   "copies": 2
-  },
-  {
-   "name": "Horn of Heaven",
-   "decks": 1,
-   "copies": 2
-  },
-  {
-   "name": "Mechanicalchaser",
-   "decks": 1,
-   "copies": 2
-  },
-  {
-   "name": "Phantom Dragon",
-   "decks": 1,
-   "copies": 2
-  },
-  {
-   "name": "Polymerization",
-   "decks": 1,
-   "copies": 2
-  },
-  {
-   "name": "Rekindling",
-   "decks": 1,
-   "copies": 2
-  },
-  {
-   "name": "Tethys, Goddess of Light",
-   "decks": 1,
-   "copies": 2
-  },
-  {
-   "name": "Airknight Parshath",
-   "decks": 1,
-   "copies": 1
-  },
-  {
-   "name": "Assault Beast",
-   "decks": 1,
-   "copies": 1
-  },
-  {
-   "name": "Assault Mode Activate",
-   "decks": 1,
-   "copies": 1
-  },
-  {
-   "name": "B.E.S. Tetran",
-   "decks": 1,
-   "copies": 1
-  },
-  {
-   "name": "Blackwing - Mistral the Silver Shield",
-   "decks": 1,
-   "copies": 1
-  },
-  {
-   "name": "Chaos Necromancer",
-   "decks": 1,
-   "copies": 1
-  },
-  {
-   "name": "Cloak and Dagger",
-   "decks": 1,
-   "copies": 1
-  },
-  {
-   "name": "D.3.S. Frog",
-   "decks": 1,
-   "copies": 1
-  },
-  {
-   "name": "Dark Paladin",
-   "decks": 1,
-   "copies": 1
-  },
-  {
-   "name": "Electric Virus",
-   "decks": 1,
-   "copies": 1
-  },
-  {
-   "name": "Elemental HERO Captain Gold",
-   "decks": 1,
-   "copies": 1
-  },
-  {
-   "name": "Elemental HERO Grand Neos",
-   "decks": 1,
-   "copies": 1
-  },
-  {
-   "name": "Elemental HERO Terra Firma",
-   "decks": 1,
-   "copies": 1
-  },
-  {
-   "name": "Elemental HERO Voltic",
-   "decks": 1,
-   "copies": 1
-  },
-  {
-   "name": "Escape from the Dark Dimension",
-   "decks": 1,
-   "copies": 1
-  },
-  {
-   "name": "Exiled Force",
-   "decks": 1,
-   "copies": 1
-  },
-  {
-   "name": "Forbidden Chalice",
-   "decks": 1,
-   "copies": 1
-  },
-  {
-   "name": "Gigantes",
-   "decks": 1,
-   "copies": 1
-  },
-  {
-   "name": "Herald of Creation",
-   "decks": 1,
-   "copies": 1
-  },
-  {
-   "name": "Herald of Green Light",
-   "decks": 1,
-   "copies": 1
-  },
-  {
-   "name": "Il Blud",
-   "decks": 1,
-   "copies": 1
-  },
-  {
-   "name": "Infernal Dragon",
-   "decks": 1,
-   "copies": 1
-  },
-  {
-   "name": "Jade Knight",
-   "decks": 1,
-   "copies": 1
-  },
-  {
-   "name": "Kinka-byo",
-   "decks": 1,
-   "copies": 1
-  },
-  {
-   "name": "Machina Peacekeeper",
-   "decks": 1,
-   "copies": 1
-  },
-  {
-   "name": "Magical Mallet",
-   "decks": 1,
-   "copies": 1
-  },
-  {
-   "name": "Magna Drago",
-   "decks": 1,
-   "copies": 1
-  },
-  {
-   "name": "Masked Dragon",
-   "decks": 1,
-   "copies": 1
-  },
-  {
-   "name": "Messenger of Peace",
-   "decks": 1,
-   "copies": 1
-  },
-  {
-   "name": "Morphtronic Scopen",
-   "decks": 1,
-   "copies": 1
-  },
-  {
-   "name": "Non-Fusion Area",
-   "decks": 1,
-   "copies": 1
-  },
-  {
-   "name": "Nova Summoner",
-   "decks": 1,
-   "copies": 1
-  },
-  {
-   "name": "Phantom of Chaos",
-   "decks": 1,
-   "copies": 1
-  },
-  {
-   "name": "Proto-Cyber Dragon",
-   "decks": 1,
-   "copies": 1
-  },
-  {
-   "name": "Puppet Plant",
-   "decks": 1,
-   "copies": 1
-  },
-  {
-   "name": "Reasoning",
-   "decks": 1,
-   "copies": 1
-  },
-  {
-   "name": "Sanwitch",
-   "decks": 1,
-   "copies": 1
-  },
-  {
-   "name": "Skyscraper",
-   "decks": 1,
-   "copies": 1
-  },
-  {
-   "name": "Splendid Venus",
-   "decks": 1,
-   "copies": 1
-  },
-  {
-   "name": "Stardust Dragon/Assault Mode",
-   "decks": 1,
-   "copies": 1
-  },
-  {
-   "name": "The Dark Creator",
-   "decks": 1,
-   "copies": 1
-  },
-  {
-   "name": "The Selection",
-   "decks": 1,
-   "copies": 1
-  },
-  {
-   "name": "The Tricky",
-   "decks": 1,
-   "copies": 1
-  },
-  {
-   "name": "Totem Dragon",
-   "decks": 1,
-   "copies": 1
-  },
-  {
-   "name": "Ultimate Ancient Gear Golem",
-   "decks": 1,
-   "copies": 1
-  },
-  {
-   "name": "Wetlands",
-   "decks": 1,
-   "copies": 1
-  },
-  {
-   "name": "White Night Dragon",
-   "decks": 1,
-   "copies": 1
+ "updated_at": "2026-11-22T05:37:46+00:00",
+ "formats": {
+  "Edison": {
+   "decks_read": 399,
+   "ranking": [
+    {
+     "name": "Stardust Dragon",
+     "decks": 399,
+     "copies": 445
+    },
+    {
+     "name": "Heavy Storm",
+     "decks": 398,
+     "copies": 398
+    },
+    {
+     "name": "Black Rose Dragon",
+     "decks": 386,
+     "copies": 386
+    },
+    {
+     "name": "Brionac, Dragon of the Ice Barrier",
+     "decks": 386,
+     "copies": 386
+    },
+    {
+     "name": "Goyo Guardian",
+     "decks": 384,
+     "copies": 384
+    },
+    {
+     "name": "Ally of Justice Catastor",
+     "decks": 375,
+     "copies": 383
+    },
+    {
+     "name": "Mirror Force",
+     "decks": 373,
+     "copies": 373
+    },
+    {
+     "name": "Mystical Space Typhoon",
+     "decks": 369,
+     "copies": 369
+    },
+    {
+     "name": "Torrential Tribute",
+     "decks": 355,
+     "copies": 355
+    },
+    {
+     "name": "D.D. Crow",
+     "decks": 346,
+     "copies": 649
+    },
+    {
+     "name": "Trap Dustshoot",
+     "decks": 337,
+     "copies": 337
+    },
+    {
+     "name": "Brain Control",
+     "decks": 335,
+     "copies": 335
+    },
+    {
+     "name": "Colossal Fighter",
+     "decks": 330,
+     "copies": 353
+    },
+    {
+     "name": "Gorz the Emissary of Darkness",
+     "decks": 320,
+     "copies": 320
+    },
+    {
+     "name": "Thought Ruler Archfiend",
+     "decks": 314,
+     "copies": 314
+    },
+    {
+     "name": "Dimensional Prison",
+     "decks": 313,
+     "copies": 644
+    },
+    {
+     "name": "Chimeratech Fortress Dragon",
+     "decks": 295,
+     "copies": 419
+    },
+    {
+     "name": "Cyber Dragon",
+     "decks": 288,
+     "copies": 528
+    },
+    {
+     "name": "Bottomless Trap Hole",
+     "decks": 286,
+     "copies": 559
+    },
+    {
+     "name": "Dust Tornado",
+     "decks": 273,
+     "copies": 604
+    },
+    {
+     "name": "Solemn Judgment",
+     "decks": 271,
+     "copies": 271
+    },
+    {
+     "name": "Dark End Dragon",
+     "decks": 240,
+     "copies": 240
+    },
+    {
+     "name": "Armory Arm",
+     "decks": 227,
+     "copies": 258
+    },
+    {
+     "name": "Royal Oppression",
+     "decks": 224,
+     "copies": 425
+    },
+    {
+     "name": "Magical Android",
+     "decks": 223,
+     "copies": 224
+    },
+    {
+     "name": "Dark Armed Dragon",
+     "decks": 219,
+     "copies": 219
+    },
+    {
+     "name": "Allure of Darkness",
+     "decks": 215,
+     "copies": 215
+    },
+    {
+     "name": "Caius the Shadow Monarch",
+     "decks": 201,
+     "copies": 456
+    },
+    {
+     "name": "Blackwing - Gale the Whirlwind",
+     "decks": 188,
+     "copies": 188
+    },
+    {
+     "name": "Reinforcement of the Army",
+     "decks": 187,
+     "copies": 187
+    },
+    {
+     "name": "Blackwing Armor Master",
+     "decks": 184,
+     "copies": 313
+    },
+    {
+     "name": "Blackwing - Sirocco the Dawn",
+     "decks": 182,
+     "copies": 535
+    },
+    {
+     "name": "Blackwing Armed Wing",
+     "decks": 175,
+     "copies": 361
+    },
+    {
+     "name": "Blackwing - Vayu the Emblem of Honor",
+     "decks": 174,
+     "copies": 404
+    },
+    {
+     "name": "Blackwing - Silverwind the Ascendant",
+     "decks": 172,
+     "copies": 183
+    },
+    {
+     "name": "Deck Devastation Virus",
+     "decks": 171,
+     "copies": 283
+    },
+    {
+     "name": "Fossil Dyna Pachycephalo",
+     "decks": 170,
+     "copies": 267
+    },
+    {
+     "name": "Pulling the Rug",
+     "decks": 169,
+     "copies": 330
+    },
+    {
+     "name": "Mist Wurm",
+     "decks": 156,
+     "copies": 156
+    },
+    {
+     "name": "Plaguespreader Zombie",
+     "decks": 151,
+     "copies": 151
+    },
+    {
+     "name": "Book of Moon",
+     "decks": 143,
+     "copies": 287
+    },
+    {
+     "name": "Card Trooper",
+     "decks": 143,
+     "copies": 143
+    },
+    {
+     "name": "Ryko, Lightsworn Hunter",
+     "decks": 142,
+     "copies": 352
+    },
+    {
+     "name": "Necro Gardna",
+     "decks": 142,
+     "copies": 142
+    },
+    {
+     "name": "Lightning Vortex",
+     "decks": 133,
+     "copies": 144
+    },
+    {
+     "name": "Mind Control",
+     "decks": 127,
+     "copies": 127
+    },
+    {
+     "name": "Kycoo the Ghost Destroyer",
+     "decks": 125,
+     "copies": 153
+    },
+    {
+     "name": "Starlight Road",
+     "decks": 120,
+     "copies": 129
+    },
+    {
+     "name": "Dark Grepher",
+     "decks": 119,
+     "copies": 280
+    },
+    {
+     "name": "Return from the Different Dimension",
+     "decks": 119,
+     "copies": 119
+    },
+    {
+     "name": "Armageddon Knight",
+     "decks": 116,
+     "copies": 226
+    },
+    {
+     "name": "Icarus Attack",
+     "decks": 111,
+     "copies": 278
+    },
+    {
+     "name": "Flamvell Uruquizas",
+     "decks": 107,
+     "copies": 107
+    },
+    {
+     "name": "Burial from a Different Dimension",
+     "decks": 102,
+     "copies": 102
+    },
+    {
+     "name": "Trap Stun",
+     "decks": 100,
+     "copies": 217
+    },
+    {
+     "name": "Compulsory Evacuation Device",
+     "decks": 95,
+     "copies": 180
+    },
+    {
+     "name": "Legacy of Yata-Garasu",
+     "decks": 92,
+     "copies": 179
+    },
+    {
+     "name": "Charge of the Light Brigade",
+     "decks": 90,
+     "copies": 90
+    },
+    {
+     "name": "Breaker the Magical Warrior",
+     "decks": 89,
+     "copies": 136
+    },
+    {
+     "name": "Blackwing - Shura the Blue Flame",
+     "decks": 86,
+     "copies": 248
+    },
+    {
+     "name": "Super-Nimble Mega Hamster",
+     "decks": 86,
+     "copies": 134
+    },
+    {
+     "name": "Elemental HERO Stratos",
+     "decks": 85,
+     "copies": 85
+    },
+    {
+     "name": "Foolish Burial",
+     "decks": 83,
+     "copies": 83
+    },
+    {
+     "name": "Vanity's Fiend",
+     "decks": 82,
+     "copies": 169
+    },
+    {
+     "name": "Blackwing - Kalut the Moon Shadow",
+     "decks": 81,
+     "copies": 235
+    },
+    {
+     "name": "Blackwing - Blizzard the Far North",
+     "decks": 80,
+     "copies": 224
+    },
+    {
+     "name": "Blackwing - Bora the Spear",
+     "decks": 80,
+     "copies": 218
+    },
+    {
+     "name": "Black Whirlwind",
+     "decks": 80,
+     "copies": 160
+    },
+    {
+     "name": "Substitoad",
+     "decks": 79,
+     "copies": 237
+    },
+    {
+     "name": "Swap Frog",
+     "decks": 79,
+     "copies": 231
+    },
+    {
+     "name": "Raigeki Break",
+     "decks": 79,
+     "copies": 200
+    },
+    {
+     "name": "Treeborn Frog",
+     "decks": 79,
+     "copies": 156
+    },
+    {
+     "name": "Dupe Frog",
+     "decks": 78,
+     "copies": 192
+    },
+    {
+     "name": "Pot of Avarice",
+     "decks": 78,
+     "copies": 153
+    },
+    {
+     "name": "Smashing Ground",
+     "decks": 73,
+     "copies": 127
+    },
+    {
+     "name": "Unifrog",
+     "decks": 73,
+     "copies": 73
+    },
+    {
+     "name": "Red Dragon Archfiend",
+     "decks": 72,
+     "copies": 72
+    },
+    {
+     "name": "One for One",
+     "decks": 70,
+     "copies": 70
+    },
+    {
+     "name": "Call of the Haunted",
+     "decks": 65,
+     "copies": 65
+    },
+    {
+     "name": "Soul Exchange",
+     "decks": 63,
+     "copies": 116
+    },
+    {
+     "name": "Giant Trunade",
+     "decks": 61,
+     "copies": 61
+    },
+    {
+     "name": "Consecrated Light",
+     "decks": 58,
+     "copies": 113
+    },
+    {
+     "name": "Chaos Sorcerer",
+     "decks": 58,
+     "copies": 58
+    },
+    {
+     "name": "Mask of Restrict",
+     "decks": 57,
+     "copies": 107
+    },
+    {
+     "name": "Elemental HERO Absolute Zero",
+     "decks": 55,
+     "copies": 144
+    },
+    {
+     "name": "Nobleman of Crossout",
+     "decks": 55,
+     "copies": 75
+    },
+    {
+     "name": "My Body as a Shield",
+     "decks": 52,
+     "copies": 56
+    },
+    {
+     "name": "Gladiator Beast Gyzarus",
+     "decks": 50,
+     "copies": 140
+    },
+    {
+     "name": "Spiritual Water Art - Aoi",
+     "decks": 50,
+     "copies": 110
+    },
+    {
+     "name": "Dandylion",
+     "decks": 50,
+     "copies": 86
+    },
+    {
+     "name": "Raiza the Storm Monarch",
+     "decks": 49,
+     "copies": 95
+    },
+    {
+     "name": "Gladiator Beast Bestiari",
+     "decks": 49,
+     "copies": 49
+    },
+    {
+     "name": "Gladiator Beast Laquari",
+     "decks": 47,
+     "copies": 92
+    },
+    {
+     "name": "Rescue Cat",
+     "decks": 47,
+     "copies": 47
+    },
+    {
+     "name": "Gladiator Beast Heraklinos",
+     "decks": 46,
+     "copies": 129
+    },
+    {
+     "name": "Salvage",
+     "decks": 46,
+     "copies": 120
+    },
+    {
+     "name": "Lyla, Lightsworn Sorceress",
+     "decks": 46,
+     "copies": 89
+    },
+    {
+     "name": "Elemental HERO Gaia",
+     "decks": 46,
+     "copies": 51
+    },
+    {
+     "name": "Cold Wave",
+     "decks": 46,
+     "copies": 46
+    },
+    {
+     "name": "Reckless Greed",
+     "decks": 45,
+     "copies": 135
+    },
+    {
+     "name": "Test Tiger",
+     "decks": 45,
+     "copies": 135
+    },
+    {
+     "name": "Miracle Fusion",
+     "decks": 45,
+     "copies": 131
+    },
+    {
+     "name": "Gladiator Beast War Chariot",
+     "decks": 45,
+     "copies": 125
+    },
+    {
+     "name": "Gladiator Beast Equeste",
+     "decks": 45,
+     "copies": 90
+    },
+    {
+     "name": "Elemental HERO Prisma",
+     "decks": 45,
+     "copies": 88
+    },
+    {
+     "name": "Gladiator Beast Retiari",
+     "decks": 45,
+     "copies": 86
+    },
+    {
+     "name": "Gladiator Beast Darius",
+     "decks": 45,
+     "copies": 58
+    },
+    {
+     "name": "Gladiator Beast Murmillo",
+     "decks": 45,
+     "copies": 46
+    },
+    {
+     "name": "Gladiator Beast Secutor",
+     "decks": 45,
+     "copies": 45
+    },
+    {
+     "name": "Gladiator Beast Samnite",
+     "decks": 44,
+     "copies": 77
+    },
+    {
+     "name": "Fissure",
+     "decks": 44,
+     "copies": 66
+    },
+    {
+     "name": "E - Emergency Call",
+     "decks": 44,
+     "copies": 50
+    },
+    {
+     "name": "Flip Flop Frog",
+     "decks": 43,
+     "copies": 43
+    },
+    {
+     "name": "Future Fusion",
+     "decks": 42,
+     "copies": 42
+    },
+    {
+     "name": "Phoenix Wing Wind Blast",
+     "decks": 41,
+     "copies": 75
+    },
+    {
+     "name": "Upstart Goblin",
+     "decks": 40,
+     "copies": 111
+    },
+    {
+     "name": "Trap Hole",
+     "decks": 40,
+     "copies": 76
+    },
+    {
+     "name": "Junk Synchron",
+     "decks": 40,
+     "copies": 54
+    },
+    {
+     "name": "Evil HERO Infernal Prodigy",
+     "decks": 40,
+     "copies": 44
+    },
+    {
+     "name": "Elemental HERO Neos Alius",
+     "decks": 39,
+     "copies": 44
+    },
+    {
+     "name": "Soul Release",
+     "decks": 39,
+     "copies": 42
+    },
+    {
+     "name": "Light-Imprisoning Mirror",
+     "decks": 38,
+     "copies": 62
+    },
+    {
+     "name": "Elemental HERO Ocean",
+     "decks": 38,
+     "copies": 42
+    },
+    {
+     "name": "Des Frog",
+     "decks": 37,
+     "copies": 82
+    },
+    {
+     "name": "Junk Warrior",
+     "decks": 37,
+     "copies": 41
+    },
+    {
+     "name": "Tragoedia",
+     "decks": 36,
+     "copies": 36
+    },
+    {
+     "name": "X-Saber Urbellum",
+     "decks": 36,
+     "copies": 36
+    },
+    {
+     "name": "Seven Tools of the Bandit",
+     "decks": 35,
+     "copies": 40
+    },
+    {
+     "name": "XX-Saber Gottoms",
+     "decks": 35,
+     "copies": 35
+    },
+    {
+     "name": "Ancient Fairy Dragon",
+     "decks": 34,
+     "copies": 36
+    },
+    {
+     "name": "The Transmigration Prophecy",
+     "decks": 34,
+     "copies": 34
+    },
+    {
+     "name": "Tempest Magician",
+     "decks": 33,
+     "copies": 33
+    },
+    {
+     "name": "Fishborg Blaster",
+     "decks": 32,
+     "copies": 77
+    },
+    {
+     "name": "Royal Decree",
+     "decks": 32,
+     "copies": 60
+    },
+    {
+     "name": "Gaia Knight, the Force of Earth",
+     "decks": 32,
+     "copies": 32
+    },
+    {
+     "name": "Sangan",
+     "decks": 32,
+     "copies": 32
+    },
+    {
+     "name": "Gold Sarcophagus",
+     "decks": 30,
+     "copies": 56
+    },
+    {
+     "name": "Battle Fader",
+     "decks": 29,
+     "copies": 36
+    },
+    {
+     "name": "Honest",
+     "decks": 28,
+     "copies": 56
+    },
+    {
+     "name": "Enemy Controller",
+     "decks": 27,
+     "copies": 41
+    },
+    {
+     "name": "Evil HERO Malicious Edge",
+     "decks": 27,
+     "copies": 27
+    },
+    {
+     "name": "Jain, Lightsworn Paladin",
+     "decks": 26,
+     "copies": 32
+    },
+    {
+     "name": "Solar Recharge",
+     "decks": 25,
+     "copies": 75
+    },
+    {
+     "name": "Wulf, Lightsworn Beast",
+     "decks": 25,
+     "copies": 60
+    },
+    {
+     "name": "Threatening Roar",
+     "decks": 25,
+     "copies": 49
+    },
+    {
+     "name": "Skill Drain",
+     "decks": 25,
+     "copies": 37
+    },
+    {
+     "name": "Dark Dust Spirit",
+     "decks": 25,
+     "copies": 29
+    },
+    {
+     "name": "Judgment Dragon",
+     "decks": 24,
+     "copies": 48
+    },
+    {
+     "name": "Celestia, Lightsworn Angel",
+     "decks": 24,
+     "copies": 40
+    },
+    {
+     "name": "Aurkus, Lightsworn Druid",
+     "decks": 24,
+     "copies": 29
+    },
+    {
+     "name": "Ehren, Lightsworn Monk",
+     "decks": 24,
+     "copies": 24
+    },
+    {
+     "name": "Garoth, Lightsworn Warrior",
+     "decks": 24,
+     "copies": 24
+    },
+    {
+     "name": "Lumina, Lightsworn Summoner",
+     "decks": 24,
+     "copies": 24
+    },
+    {
+     "name": "Jar of Greed",
+     "decks": 23,
+     "copies": 33
+    },
+    {
+     "name": "Iron Chain Dragon",
+     "decks": 23,
+     "copies": 23
+    },
+    {
+     "name": "Moray of Greed",
+     "decks": 21,
+     "copies": 63
+    },
+    {
+     "name": "Machina Gearframe",
+     "decks": 20,
+     "copies": 60
+    },
+    {
+     "name": "Machina Fortress",
+     "decks": 20,
+     "copies": 58
+    },
+    {
+     "name": "Machina Force",
+     "decks": 20,
+     "copies": 32
+    },
+    {
+     "name": "Debris Dragon",
+     "decks": 19,
+     "copies": 55
+    },
+    {
+     "name": "Power Tool Dragon",
+     "decks": 19,
+     "copies": 33
+    },
+    {
+     "name": "Instant Fusion",
+     "decks": 19,
+     "copies": 31
+    },
+    {
+     "name": "Card Destruction",
+     "decks": 19,
+     "copies": 19
+    },
+    {
+     "name": "Lonefire Blossom",
+     "decks": 18,
+     "copies": 36
+    },
+    {
+     "name": "Tytannial, Princess of Camellias",
+     "decks": 18,
+     "copies": 18
+    },
+    {
+     "name": "Deep Sea Diva",
+     "decks": 17,
+     "copies": 49
+    },
+    {
+     "name": "D.D.R. - Different Dimension Reincarnation",
+     "decks": 17,
+     "copies": 28
+    },
+    {
+     "name": "Trident Dragion",
+     "decks": 17,
+     "copies": 17
+    },
+    {
+     "name": "Red-Eyes Darkness Metal Dragon",
+     "decks": 16,
+     "copies": 48
+    },
+    {
+     "name": "Legendary Jujitsu Master",
+     "decks": 16,
+     "copies": 35
+    },
+    {
+     "name": "Darkfire Dragon",
+     "decks": 16,
+     "copies": 26
+    },
+    {
+     "name": "Koa'ki Meiru Drago",
+     "decks": 16,
+     "copies": 25
+    },
+    {
+     "name": "Waboku",
+     "decks": 16,
+     "copies": 21
+    },
+    {
+     "name": "Five-Headed Dragon",
+     "decks": 16,
+     "copies": 16
+    },
+    {
+     "name": "Prime Material Dragon",
+     "decks": 16,
+     "copies": 16
+    },
+    {
+     "name": "Shrink",
+     "decks": 16,
+     "copies": 16
+    },
+    {
+     "name": "Hidden Armory",
+     "decks": 15,
+     "copies": 43
+    },
+    {
+     "name": "Destiny HERO - Malicious",
+     "decks": 15,
+     "copies": 30
+    },
+    {
+     "name": "Mark of the Rose",
+     "decks": 15,
+     "copies": 29
+    },
+    {
+     "name": "Black Brutdrago",
+     "decks": 15,
+     "copies": 21
+    },
+    {
+     "name": "Blackwing - Elphin the Raven",
+     "decks": 15,
+     "copies": 15
+    },
+    {
+     "name": "Blue-Eyes White Dragon",
+     "decks": 14,
+     "copies": 42
+    },
+    {
+     "name": "Cards of Consonance",
+     "decks": 14,
+     "copies": 42
+    },
+    {
+     "name": "Supervise",
+     "decks": 14,
+     "copies": 42
+    },
+    {
+     "name": "The White Stone of Legend",
+     "decks": 14,
+     "copies": 42
+    },
+    {
+     "name": "Trade-In",
+     "decks": 14,
+     "copies": 42
+    },
+    {
+     "name": "Super Solar Nutrient",
+     "decks": 14,
+     "copies": 41
+    },
+    {
+     "name": "Miracle Fertilizer",
+     "decks": 14,
+     "copies": 34
+    },
+    {
+     "name": "Jinzo",
+     "decks": 14,
+     "copies": 32
+    },
+    {
+     "name": "Vortex Trooper",
+     "decks": 14,
+     "copies": 32
+    },
+    {
+     "name": "Gigaplant",
+     "decks": 14,
+     "copies": 28
+    },
+    {
+     "name": "Karma Cut",
+     "decks": 14,
+     "copies": 19
+    },
+    {
+     "name": "Copy Plant",
+     "decks": 14,
+     "copies": 16
+    },
+    {
+     "name": "Limiter Removal",
+     "decks": 14,
+     "copies": 14
+    },
+    {
+     "name": "Nettles",
+     "decks": 14,
+     "copies": 14
+    },
+    {
+     "name": "Super Rejuvenation",
+     "decks": 13,
+     "copies": 39
+    },
+    {
+     "name": "Magical Stone Excavation",
+     "decks": 13,
+     "copies": 26
+    },
+    {
+     "name": "Monster Reincarnation",
+     "decks": 13,
+     "copies": 26
+    },
+    {
+     "name": "Spined Gillman",
+     "decks": 13,
+     "copies": 14
+    },
+    {
+     "name": "Dragoness the Wicked Knight",
+     "decks": 13,
+     "copies": 13
+    },
+    {
+     "name": "Nobleman of Extermination",
+     "decks": 12,
+     "copies": 15
+    },
+    {
+     "name": "Needle Ceiling",
+     "decks": 12,
+     "copies": 13
+    },
+    {
+     "name": "Elemental HERO Mariner",
+     "decks": 12,
+     "copies": 12
+    },
+    {
+     "name": "Beckoning Light",
+     "decks": 11,
+     "copies": 26
+    },
+    {
+     "name": "Krebons",
+     "decks": 11,
+     "copies": 25
+    },
+    {
+     "name": "UFO Turtle",
+     "decks": 11,
+     "copies": 24
+    },
+    {
+     "name": "Goblin Zombie",
+     "decks": 11,
+     "copies": 22
+    },
+    {
+     "name": "Light and Darkness Dragon",
+     "decks": 11,
+     "copies": 20
+    },
+    {
+     "name": "Possessed Dark Soul",
+     "decks": 11,
+     "copies": 14
+    },
+    {
+     "name": "Dark Illusion",
+     "decks": 11,
+     "copies": 11
+    },
+    {
+     "name": "Emergency Teleport",
+     "decks": 11,
+     "copies": 11
+    },
+    {
+     "name": "Mezuki",
+     "decks": 11,
+     "copies": 11
+    },
+    {
+     "name": "Revived King Ha Des",
+     "decks": 11,
+     "copies": 11
+    },
+    {
+     "name": "Spirit Reaper",
+     "decks": 11,
+     "copies": 11
+    },
+    {
+     "name": "Herald of Orange Light",
+     "decks": 10,
+     "copies": 26
+    },
+    {
+     "name": "Thestalos the Firestorm Monarch",
+     "decks": 10,
+     "copies": 20
+    },
+    {
+     "name": "Avenging Knight Parshath",
+     "decks": 10,
+     "copies": 10
+    },
+    {
+     "name": "Chimeratech Overdragon",
+     "decks": 10,
+     "copies": 10
+    },
+    {
+     "name": "Neo-Spacian Grand Mole",
+     "decks": 10,
+     "copies": 10
+    },
+    {
+     "name": "Scapegoat",
+     "decks": 10,
+     "copies": 10
+    },
+    {
+     "name": "Archlord Kristya",
+     "decks": 9,
+     "copies": 20
+    },
+    {
+     "name": "Divine Wrath",
+     "decks": 9,
+     "copies": 14
+    },
+    {
+     "name": "Arcanite Magician",
+     "decks": 9,
+     "copies": 12
+    },
+    {
+     "name": "Autonomous Action Unit",
+     "decks": 9,
+     "copies": 9
+    },
+    {
+     "name": "Gladiator Beast Hoplomus",
+     "decks": 9,
+     "copies": 9
+    },
+    {
+     "name": "Mind Crush",
+     "decks": 9,
+     "copies": 9
+    },
+    {
+     "name": "Psychic Lifetrancer",
+     "decks": 9,
+     "copies": 9
+    },
+    {
+     "name": "Zombie Master",
+     "decks": 9,
+     "copies": 9
+    },
+    {
+     "name": "Jinzo - Returner",
+     "decks": 8,
+     "copies": 24
+    },
+    {
+     "name": "Pyramid Turtle",
+     "decks": 8,
+     "copies": 21
+    },
+    {
+     "name": "Mother Grizzly",
+     "decks": 8,
+     "copies": 15
+    },
+    {
+     "name": "D.D. Warrior Lady",
+     "decks": 8,
+     "copies": 9
+    },
+    {
+     "name": "Ancient Sacred Wyvern",
+     "decks": 8,
+     "copies": 8
+    },
+    {
+     "name": "Morphing Jar",
+     "decks": 8,
+     "copies": 8
+    },
+    {
+     "name": "Snipe Hunter",
+     "decks": 8,
+     "copies": 8
+    },
+    {
+     "name": "Book of Life",
+     "decks": 7,
+     "copies": 17
+    },
+    {
+     "name": "Ancient Forest",
+     "decks": 7,
+     "copies": 11
+    },
+    {
+     "name": "Offerings to the Doomed",
+     "decks": 7,
+     "copies": 9
+    },
+    {
+     "name": "Beelze Frog",
+     "decks": 7,
+     "copies": 7
+    },
+    {
+     "name": "Cyber Valley",
+     "decks": 7,
+     "copies": 7
+    },
+    {
+     "name": "Doomkaiser Dragon",
+     "decks": 7,
+     "copies": 7
+    },
+    {
+     "name": "Flamvell Guard",
+     "decks": 7,
+     "copies": 7
+    },
+    {
+     "name": "Cyber Eltanin",
+     "decks": 6,
+     "copies": 14
+    },
+    {
+     "name": "Ultimate Offering",
+     "decks": 6,
+     "copies": 12
+    },
+    {
+     "name": "Imperial Iron Wall",
+     "decks": 6,
+     "copies": 11
+    },
+    {
+     "name": "Shadow-Imprisoning Mirror",
+     "decks": 6,
+     "copies": 11
+    },
+    {
+     "name": "Eradicator Epidemic Virus",
+     "decks": 6,
+     "copies": 8
+    },
+    {
+     "name": "System Down",
+     "decks": 6,
+     "copies": 7
+    },
+    {
+     "name": "D.D. Assailant",
+     "decks": 6,
+     "copies": 6
+    },
+    {
+     "name": "Anti-Spell Fragrance",
+     "decks": 5,
+     "copies": 8
+    },
+    {
+     "name": "Destiny HERO - Plasma",
+     "decks": 5,
+     "copies": 5
+    },
+    {
+     "name": "Ojama Knight",
+     "decks": 5,
+     "copies": 5
+    },
+    {
+     "name": "Reaper on the Nightmare",
+     "decks": 5,
+     "copies": 5
+    },
+    {
+     "name": "Telekinetic Power Well",
+     "decks": 4,
+     "copies": 11
+    },
+    {
+     "name": "Terraforming",
+     "decks": 4,
+     "copies": 11
+    },
+    {
+     "name": "Gladiator Beast's Respite",
+     "decks": 4,
+     "copies": 10
+    },
+    {
+     "name": "Gravekeeper's Spy",
+     "decks": 4,
+     "copies": 10
+    },
+    {
+     "name": "Sphere of Chaos",
+     "decks": 4,
+     "copies": 9
+    },
+    {
+     "name": "Mystic Tomato",
+     "decks": 4,
+     "copies": 8
+    },
+    {
+     "name": "Red-Eyes Wyvern",
+     "decks": 4,
+     "copies": 8
+    },
+    {
+     "name": "Chain Disappearance",
+     "decks": 4,
+     "copies": 6
+    },
+    {
+     "name": "Snowman Eater",
+     "decks": 4,
+     "copies": 6
+    },
+    {
+     "name": "Swallow Flip",
+     "decks": 4,
+     "copies": 5
+    },
+    {
+     "name": "Cyber Twin Dragon",
+     "decks": 4,
+     "copies": 4
+    },
+    {
+     "name": "Exploder Dragonwing",
+     "decks": 4,
+     "copies": 4
+    },
+    {
+     "name": "Light End Dragon",
+     "decks": 4,
+     "copies": 4
+    },
+    {
+     "name": "Magic Cylinder",
+     "decks": 4,
+     "copies": 4
+    },
+    {
+     "name": "Mausoleum of the Emperor",
+     "decks": 4,
+     "copies": 4
+    },
+    {
+     "name": "Mermaid Archer",
+     "decks": 4,
+     "copies": 4
+    },
+    {
+     "name": "Musician King",
+     "decks": 4,
+     "copies": 4
+    },
+    {
+     "name": "Psychic Commander",
+     "decks": 4,
+     "copies": 4
+    },
+    {
+     "name": "Shire, Lightsworn Spirit",
+     "decks": 4,
+     "copies": 4
+    },
+    {
+     "name": "Soul of Purity and Light",
+     "decks": 4,
+     "copies": 4
+    },
+    {
+     "name": "Thunder King Rai-Oh",
+     "decks": 4,
+     "copies": 4
+    },
+    {
+     "name": "Twister",
+     "decks": 4,
+     "copies": 4
+    },
+    {
+     "name": "Gallis the Star Beast",
+     "decks": 3,
+     "copies": 9
+    },
+    {
+     "name": "Geartown",
+     "decks": 3,
+     "copies": 9
+    },
+    {
+     "name": "Magical Merchant",
+     "decks": 3,
+     "copies": 9
+    },
+    {
+     "name": "X-Saber Airbellum",
+     "decks": 3,
+     "copies": 9
+    },
+    {
+     "name": "Ancient Gear Beast",
+     "decks": 3,
+     "copies": 8
+    },
+    {
+     "name": "Ancient Gear Gadjiltron Dragon",
+     "decks": 3,
+     "copies": 7
+    },
+    {
+     "name": "Green Gadget",
+     "decks": 3,
+     "copies": 7
+    },
+    {
+     "name": "Quickdraw Synchron",
+     "decks": 3,
+     "copies": 7
+    },
+    {
+     "name": "Red Gadget",
+     "decks": 3,
+     "copies": 7
+    },
+    {
+     "name": "Drill Warrior",
+     "decks": 3,
+     "copies": 6
+    },
+    {
+     "name": "Fusilier Dragon, the Dual-Mode Beast",
+     "decks": 3,
+     "copies": 6
+    },
+    {
+     "name": "Hedge Guard",
+     "decks": 3,
+     "copies": 6
+    },
+    {
+     "name": "Shining Angel",
+     "decks": 3,
+     "copies": 6
+    },
+    {
+     "name": "Yellow Gadget",
+     "decks": 3,
+     "copies": 6
+    },
+    {
+     "name": "Super Polymerization",
+     "decks": 3,
+     "copies": 5
+    },
+    {
+     "name": "Doomcaliber Knight",
+     "decks": 3,
+     "copies": 4
+    },
+    {
+     "name": "G.B. Hunter",
+     "decks": 3,
+     "copies": 4
+    },
+    {
+     "name": "Dark Bribe",
+     "decks": 3,
+     "copies": 3
+    },
+    {
+     "name": "Destructotron",
+     "decks": 3,
+     "copies": 3
+    },
+    {
+     "name": "Dragon Ice",
+     "decks": 3,
+     "copies": 3
+    },
+    {
+     "name": "Gravekeeper's Descendant",
+     "decks": 3,
+     "copies": 3
+    },
+    {
+     "name": "Junk Archer",
+     "decks": 3,
+     "copies": 3
+    },
+    {
+     "name": "Mind Master",
+     "decks": 3,
+     "copies": 3
+    },
+    {
+     "name": "Mobius the Frost Monarch",
+     "decks": 3,
+     "copies": 3
+    },
+    {
+     "name": "Nitro Warrior",
+     "decks": 3,
+     "copies": 3
+    },
+    {
+     "name": "Road Warrior",
+     "decks": 3,
+     "copies": 3
+    },
+    {
+     "name": "Sea Dragon Lord Gishilnodon",
+     "decks": 3,
+     "copies": 3
+    },
+    {
+     "name": "Turbo Warrior",
+     "decks": 3,
+     "copies": 3
+    },
+    {
+     "name": "Zombie World",
+     "decks": 3,
+     "copies": 3
+    },
+    {
+     "name": "Gemini Spark",
+     "decks": 2,
+     "copies": 6
+    },
+    {
+     "name": "Dimensional Fissure",
+     "decks": 2,
+     "copies": 5
+    },
+    {
+     "name": "Beast King Barbaros",
+     "decks": 2,
+     "copies": 4
+    },
+    {
+     "name": "Dimensional Alchemist",
+     "decks": 2,
+     "copies": 4
+    },
+    {
+     "name": "Lord British Space Fighter",
+     "decks": 2,
+     "copies": 4
+    },
+    {
+     "name": "Prohibition",
+     "decks": 2,
+     "copies": 4
+    },
+    {
+     "name": "Witch of the Black Rose",
+     "decks": 2,
+     "copies": 4
+    },
+    {
+     "name": "Creature Swap",
+     "decks": 2,
+     "copies": 3
+    },
+    {
+     "name": "Exodius the Ultimate Forbidden Lord",
+     "decks": 2,
+     "copies": 3
+    },
+    {
+     "name": "Herald of Purple Light",
+     "decks": 2,
+     "copies": 3
+    },
+    {
+     "name": "Soul Taker",
+     "decks": 2,
+     "copies": 3
+    },
+    {
+     "name": "Superalloy Beast Raptinus",
+     "decks": 2,
+     "copies": 3
+    },
+    {
+     "name": "Cyber End Dragon",
+     "decks": 2,
+     "copies": 2
+    },
+    {
+     "name": "Delta Crow - Anti Reverse",
+     "decks": 2,
+     "copies": 2
+    },
+    {
+     "name": "Elemental HERO Magma Neos",
+     "decks": 2,
+     "copies": 2
+    },
+    {
+     "name": "Exploder Dragon",
+     "decks": 2,
+     "copies": 2
+    },
+    {
+     "name": "Fiend Comedian",
+     "decks": 2,
+     "copies": 2
+    },
+    {
+     "name": "Injection Fairy Lily",
+     "decks": 2,
+     "copies": 2
+    },
+    {
+     "name": "Karbonala Warrior",
+     "decks": 2,
+     "copies": 2
+    },
+    {
+     "name": "King Tiger Wanghu",
+     "decks": 2,
+     "copies": 2
+    },
+    {
+     "name": "Marionette Mite",
+     "decks": 2,
+     "copies": 2
+    },
+    {
+     "name": "Power Filter",
+     "decks": 2,
+     "copies": 2
+    },
+    {
+     "name": "Proof of Powerlessness",
+     "decks": 2,
+     "copies": 2
+    },
+    {
+     "name": "Summoner Monk",
+     "decks": 2,
+     "copies": 2
+    },
+    {
+     "name": "Swords of Revealing Light",
+     "decks": 2,
+     "copies": 2
+    },
+    {
+     "name": "Treacherous Trap Hole",
+     "decks": 2,
+     "copies": 2
+    },
+    {
+     "name": "Venom Swamp",
+     "decks": 2,
+     "copies": 2
+    },
+    {
+     "name": "Blue Thunder T-45",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Blue-Eyes Ultimate Dragon",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "D.D. Survivor",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Fiendish Chain",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Flamvell Firedog",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Gladiator Beast Gaiodiaz",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Gladiator Proving Ground",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Hecatrice",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Interdimensional Matter Transporter",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "King of the Swamp",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Ojama King",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Scrap-Iron Scarecrow",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Skill Successor",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Valhalla, Hall of the Fallen",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Arcane Apprentice",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Des Lacooda",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Flamvell Magician",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Gellenduo",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Hero Blast",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Horn of Heaven",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Mechanicalchaser",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Phantom Dragon",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Polymerization",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Rekindling",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Tethys, Goddess of Light",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Airknight Parshath",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Assault Beast",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Assault Mode Activate",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "B.E.S. Tetran",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Blackwing - Mistral the Silver Shield",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Chaos Necromancer",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Cloak and Dagger",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "D.3.S. Frog",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Dark Paladin",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Electric Virus",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Elemental HERO Captain Gold",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Elemental HERO Grand Neos",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Elemental HERO Terra Firma",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Elemental HERO Voltic",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Escape from the Dark Dimension",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Exiled Force",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Forbidden Chalice",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Gigantes",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Herald of Creation",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Herald of Green Light",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Il Blud",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Infernal Dragon",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Jade Knight",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Kinka-byo",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Machina Peacekeeper",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Magical Mallet",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Magna Drago",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Masked Dragon",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Messenger of Peace",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Morphtronic Scopen",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Non-Fusion Area",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Nova Summoner",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Phantom of Chaos",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Proto-Cyber Dragon",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Puppet Plant",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Reasoning",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Sanwitch",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Skyscraper",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Splendid Venus",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Stardust Dragon/Assault Mode",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "The Dark Creator",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "The Selection",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "The Tricky",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Totem Dragon",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Ultimate Ancient Gear Golem",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Wetlands",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "White Night Dragon",
+     "decks": 1,
+     "copies": 1
+    }
+   ],
+   "top_n": 200
+  },
+  "Goat": {
+   "decks_read": 400,
+   "ranking": [
+    {
+     "name": "Pot of Greed",
+     "decks": 400,
+     "copies": 400
+    },
+    {
+     "name": "Graceful Charity",
+     "decks": 399,
+     "copies": 399
+    },
+    {
+     "name": "Heavy Storm",
+     "decks": 398,
+     "copies": 398
+    },
+    {
+     "name": "Ring of Destruction",
+     "decks": 394,
+     "copies": 394
+    },
+    {
+     "name": "Snatch Steal",
+     "decks": 388,
+     "copies": 388
+    },
+    {
+     "name": "Mystical Space Typhoon",
+     "decks": 385,
+     "copies": 385
+    },
+    {
+     "name": "Mirror Force",
+     "decks": 382,
+     "copies": 382
+    },
+    {
+     "name": "Nobleman of Crossout",
+     "decks": 380,
+     "copies": 754
+    },
+    {
+     "name": "Breaker the Magical Warrior",
+     "decks": 379,
+     "copies": 379
+    },
+    {
+     "name": "Thousand-Eyes Restrict",
+     "decks": 375,
+     "copies": 897
+    },
+    {
+     "name": "Dark Balter the Terrible",
+     "decks": 374,
+     "copies": 482
+    },
+    {
+     "name": "Tribe-Infecting Virus",
+     "decks": 374,
+     "copies": 374
+    },
+    {
+     "name": "Ryu Senshi",
+     "decks": 361,
+     "copies": 433
+    },
+    {
+     "name": "Delinquent Duo",
+     "decks": 360,
+     "copies": 360
+    },
+    {
+     "name": "Gatling Dragon",
+     "decks": 351,
+     "copies": 404
+    },
+    {
+     "name": "Black Luster Soldier - Envoy of the Beginning",
+     "decks": 347,
+     "copies": 347
+    },
+    {
+     "name": "Sakuretsu Armor",
+     "decks": 338,
+     "copies": 902
+    },
+    {
+     "name": "Torrential Tribute",
+     "decks": 334,
+     "copies": 334
+    },
+    {
+     "name": "Fiend Skull Dragon",
+     "decks": 333,
+     "copies": 358
+    },
+    {
+     "name": "Dark Blade the Dragon Knight",
+     "decks": 332,
+     "copies": 346
+    },
+    {
+     "name": "Darkfire Dragon",
+     "decks": 327,
+     "copies": 332
+    },
+    {
+     "name": "Trap Dustshoot",
+     "decks": 324,
+     "copies": 709
+    },
+    {
+     "name": "Reaper on the Nightmare",
+     "decks": 324,
+     "copies": 326
+    },
+    {
+     "name": "Sangan",
+     "decks": 322,
+     "copies": 322
+    },
+    {
+     "name": "Magician of Faith",
+     "decks": 307,
+     "copies": 563
+    },
+    {
+     "name": "King Dragun",
+     "decks": 304,
+     "copies": 316
+    },
+    {
+     "name": "Gravekeeper's Spy",
+     "decks": 303,
+     "copies": 778
+    },
+    {
+     "name": "The Last Warrior from Another Planet",
+     "decks": 295,
+     "copies": 297
+    },
+    {
+     "name": "Dust Tornado",
+     "decks": 277,
+     "copies": 605
+    },
+    {
+     "name": "Master of Oz",
+     "decks": 276,
+     "copies": 315
+    },
+    {
+     "name": "Ojama King",
+     "decks": 268,
+     "copies": 276
+    },
+    {
+     "name": "Jar of Greed",
+     "decks": 267,
+     "copies": 639
+    },
+    {
+     "name": "Mind Control",
+     "decks": 258,
+     "copies": 419
+    },
+    {
+     "name": "Book of Moon",
+     "decks": 258,
+     "copies": 306
+    },
+    {
+     "name": "Tsukuyomi",
+     "decks": 248,
+     "copies": 296
+    },
+    {
+     "name": "Chaos Sorcerer",
+     "decks": 242,
+     "copies": 397
+    },
+    {
+     "name": "Kycoo the Ghost Destroyer",
+     "decks": 240,
+     "copies": 389
+    },
+    {
+     "name": "Dragoness the Wicked Knight",
+     "decks": 238,
+     "copies": 242
+    },
+    {
+     "name": "Cipher Soldier",
+     "decks": 231,
+     "copies": 307
+    },
+    {
+     "name": "Sinister Serpent",
+     "decks": 217,
+     "copies": 217
+    },
+    {
+     "name": "Solemn Judgment",
+     "decks": 209,
+     "copies": 585
+    },
+    {
+     "name": "Mystik Wok",
+     "decks": 209,
+     "copies": 292
+    },
+    {
+     "name": "D.D. Warrior Lady",
+     "decks": 207,
+     "copies": 207
+    },
+    {
+     "name": "Dekoichi the Battlechanted Locomotive",
+     "decks": 204,
+     "copies": 415
+    },
+    {
+     "name": "Premature Burial",
+     "decks": 203,
+     "copies": 203
+    },
+    {
+     "name": "Mobius the Frost Monarch",
+     "decks": 202,
+     "copies": 224
+    },
+    {
+     "name": "Exiled Force",
+     "decks": 197,
+     "copies": 197
+    },
+    {
+     "name": "Thunder Dragon",
+     "decks": 190,
+     "copies": 570
+    },
+    {
+     "name": "Zombyra the Dark",
+     "decks": 182,
+     "copies": 269
+    },
+    {
+     "name": "Reinforcement of the Army",
+     "decks": 181,
+     "copies": 343
+    },
+    {
+     "name": "Blade Knight",
+     "decks": 177,
+     "copies": 409
+    },
+    {
+     "name": "Call of the Haunted",
+     "decks": 177,
+     "copies": 177
+    },
+    {
+     "name": "Raigeki Break",
+     "decks": 170,
+     "copies": 369
+    },
+    {
+     "name": "Flame Ghost",
+     "decks": 170,
+     "copies": 181
+    },
+    {
+     "name": "Upstart Goblin",
+     "decks": 159,
+     "copies": 310
+    },
+    {
+     "name": "Mystic Swordsman LV2",
+     "decks": 149,
+     "copies": 150
+    },
+    {
+     "name": "Ninja Grandmaster Sasuke",
+     "decks": 147,
+     "copies": 160
+    },
+    {
+     "name": "Don Zaloog",
+     "decks": 143,
+     "copies": 143
+    },
+    {
+     "name": "Card Destruction",
+     "decks": 140,
+     "copies": 140
+    },
+    {
+     "name": "Asura Priest",
+     "decks": 138,
+     "copies": 157
+    },
+    {
+     "name": "Smashing Ground",
+     "decks": 130,
+     "copies": 163
+    },
+    {
+     "name": "Morphing Jar",
+     "decks": 121,
+     "copies": 121
+    },
+    {
+     "name": "Swords of Revealing Light",
+     "decks": 120,
+     "copies": 120
+    },
+    {
+     "name": "Night Assailant",
+     "decks": 114,
+     "copies": 222
+    },
+    {
+     "name": "Twin-Headed Thunder Dragon",
+     "decks": 112,
+     "copies": 112
+    },
+    {
+     "name": "Scapegoat",
+     "decks": 111,
+     "copies": 285
+    },
+    {
+     "name": "Xing Zhen Hu",
+     "decks": 109,
+     "copies": 114
+    },
+    {
+     "name": "Spirit Reaper",
+     "decks": 105,
+     "copies": 109
+    },
+    {
+     "name": "Metamorphosis",
+     "decks": 100,
+     "copies": 207
+    },
+    {
+     "name": "Amazoness Archer",
+     "decks": 93,
+     "copies": 94
+    },
+    {
+     "name": "Creature Swap",
+     "decks": 62,
+     "copies": 115
+    },
+    {
+     "name": "Injection Fairy Lily",
+     "decks": 61,
+     "copies": 61
+    },
+    {
+     "name": "Giant Trunade",
+     "decks": 56,
+     "copies": 134
+    },
+    {
+     "name": "Dark Flare Knight",
+     "decks": 55,
+     "copies": 59
+    },
+    {
+     "name": "Berserk Gorilla",
+     "decks": 53,
+     "copies": 69
+    },
+    {
+     "name": "Royal Decree",
+     "decks": 51,
+     "copies": 127
+    },
+    {
+     "name": "Zaborg the Thunder Monarch",
+     "decks": 47,
+     "copies": 67
+    },
+    {
+     "name": "Giltia the D. Knight",
+     "decks": 46,
+     "copies": 46
+    },
+    {
+     "name": "Cyber Jar",
+     "decks": 44,
+     "copies": 44
+    },
+    {
+     "name": "Gyaku-Gire Panda",
+     "decks": 40,
+     "copies": 90
+    },
+    {
+     "name": "Kuriboh",
+     "decks": 40,
+     "copies": 44
+    },
+    {
+     "name": "Charubin the Fire Knight",
+     "decks": 37,
+     "copies": 37
+    },
+    {
+     "name": "Phoenix Wing Wind Blast",
+     "decks": 33,
+     "copies": 67
+    },
+    {
+     "name": "D.D. Assailant",
+     "decks": 33,
+     "copies": 50
+    },
+    {
+     "name": "Ceasefire",
+     "decks": 32,
+     "copies": 32
+    },
+    {
+     "name": "King Tiger Wanghu",
+     "decks": 31,
+     "copies": 52
+    },
+    {
+     "name": "Skilled Dark Magician",
+     "decks": 31,
+     "copies": 34
+    },
+    {
+     "name": "Jinzo",
+     "decks": 31,
+     "copies": 31
+    },
+    {
+     "name": "United We Stand",
+     "decks": 31,
+     "copies": 31
+    },
+    {
+     "name": "Secret Barrel",
+     "decks": 30,
+     "copies": 87
+    },
+    {
+     "name": "Threatening Roar",
+     "decks": 30,
+     "copies": 62
+    },
+    {
+     "name": "Compulsory Evacuation Device",
+     "decks": 30,
+     "copies": 44
+    },
+    {
+     "name": "Roulette Barrel",
+     "decks": 30,
+     "copies": 35
+    },
+    {
+     "name": "Shining Angel",
+     "decks": 28,
+     "copies": 73
+    },
+    {
+     "name": "Gravity Bind",
+     "decks": 28,
+     "copies": 48
+    },
+    {
+     "name": "Return from the Different Dimension",
+     "decks": 28,
+     "copies": 42
+    },
+    {
+     "name": "Magic Cylinder",
+     "decks": 28,
+     "copies": 28
+    },
+    {
+     "name": "Roaring Ocean Snake",
+     "decks": 27,
+     "copies": 29
+    },
+    {
+     "name": "Brain Control",
+     "decks": 26,
+     "copies": 36
+    },
+    {
+     "name": "Cyber-Stein",
+     "decks": 26,
+     "copies": 35
+    },
+    {
+     "name": "Ojama Trio",
+     "decks": 25,
+     "copies": 74
+    },
+    {
+     "name": "Level Limit - Area B",
+     "decks": 25,
+     "copies": 48
+    },
+    {
+     "name": "Jowgen the Spiritualist",
+     "decks": 25,
+     "copies": 42
+    },
+    {
+     "name": "Dark Scorpion - Cliff the Trap Remover",
+     "decks": 25,
+     "copies": 25
+    },
+    {
+     "name": "Just Desserts",
+     "decks": 23,
+     "copies": 67
+    },
+    {
+     "name": "Giant Rat",
+     "decks": 23,
+     "copies": 57
+    },
+    {
+     "name": "Karbonala Warrior",
+     "decks": 23,
+     "copies": 23
+    },
+    {
+     "name": "Last Will",
+     "decks": 22,
+     "copies": 57
+    },
+    {
+     "name": "Enemy Controller",
+     "decks": 22,
+     "copies": 26
+    },
+    {
+     "name": "Bottomless Trap Hole",
+     "decks": 21,
+     "copies": 28
+    },
+    {
+     "name": "Nightmare Wheel",
+     "decks": 19,
+     "copies": 55
+    },
+    {
+     "name": "Black Skull Dragon",
+     "decks": 19,
+     "copies": 21
+    },
+    {
+     "name": "Mystic Tomato",
+     "decks": 18,
+     "copies": 33
+    },
+    {
+     "name": "Mataza the Zapper",
+     "decks": 18,
+     "copies": 20
+    },
+    {
+     "name": "Super Roboyarou",
+     "decks": 17,
+     "copies": 21
+    },
+    {
+     "name": "Widespread Ruin",
+     "decks": 17,
+     "copies": 18
+    },
+    {
+     "name": "Des Wombat",
+     "decks": 16,
+     "copies": 35
+    },
+    {
+     "name": "Des Koala",
+     "decks": 16,
+     "copies": 34
+    },
+    {
+     "name": "Hysteric Fairy",
+     "decks": 16,
+     "copies": 17
+    },
+    {
+     "name": "Needle Ceiling",
+     "decks": 16,
+     "copies": 16
+    },
+    {
+     "name": "Time Seal",
+     "decks": 15,
+     "copies": 38
+    },
+    {
+     "name": "Thousand Dragon",
+     "decks": 14,
+     "copies": 36
+    },
+    {
+     "name": "Dark Magician of Chaos",
+     "decks": 14,
+     "copies": 14
+    },
+    {
+     "name": "Dark Paladin",
+     "decks": 13,
+     "copies": 27
+    },
+    {
+     "name": "Rescue Cat",
+     "decks": 12,
+     "copies": 34
+    },
+    {
+     "name": "Goblin Attack Force",
+     "decks": 12,
+     "copies": 19
+    },
+    {
+     "name": "Mask of Darkness",
+     "decks": 12,
+     "copies": 18
+    },
+    {
+     "name": "Desert Sunlight",
+     "decks": 12,
+     "copies": 15
+    },
+    {
+     "name": "Cannon Soldier",
+     "decks": 12,
+     "copies": 12
+    },
+    {
+     "name": "Milus Radiant",
+     "decks": 11,
+     "copies": 21
+    },
+    {
+     "name": "Gigantes",
+     "decks": 10,
+     "copies": 23
+    },
+    {
+     "name": "Barrel Behind the Door",
+     "decks": 10,
+     "copies": 17
+    },
+    {
+     "name": "Spell Canceller",
+     "decks": 10,
+     "copies": 17
+    },
+    {
+     "name": "Big Bang Shot",
+     "decks": 10,
+     "copies": 15
+    },
+    {
+     "name": "Gaia the Dragon Champion",
+     "decks": 10,
+     "copies": 12
+    },
+    {
+     "name": "Archfiend Soldier",
+     "decks": 10,
+     "copies": 10
+    },
+    {
+     "name": "Magic Drain",
+     "decks": 10,
+     "copies": 10
+    },
+    {
+     "name": "Musician King",
+     "decks": 10,
+     "copies": 10
+    },
+    {
+     "name": "St. Joan",
+     "decks": 10,
+     "copies": 10
+    },
+    {
+     "name": "Monster Gate",
+     "decks": 9,
+     "copies": 27
+    },
+    {
+     "name": "Reasoning",
+     "decks": 9,
+     "copies": 27
+    },
+    {
+     "name": "Manju of the Ten Thousand Hands",
+     "decks": 9,
+     "copies": 26
+    },
+    {
+     "name": "Giant Orc",
+     "decks": 9,
+     "copies": 16
+    },
+    {
+     "name": "Big Shield Gardna",
+     "decks": 9,
+     "copies": 13
+    },
+    {
+     "name": "Flame Swordsman",
+     "decks": 9,
+     "copies": 13
+    },
+    {
+     "name": "Humanoid Worm Drake",
+     "decks": 9,
+     "copies": 11
+    },
+    {
+     "name": "Seven Tools of the Bandit",
+     "decks": 9,
+     "copies": 10
+    },
+    {
+     "name": "Lightning Vortex",
+     "decks": 9,
+     "copies": 9
+    },
+    {
+     "name": "Relinquished",
+     "decks": 8,
+     "copies": 17
+    },
+    {
+     "name": "Apprentice Magician",
+     "decks": 8,
+     "copies": 14
+    },
+    {
+     "name": "Elemental HERO Flame Wingman",
+     "decks": 8,
+     "copies": 12
+    },
+    {
+     "name": "Monster Reincarnation",
+     "decks": 8,
+     "copies": 9
+    },
+    {
+     "name": "Black Illusion Ritual",
+     "decks": 8,
+     "copies": 8
+    },
+    {
+     "name": "Abyss Soldier",
+     "decks": 7,
+     "copies": 10
+    },
+    {
+     "name": "Token Thanksgiving",
+     "decks": 7,
+     "copies": 10
+    },
+    {
+     "name": "Labyrinth Tank",
+     "decks": 7,
+     "copies": 8
+    },
+    {
+     "name": "Chain Energy",
+     "decks": 6,
+     "copies": 18
+    },
+    {
+     "name": "Dimension Fusion",
+     "decks": 6,
+     "copies": 17
+    },
+    {
+     "name": "Drop Off",
+     "decks": 6,
+     "copies": 16
+    },
+    {
+     "name": "Sacred Crane",
+     "decks": 6,
+     "copies": 13
+    },
+    {
+     "name": "Fusilier Dragon, the Dual-Mode Beast",
+     "decks": 6,
+     "copies": 11
+    },
+    {
+     "name": "Super Robolady",
+     "decks": 6,
+     "copies": 10
+    },
+    {
+     "name": "Blowback Dragon",
+     "decks": 6,
+     "copies": 8
+    },
+    {
+     "name": "Mokey Mokey King",
+     "decks": 6,
+     "copies": 8
+    },
+    {
+     "name": "Bad Reaction to Simochi",
+     "decks": 6,
+     "copies": 7
+    },
+    {
+     "name": "Cyber Saurus",
+     "decks": 6,
+     "copies": 6
+    },
+    {
+     "name": "Elemental HERO Thunder Giant",
+     "decks": 6,
+     "copies": 6
+    },
+    {
+     "name": "Possessed Dark Soul",
+     "decks": 6,
+     "copies": 6
+    },
+    {
+     "name": "Swift Gaia the Fierce Knight",
+     "decks": 6,
+     "copies": 6
+    },
+    {
+     "name": "Toon Table of Contents",
+     "decks": 5,
+     "copies": 15
+    },
+    {
+     "name": "Wave-Motion Cannon",
+     "decks": 5,
+     "copies": 11
+    },
+    {
+     "name": "Jirai Gumo",
+     "decks": 5,
+     "copies": 10
+    },
+    {
+     "name": "Royal Oppression",
+     "decks": 5,
+     "copies": 10
+    },
+    {
+     "name": "Megamorph",
+     "decks": 5,
+     "copies": 9
+    },
+    {
+     "name": "Airknight Parshath",
+     "decks": 5,
+     "copies": 5
+    },
+    {
+     "name": "Byser Shock",
+     "decks": 5,
+     "copies": 5
+    },
+    {
+     "name": "Reckless Greed",
+     "decks": 5,
+     "copies": 5
+    },
+    {
+     "name": "Senju of the Thousand Hands",
+     "decks": 4,
+     "copies": 6
+    },
+    {
+     "name": "Empress Judge",
+     "decks": 4,
+     "copies": 5
+    },
+    {
+     "name": "Old Vindictive Magician",
+     "decks": 4,
+     "copies": 5
+    },
+    {
+     "name": "Acid Trap Hole",
+     "decks": 4,
+     "copies": 4
+    },
+    {
+     "name": "Legendary Jujitsu Master",
+     "decks": 4,
+     "copies": 4
+    },
+    {
+     "name": "Mass Driver",
+     "decks": 4,
+     "copies": 4
+    },
+    {
+     "name": "Strike Ninja",
+     "decks": 4,
+     "copies": 4
+    },
+    {
+     "name": "Toon Cannon Soldier",
+     "decks": 4,
+     "copies": 4
+    },
+    {
+     "name": "Warrior of Tradition",
+     "decks": 4,
+     "copies": 4
+    },
+    {
+     "name": "Limiter Removal",
+     "decks": 3,
+     "copies": 9
+    },
+    {
+     "name": "Deepsea Shark",
+     "decks": 3,
+     "copies": 6
+    },
+    {
+     "name": "Swords of Concealing Light",
+     "decks": 3,
+     "copies": 6
+    },
+    {
+     "name": "Bickuribox",
+     "decks": 3,
+     "copies": 5
+    },
+    {
+     "name": "Greenkappa",
+     "decks": 3,
+     "copies": 4
+    },
+    {
+     "name": "Dark Mimic LV1",
+     "decks": 3,
+     "copies": 3
+    },
+    {
+     "name": "Fusionist",
+     "decks": 3,
+     "copies": 3
+    },
+    {
+     "name": "Mage Power",
+     "decks": 3,
+     "copies": 3
+    },
+    {
+     "name": "Magical Merchant",
+     "decks": 3,
+     "copies": 3
+    },
+    {
+     "name": "Spear Dragon",
+     "decks": 3,
+     "copies": 3
+    },
+    {
+     "name": "Book of Taiyou",
+     "decks": 2,
+     "copies": 6
+    },
+    {
+     "name": "Emissary of the Afterlife",
+     "decks": 2,
+     "copies": 6
+    },
+    {
+     "name": "Horus the Black Flame Dragon LV6",
+     "decks": 2,
+     "copies": 6
+    },
+    {
+     "name": "Pyramid Turtle",
+     "decks": 2,
+     "copies": 6
+    },
+    {
+     "name": "Reload",
+     "decks": 2,
+     "copies": 6
+    },
+    {
+     "name": "Rush Recklessly",
+     "decks": 2,
+     "copies": 6
+    },
+    {
+     "name": "Spell Reproduction",
+     "decks": 2,
+     "copies": 6
+    },
+    {
+     "name": "The Shallow Grave",
+     "decks": 2,
+     "copies": 6
+    },
+    {
+     "name": "Wall of Revealing Light",
+     "decks": 2,
+     "copies": 6
+    },
+    {
+     "name": "A Feather of the Phoenix",
+     "decks": 2,
+     "copies": 5
+    },
+    {
+     "name": "Anti-Spell Fragrance",
+     "decks": 2,
+     "copies": 5
+    },
+    {
+     "name": "Iron Blacksmith Kotetsu",
+     "decks": 2,
+     "copies": 5
+    },
+    {
+     "name": "Messenger of Peace",
+     "decks": 2,
+     "copies": 5
+    },
+    {
+     "name": "Last Turn",
+     "decks": 2,
+     "copies": 4
+    },
+    {
+     "name": "Magic Jammer",
+     "decks": 2,
+     "copies": 4
+    },
+    {
+     "name": "Ryu Kokki",
+     "decks": 2,
+     "copies": 4
+    },
+    {
+     "name": "Skill Drain",
+     "decks": 2,
+     "copies": 4
+    },
+    {
+     "name": "Soul Exchange",
+     "decks": 2,
+     "copies": 4
+    },
+    {
+     "name": "The Big March of Animals",
+     "decks": 2,
+     "copies": 4
+    },
+    {
+     "name": "Granmarg the Rock Monarch",
+     "decks": 2,
+     "copies": 3
+    },
+    {
+     "name": "Cursed Seal of the Forbidden Spell",
+     "decks": 2,
+     "copies": 2
+    },
+    {
+     "name": "Des Lacooda",
+     "decks": 2,
+     "copies": 2
+    },
+    {
+     "name": "Horus the Black Flame Dragon LV8",
+     "decks": 2,
+     "copies": 2
+    },
+    {
+     "name": "Luster Dragon",
+     "decks": 2,
+     "copies": 2
+    },
+    {
+     "name": "Mirage Dragon",
+     "decks": 2,
+     "copies": 2
+    },
+    {
+     "name": "My Body as a Shield",
+     "decks": 2,
+     "copies": 2
+    },
+    {
+     "name": "Protector of the Sanctuary",
+     "decks": 2,
+     "copies": 2
+    },
+    {
+     "name": "Rabid Horseman",
+     "decks": 2,
+     "copies": 2
+    },
+    {
+     "name": "Sanwitch",
+     "decks": 2,
+     "copies": 2
+    },
+    {
+     "name": "Sasuke Samurai #4",
+     "decks": 2,
+     "copies": 2
+    },
+    {
+     "name": "Archfiend's Oath",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Armed Samurai - Ben Kei",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Axe of Despair",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Convulsion of Nature",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Dark Master - Zorc",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Dream Clown",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Mask of Brutality",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Mother Grizzly",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Royal Magical Library",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Self-Destruct Button",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Stumbling",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "The Agent of Creation - Venus",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Aqua Spirit",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Backup Soldier",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Banisher of the Light",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Blast with Chain",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Contract with the Dark Master",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Fake Trap",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Golem Sentry",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Lightning Blade",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Mystical Shine Ball",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Prohibition",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Share the Pain",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Slate Warrior",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Spell Absorption",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Thunder Nyan Nyan",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Toon Goblin Attack Force",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Autonomous Action Unit",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Bio-Mage",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Black Pendant",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Book of Life",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Catapult Turtle",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Chaos Command Magician",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "D.D. Trainer",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Dark Jeroid",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Deck Devastation Virus",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Exodia the Forbidden One",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Final Attack Orders",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Flower Wolf",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Gagagigo",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Gearfried the Iron Knight",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Hallowed Life Barrier",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Hand of Nephthys",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Kaiser Colosseum",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Kaminari Attack",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Kwagar Hercules",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Left Arm of the Forbidden One",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Left Leg of the Forbidden One",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Lekunga",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Mask of Restrict",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Metal Dragon",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Mind Crush",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Necrovalley",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Needle Burrower",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Neko Mane King",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Newdoria",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Penguin Soldier",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Pitch-Black Warwolf",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Poison of the Old Man",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Reversal Quiz",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Right Arm of the Forbidden One",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Right Leg of the Forbidden One",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Sacred Phoenix of Nephthys",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Serial Spell",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Serpentine Princess",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Shadowslayer",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Soul Release",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Spellbook Organization",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Stealth Bird",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Summoner of Illusions",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Susa Soldier",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "The Forgiving Maiden",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "The Little Swordsman of Aile",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Toon World",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Vampire Lord",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Winged Kuriboh",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "XZ-Tank Cannon",
+     "decks": 1,
+     "copies": 1
+    }
+   ],
+   "top_n": 100
+  },
+  "HAT": {
+   "decks_read": 400,
+   "ranking": [
+    {
+     "name": "Maxx \"C\"",
+     "decks": 381,
+     "copies": 1100
+    },
+    {
+     "name": "D.D. Crow",
+     "decks": 368,
+     "copies": 963
+    },
+    {
+     "name": "Number 101: Silent Honor ARK",
+     "decks": 345,
+     "copies": 438
+    },
+    {
+     "name": "Evilswarm Exciton Knight",
+     "decks": 333,
+     "copies": 368
+    },
+    {
+     "name": "Dark Hole",
+     "decks": 333,
+     "copies": 333
+    },
+    {
+     "name": "Abyss Dweller",
+     "decks": 328,
+     "copies": 340
+    },
+    {
+     "name": "Torrential Tribute",
+     "decks": 308,
+     "copies": 308
+    },
+    {
+     "name": "Solemn Warning",
+     "decks": 307,
+     "copies": 307
+    },
+    {
+     "name": "Soul Charge",
+     "decks": 299,
+     "copies": 694
+    },
+    {
+     "name": "Breakthrough Skill",
+     "decks": 299,
+     "copies": 677
+    },
+    {
+     "name": "Bottomless Trap Hole",
+     "decks": 296,
+     "copies": 296
+    },
+    {
+     "name": "Mystical Space Typhoon",
+     "decks": 285,
+     "copies": 805
+    },
+    {
+     "name": "Mind Control",
+     "decks": 281,
+     "copies": 281
+    },
+    {
+     "name": "Number 50: Blackship of Corn",
+     "decks": 262,
+     "copies": 262
+    },
+    {
+     "name": "Debunk",
+     "decks": 245,
+     "copies": 561
+    },
+    {
+     "name": "Black Horn of Heaven",
+     "decks": 241,
+     "copies": 502
+    },
+    {
+     "name": "Number 80: Rhapsody in Berserk",
+     "decks": 216,
+     "copies": 216
+    },
+    {
+     "name": "Number 103: Ragnazero",
+     "decks": 185,
+     "copies": 186
+    },
+    {
+     "name": "Traptrix Trap Hole Nightmare",
+     "decks": 166,
+     "copies": 236
+    },
+    {
+     "name": "Pot of Duality",
+     "decks": 157,
+     "copies": 446
+    },
+    {
+     "name": "Fire Hand",
+     "decks": 156,
+     "copies": 353
+    },
+    {
+     "name": "Ice Hand",
+     "decks": 156,
+     "copies": 347
+    },
+    {
+     "name": "Ghostrick Alucard",
+     "decks": 151,
+     "copies": 153
+    },
+    {
+     "name": "Compulsory Evacuation Device",
+     "decks": 147,
+     "copies": 147
+    },
+    {
+     "name": "Gaia Dragon, the Thunder Charger",
+     "decks": 144,
+     "copies": 149
+    },
+    {
+     "name": "Constellar Pleiades",
+     "decks": 142,
+     "copies": 225
+    },
+    {
+     "name": "Daigusto Emeral",
+     "decks": 140,
+     "copies": 140
+    },
+    {
+     "name": "Wiretap",
+     "decks": 139,
+     "copies": 276
+    },
+    {
+     "name": "Artifact Sanctum",
+     "decks": 138,
+     "copies": 414
+    },
+    {
+     "name": "Artifact Moralltach",
+     "decks": 138,
+     "copies": 398
+    },
+    {
+     "name": "Gagaga Cowboy",
+     "decks": 133,
+     "copies": 133
+    },
+    {
+     "name": "Fiendish Chain",
+     "decks": 131,
+     "copies": 349
+    },
+    {
+     "name": "Tiras, Keeper of Genesis",
+     "decks": 130,
+     "copies": 130
+    },
+    {
+     "name": "Artifact Ignition",
+     "decks": 129,
+     "copies": 384
+    },
+    {
+     "name": "Upstart Goblin",
+     "decks": 128,
+     "copies": 378
+    },
+    {
+     "name": "Call of the Haunted",
+     "decks": 126,
+     "copies": 286
+    },
+    {
+     "name": "Artifact Beagalltach",
+     "decks": 125,
+     "copies": 170
+    },
+    {
+     "name": "Traptrix Myrmeleo",
+     "decks": 123,
+     "copies": 341
+    },
+    {
+     "name": "Double Cyclone",
+     "decks": 123,
+     "copies": 275
+    },
+    {
+     "name": "Diamond Dire Wolf",
+     "decks": 120,
+     "copies": 135
+    },
+    {
+     "name": "Number 82: Heartlandraco",
+     "decks": 120,
+     "copies": 120
+    },
+    {
+     "name": "Mecha Phantom Beast Dracossack",
+     "decks": 119,
+     "copies": 137
+    },
+    {
+     "name": "Number 11: Big Eye",
+     "decks": 116,
+     "copies": 117
+    },
+    {
+     "name": "Number 61: Volcasaurus",
+     "decks": 116,
+     "copies": 117
+    },
+    {
+     "name": "Artifact Scythe",
+     "decks": 112,
+     "copies": 126
+    },
+    {
+     "name": "Forbidden Lance",
+     "decks": 109,
+     "copies": 244
+    },
+    {
+     "name": "Dimensional Fissure",
+     "decks": 109,
+     "copies": 109
+    },
+    {
+     "name": "Lavalval Chain",
+     "decks": 108,
+     "copies": 122
+    },
+    {
+     "name": "Wind-Up Zenmaines",
+     "decks": 103,
+     "copies": 104
+    },
+    {
+     "name": "Acid Trap Hole",
+     "decks": 99,
+     "copies": 108
+    },
+    {
+     "name": "Nobleman of Crossout",
+     "decks": 98,
+     "copies": 167
+    },
+    {
+     "name": "Artifact Durendal",
+     "decks": 95,
+     "copies": 95
+    },
+    {
+     "name": "Book of Moon",
+     "decks": 93,
+     "copies": 93
+    },
+    {
+     "name": "Soul of Silvermountain",
+     "decks": 92,
+     "copies": 92
+    },
+    {
+     "name": "Traptrix Dionaea",
+     "decks": 86,
+     "copies": 165
+    },
+    {
+     "name": "Leviair the Sea Dragon",
+     "decks": 80,
+     "copies": 105
+    },
+    {
+     "name": "Soul Drain",
+     "decks": 80,
+     "copies": 80
+    },
+    {
+     "name": "Ally of Justice Cycle Reader",
+     "decks": 77,
+     "copies": 86
+    },
+    {
+     "name": "Gear Gigant X",
+     "decks": 76,
+     "copies": 208
+    },
+    {
+     "name": "Constellar Ptolemy M7",
+     "decks": 76,
+     "copies": 78
+    },
+    {
+     "name": "Deep Dark Trap Hole",
+     "decks": 75,
+     "copies": 79
+    },
+    {
+     "name": "Macro Cosmos",
+     "decks": 75,
+     "copies": 75
+    },
+    {
+     "name": "Cairngorgon, Antiluminescent Knight",
+     "decks": 74,
+     "copies": 74
+    },
+    {
+     "name": "Number 30: Acid Golem of Destruction",
+     "decks": 72,
+     "copies": 72
+    },
+    {
+     "name": "Black Rose Dragon",
+     "decks": 70,
+     "copies": 70
+    },
+    {
+     "name": "Geargiarmor",
+     "decks": 69,
+     "copies": 207
+    },
+    {
+     "name": "Geargiarsenal",
+     "decks": 69,
+     "copies": 206
+    },
+    {
+     "name": "Geargiaccelerator",
+     "decks": 69,
+     "copies": 202
+    },
+    {
+     "name": "Geargiagear",
+     "decks": 68,
+     "copies": 204
+    },
+    {
+     "name": "Geargiano Mk-II",
+     "decks": 68,
+     "copies": 202
+    },
+    {
+     "name": "Geargiano",
+     "decks": 66,
+     "copies": 66
+    },
+    {
+     "name": "Mechquipped Angineer",
+     "decks": 65,
+     "copies": 65
+    },
+    {
+     "name": "Number 85: Crazy Box",
+     "decks": 65,
+     "copies": 65
+    },
+    {
+     "name": "Cardcar D",
+     "decks": 64,
+     "copies": 149
+    },
+    {
+     "name": "Foolish Burial",
+     "decks": 60,
+     "copies": 60
+    },
+    {
+     "name": "Needle Ceiling",
+     "decks": 59,
+     "copies": 86
+    },
+    {
+     "name": "Mind Crush",
+     "decks": 56,
+     "copies": 128
+    },
+    {
+     "name": "Vanity's Emptiness",
+     "decks": 55,
+     "copies": 126
+    },
+    {
+     "name": "Tidal, Dragon Ruler of Waterfalls",
+     "decks": 54,
+     "copies": 54
+    },
+    {
+     "name": "Instant Fusion",
+     "decks": 53,
+     "copies": 121
+    },
+    {
+     "name": "Flying \"C\"",
+     "decks": 53,
+     "copies": 106
+    },
+    {
+     "name": "Stardust Dragon",
+     "decks": 52,
+     "copies": 58
+    },
+    {
+     "name": "Leo, the Keeper of the Sacred Tree",
+     "decks": 51,
+     "copies": 52
+    },
+    {
+     "name": "Reinforcement of the Army",
+     "decks": 50,
+     "copies": 50
+    },
+    {
+     "name": "Trap Stun",
+     "decks": 49,
+     "copies": 113
+    },
+    {
+     "name": "Forbidden Chalice",
+     "decks": 49,
+     "copies": 112
+    },
+    {
+     "name": "Allure of Darkness",
+     "decks": 46,
+     "copies": 46
+    },
+    {
+     "name": "Fire Formation - Tenki",
+     "decks": 43,
+     "copies": 127
+    },
+    {
+     "name": "Void Trap Hole",
+     "decks": 43,
+     "copies": 44
+    },
+    {
+     "name": "Scrap Dragon",
+     "decks": 42,
+     "copies": 42
+    },
+    {
+     "name": "Blaster, Dragon Ruler of Infernos",
+     "decks": 41,
+     "copies": 41
+    },
+    {
+     "name": "DNA Surgery",
+     "decks": 39,
+     "copies": 85
+    },
+    {
+     "name": "Malevolent Catastrophe",
+     "decks": 39,
+     "copies": 54
+    },
+    {
+     "name": "Redox, Dragon Ruler of Boulders",
+     "decks": 39,
+     "copies": 39
+    },
+    {
+     "name": "Divine Dragon Knight Felgrand",
+     "decks": 36,
+     "copies": 52
+    },
+    {
+     "name": "Herald of Pure Light",
+     "decks": 36,
+     "copies": 36
+    },
+    {
+     "name": "Honest",
+     "decks": 36,
+     "copies": 36
+    },
+    {
+     "name": "Star Eater",
+     "decks": 34,
+     "copies": 35
+    },
+    {
+     "name": "Photon Thrasher",
+     "decks": 33,
+     "copies": 42
+    },
+    {
+     "name": "Downerd Magician",
+     "decks": 33,
+     "copies": 37
+    },
+    {
+     "name": "Bujintei Kagutsuchi",
+     "decks": 33,
+     "copies": 34
+    },
+    {
+     "name": "Stardust Spark Dragon",
+     "decks": 33,
+     "copies": 33
+    },
+    {
+     "name": "Abyss-sphere",
+     "decks": 32,
+     "copies": 96
+    },
+    {
+     "name": "Mermail Abyssteus",
+     "decks": 32,
+     "copies": 96
+    },
+    {
+     "name": "Mermail Abysspike",
+     "decks": 32,
+     "copies": 95
+    },
+    {
+     "name": "Mermail Abysslinde",
+     "decks": 32,
+     "copies": 93
+    },
+    {
+     "name": "Atlantean Marksman",
+     "decks": 32,
+     "copies": 86
+    },
+    {
+     "name": "Atlantean Heavy Infantry",
+     "decks": 32,
+     "copies": 44
+    },
+    {
+     "name": "Mermail Abyssmegalo",
+     "decks": 32,
+     "copies": 40
+    },
+    {
+     "name": "Atlantean Dragoons",
+     "decks": 32,
+     "copies": 32
+    },
+    {
+     "name": "Constellar Omega",
+     "decks": 32,
+     "copies": 32
+    },
+    {
+     "name": "Mermail Abyssgaios",
+     "decks": 32,
+     "copies": 32
+    },
+    {
+     "name": "Mermail Abyssgunde",
+     "decks": 32,
+     "copies": 32
+    },
+    {
+     "name": "Skull Meister",
+     "decks": 31,
+     "copies": 69
+    },
+    {
+     "name": "Dimensional Prison",
+     "decks": 31,
+     "copies": 56
+    },
+    {
+     "name": "Ghostrick Socuteboss",
+     "decks": 31,
+     "copies": 33
+    },
+    {
+     "name": "Daigusto Phoenix",
+     "decks": 31,
+     "copies": 32
+    },
+    {
+     "name": "Gachi Gachi Gantetsu",
+     "decks": 31,
+     "copies": 31
+    },
+    {
+     "name": "Spellbook Library of the Crescent",
+     "decks": 30,
+     "copies": 90
+    },
+    {
+     "name": "Spellbook Magician of Prophecy",
+     "decks": 30,
+     "copies": 90
+    },
+    {
+     "name": "Spellbook of Secrets",
+     "decks": 30,
+     "copies": 90
+    },
+    {
+     "name": "High Priestess of Prophecy",
+     "decks": 30,
+     "copies": 89
+    },
+    {
+     "name": "Genex Undine",
+     "decks": 30,
+     "copies": 79
+    },
+    {
+     "name": "Justice of Prophecy",
+     "decks": 30,
+     "copies": 74
+    },
+    {
+     "name": "Spellbook of Wisdom",
+     "decks": 30,
+     "copies": 68
+    },
+    {
+     "name": "Genex Controller",
+     "decks": 30,
+     "copies": 67
+    },
+    {
+     "name": "Spellbook of Eternity",
+     "decks": 30,
+     "copies": 61
+    },
+    {
+     "name": "Spellbook of the Master",
+     "decks": 30,
+     "copies": 60
+    },
+    {
+     "name": "The Grand Spellbook Tower",
+     "decks": 30,
+     "copies": 60
+    },
+    {
+     "name": "Spellbook of Power",
+     "decks": 30,
+     "copies": 46
+    },
+    {
+     "name": "Spellbook of Life",
+     "decks": 30,
+     "copies": 31
+    },
+    {
+     "name": "Hierophant of Prophecy",
+     "decks": 30,
+     "copies": 30
+    },
+    {
+     "name": "Mermail Abyssleed",
+     "decks": 30,
+     "copies": 30
+    },
+    {
+     "name": "Shining Elf",
+     "decks": 30,
+     "copies": 30
+    },
+    {
+     "name": "Spellbook of Fate",
+     "decks": 30,
+     "copies": 30
+    },
+    {
+     "name": "Rivalry of Warlords",
+     "decks": 29,
+     "copies": 55
+    },
+    {
+     "name": "Mirror Force",
+     "decks": 29,
+     "copies": 44
+    },
+    {
+     "name": "Skill Drain",
+     "decks": 28,
+     "copies": 81
+    },
+    {
+     "name": "Crimson Blader",
+     "decks": 28,
+     "copies": 28
+    },
+    {
+     "name": "Hieratic Sun Dragon Overlord of Heliopolis",
+     "decks": 27,
+     "copies": 27
+    },
+    {
+     "name": "Moulinglacia the Elemental Lord",
+     "decks": 27,
+     "copies": 27
+    },
+    {
+     "name": "Number 106: Giant Hand",
+     "decks": 27,
+     "copies": 27
+    },
+    {
+     "name": "Mavelus",
+     "decks": 26,
+     "copies": 26
+    },
+    {
+     "name": "Phoenix Wing Wind Blast",
+     "decks": 25,
+     "copies": 53
+    },
+    {
+     "name": "Brotherhood of the Fire Fist - Bear",
+     "decks": 25,
+     "copies": 37
+    },
+    {
+     "name": "Bahamut Shark",
+     "decks": 25,
+     "copies": 25
+    },
+    {
+     "name": "Mermail Abysstrite",
+     "decks": 25,
+     "copies": 25
+    },
+    {
+     "name": "Tempest, Dragon Ruler of Storms",
+     "decks": 25,
+     "copies": 25
+    },
+    {
+     "name": "Temperance of Prophecy",
+     "decks": 24,
+     "copies": 68
+    },
+    {
+     "name": "Brotherhood of the Fire Fist - Tiger King",
+     "decks": 24,
+     "copies": 30
+    },
+    {
+     "name": "Number 15: Gimmick Puppet Giant Grinder",
+     "decks": 24,
+     "copies": 25
+    },
+    {
+     "name": "Ojama Knight",
+     "decks": 24,
+     "copies": 25
+    },
+    {
+     "name": "Kagetokage",
+     "decks": 23,
+     "copies": 60
+    },
+    {
+     "name": "Card Trooper",
+     "decks": 23,
+     "copies": 45
+    },
+    {
+     "name": "Fusionist",
+     "decks": 23,
+     "copies": 23
+    },
+    {
+     "name": "Kamionwizard",
+     "decks": 23,
+     "copies": 23
+    },
+    {
+     "name": "Mermail Abyssturge",
+     "decks": 23,
+     "copies": 23
+    },
+    {
+     "name": "Effect Veiler",
+     "decks": 22,
+     "copies": 45
+    },
+    {
+     "name": "King of the Feral Imps",
+     "decks": 22,
+     "copies": 25
+    },
+    {
+     "name": "Bujin Yamato",
+     "decks": 21,
+     "copies": 63
+    },
+    {
+     "name": "Bujintei Susanowo",
+     "decks": 21,
+     "copies": 55
+    },
+    {
+     "name": "Bujingi Crane",
+     "decks": 21,
+     "copies": 54
+    },
+    {
+     "name": "Bujingi Hare",
+     "decks": 21,
+     "copies": 42
+    },
+    {
+     "name": "Bujingi Turtle",
+     "decks": 21,
+     "copies": 36
+    },
+    {
+     "name": "Bujin Hirume",
+     "decks": 21,
+     "copies": 25
+    },
+    {
+     "name": "Michael, the Arch-Lightsworn",
+     "decks": 21,
+     "copies": 22
+    },
+    {
+     "name": "Armored Kappa",
+     "decks": 21,
+     "copies": 21
+    },
+    {
+     "name": "Dragon Shrine",
+     "decks": 20,
+     "copies": 60
+    },
+    {
+     "name": "Cards of Consonance",
+     "decks": 20,
+     "copies": 48
+    },
+    {
+     "name": "Summoner Monk",
+     "decks": 20,
+     "copies": 36
+    },
+    {
+     "name": "Flamvell Guard",
+     "decks": 20,
+     "copies": 26
+    },
+    {
+     "name": "Debris Dragon",
+     "decks": 19,
+     "copies": 19
+    },
+    {
+     "name": "Number 66: Master Key Beetle",
+     "decks": 19,
+     "copies": 19
+    },
+    {
+     "name": "Imperial Iron Wall",
+     "decks": 18,
+     "copies": 44
+    },
+    {
+     "name": "Gold Sarcophagus",
+     "decks": 18,
+     "copies": 18
+    },
+    {
+     "name": "Trade-In",
+     "decks": 17,
+     "copies": 50
+    },
+    {
+     "name": "Light-Imprisoning Mirror",
+     "decks": 17,
+     "copies": 35
+    },
+    {
+     "name": "Tin Goldfish",
+     "decks": 17,
+     "copies": 25
+    },
+    {
+     "name": "Twister",
+     "decks": 17,
+     "copies": 19
+    },
+    {
+     "name": "Thunder King Rai-Oh",
+     "decks": 17,
+     "copies": 17
+    },
+    {
+     "name": "Wind-Up Arsenal Zenmaioh",
+     "decks": 17,
+     "copies": 17
+    },
+    {
+     "name": "Blue-Eyes White Dragon",
+     "decks": 16,
+     "copies": 46
+    },
+    {
+     "name": "The White Stone of Legend",
+     "decks": 16,
+     "copies": 46
+    },
+    {
+     "name": "Azure-Eyes Silver Dragon",
+     "decks": 16,
+     "copies": 16
+    },
+    {
+     "name": "Black Luster Soldier - Envoy of the Beginning",
+     "decks": 16,
+     "copies": 16
+    },
+    {
+     "name": "Bujintei Tsukuyomi",
+     "decks": 16,
+     "copies": 16
+    },
+    {
+     "name": "Colossal Fighter",
+     "decks": 16,
+     "copies": 16
+    },
+    {
+     "name": "M-X-Saber Invoker",
+     "decks": 16,
+     "copies": 16
+    },
+    {
+     "name": "World of Prophecy",
+     "decks": 16,
+     "copies": 16
+    },
+    {
+     "name": "Solar Recharge",
+     "decks": 15,
+     "copies": 45
+    },
+    {
+     "name": "Lumina, Lightsworn Summoner",
+     "decks": 15,
+     "copies": 43
+    },
+    {
+     "name": "Needlebug Nest",
+     "decks": 15,
+     "copies": 41
+    },
+    {
+     "name": "Bujincarnation",
+     "decks": 15,
+     "copies": 37
+    },
+    {
+     "name": "Raiden, Hand of the Lightsworn",
+     "decks": 15,
+     "copies": 36
+    },
+    {
+     "name": "Xyz Universe",
+     "decks": 15,
+     "copies": 29
+    },
+    {
+     "name": "Lyla, Lightsworn Sorceress",
+     "decks": 15,
+     "copies": 26
+    },
+    {
+     "name": "Bujin Mikazuchi",
+     "decks": 15,
+     "copies": 25
+    },
+    {
+     "name": "Bujingi Quilin",
+     "decks": 15,
+     "copies": 15
+    },
+    {
+     "name": "Charge of the Light Brigade",
+     "decks": 15,
+     "copies": 15
+    },
+    {
+     "name": "Mythic Tree Dragon",
+     "decks": 15,
+     "copies": 15
+    },
+    {
+     "name": "Mythic Water Dragon",
+     "decks": 15,
+     "copies": 15
+    },
+    {
+     "name": "Infernity Archfiend",
+     "decks": 14,
+     "copies": 42
+    },
+    {
+     "name": "Infernity Break",
+     "decks": 14,
+     "copies": 42
+    },
+    {
+     "name": "Madolche Anjelly",
+     "decks": 14,
+     "copies": 42
+    },
+    {
+     "name": "Madolche Magileine",
+     "decks": 14,
+     "copies": 42
+    },
+    {
+     "name": "Stygian Street Patrol",
+     "decks": 14,
+     "copies": 42
+    },
+    {
+     "name": "Eclipse Wyvern",
+     "decks": 14,
+     "copies": 32
+    },
+    {
+     "name": "Wulf, Lightsworn Beast",
+     "decks": 14,
+     "copies": 31
+    },
+    {
+     "name": "Madolche Hootcake",
+     "decks": 14,
+     "copies": 29
+    },
+    {
+     "name": "Infernity Necromancer",
+     "decks": 14,
+     "copies": 28
+    },
+    {
+     "name": "Madolche Queen Tiaramisu",
+     "decks": 14,
+     "copies": 28
+    },
+    {
+     "name": "Dark Grepher",
+     "decks": 14,
+     "copies": 27
+    },
+    {
+     "name": "Lightray Diabolos",
+     "decks": 14,
+     "copies": 26
+    },
+    {
+     "name": "Madolche Messengelato",
+     "decks": 14,
+     "copies": 18
+    },
+    {
+     "name": "Madolche Chateau",
+     "decks": 14,
+     "copies": 16
+    },
+    {
+     "name": "Armageddon Knight",
+     "decks": 14,
+     "copies": 15
+    },
+    {
+     "name": "Dynatherium",
+     "decks": 14,
+     "copies": 15
+    },
+    {
+     "name": "Archfiend Heiress",
+     "decks": 14,
+     "copies": 14
+    },
+    {
+     "name": "Archfiend Palabyrinth",
+     "decks": 14,
+     "copies": 14
+    },
+    {
+     "name": "Infernity Barrier",
+     "decks": 14,
+     "copies": 14
+    },
+    {
+     "name": "Infernity Launcher",
+     "decks": 14,
+     "copies": 14
+    },
+    {
+     "name": "Madolche Mewfeuille",
+     "decks": 14,
+     "copies": 14
+    },
+    {
+     "name": "Madolche Ticket",
+     "decks": 14,
+     "copies": 14
+    },
+    {
+     "name": "Minerva, Lightsworn Maiden",
+     "decks": 14,
+     "copies": 14
+    },
+    {
+     "name": "Thunder Sea Horse",
+     "decks": 13,
+     "copies": 39
+    },
+    {
+     "name": "Mahunder",
+     "decks": 13,
+     "copies": 26
+    },
+    {
+     "name": "Wattcobra",
+     "decks": 13,
+     "copies": 26
+    },
+    {
+     "name": "Wattgiraffe",
+     "decks": 13,
+     "copies": 26
+    },
+    {
+     "name": "Burial from a Different Dimension",
+     "decks": 13,
+     "copies": 13
+    },
+    {
+     "name": "Coach Soldier Wolfbark",
+     "decks": 13,
+     "copies": 13
+    },
+    {
+     "name": "Judgment Dragon",
+     "decks": 12,
+     "copies": 33
+    },
+    {
+     "name": "Alsei, the Sylvan High Protector",
+     "decks": 12,
+     "copies": 15
+    },
+    {
+     "name": "Ehren, Lightsworn Monk",
+     "decks": 12,
+     "copies": 12
+    },
+    {
+     "name": "Garoth, Lightsworn Warrior",
+     "decks": 12,
+     "copies": 12
+    },
+    {
+     "name": "Gungnir, Dragon of the Ice Barrier",
+     "decks": 12,
+     "copies": 12
+    },
+    {
+     "name": "Aratama",
+     "decks": 11,
+     "copies": 33
+    },
+    {
+     "name": "Nikitama",
+     "decks": 11,
+     "copies": 32
+    },
+    {
+     "name": "Evilswarm Mandragora",
+     "decks": 11,
+     "copies": 27
+    },
+    {
+     "name": "Evilswarm Ophion",
+     "decks": 11,
+     "copies": 27
+    },
+    {
+     "name": "Kycoo the Ghost Destroyer",
+     "decks": 11,
+     "copies": 12
+    },
+    {
+     "name": "Brotherhood of the Fire Fist - Gorilla",
+     "decks": 11,
+     "copies": 11
+    },
+    {
+     "name": "Bujingi Sinyou",
+     "decks": 11,
+     "copies": 11
+    },
+    {
+     "name": "Temtempo the Percussion Djinn",
+     "decks": 11,
+     "copies": 11
+    },
+    {
+     "name": "Miracle Fertilizer",
+     "decks": 10,
+     "copies": 30
+    },
+    {
+     "name": "Sylvan Charity",
+     "decks": 10,
+     "copies": 30
+    },
+    {
+     "name": "Sylvan Hermitree",
+     "decks": 10,
+     "copies": 30
+    },
+    {
+     "name": "Sylvan Sagequoia",
+     "decks": 10,
+     "copies": 30
+    },
+    {
+     "name": "Sylvan Komushroomo",
+     "decks": 10,
+     "copies": 29
+    },
+    {
+     "name": "Sylvan Marshalleaf",
+     "decks": 10,
+     "copies": 28
+    },
+    {
+     "name": "Machina Fortress",
+     "decks": 10,
+     "copies": 24
+    },
+    {
+     "name": "Mount Sylvania",
+     "decks": 10,
+     "copies": 24
+    },
+    {
+     "name": "Divine Wrath",
+     "decks": 10,
+     "copies": 20
+    },
+    {
+     "name": "Lonefire Blossom",
+     "decks": 10,
+     "copies": 20
+    },
+    {
+     "name": "Sylvan Princessprout",
+     "decks": 10,
+     "copies": 20
+    },
+    {
+     "name": "Orea, the Sylvan High Arbiter",
+     "decks": 10,
+     "copies": 17
+    },
+    {
+     "name": "Revival Golem",
+     "decks": 10,
+     "copies": 14
+    },
+    {
+     "name": "Machina Gearframe",
+     "decks": 10,
+     "copies": 12
+    },
+    {
+     "name": "Number 47: Nightmare Shark",
+     "decks": 10,
+     "copies": 10
+    },
+    {
+     "name": "Shark Fortress",
+     "decks": 10,
+     "copies": 10
+    },
+    {
+     "name": "Spore",
+     "decks": 10,
+     "copies": 10
+    },
+    {
+     "name": "Evilswarm Castor",
+     "decks": 9,
+     "copies": 27
+    },
+    {
+     "name": "Evilswarm Heliotrope",
+     "decks": 9,
+     "copies": 27
+    },
+    {
+     "name": "Infestation Pandemic",
+     "decks": 9,
+     "copies": 25
+    },
+    {
+     "name": "Royal Decree",
+     "decks": 9,
+     "copies": 20
+    },
+    {
+     "name": "Rainbow Kuriboh",
+     "decks": 9,
+     "copies": 18
+    },
+    {
+     "name": "Full House",
+     "decks": 9,
+     "copies": 17
+    },
+    {
+     "name": "Yaksha",
+     "decks": 9,
+     "copies": 10
+    },
+    {
+     "name": "Blackwing - Zephyros the Elite",
+     "decks": 9,
+     "copies": 9
+    },
+    {
+     "name": "Evilswarm Bahamut",
+     "decks": 9,
+     "copies": 9
+    },
+    {
+     "name": "Gem-Knight Pearl",
+     "decks": 9,
+     "copies": 9
+    },
+    {
+     "name": "Goblindbergh",
+     "decks": 9,
+     "copies": 9
+    },
+    {
+     "name": "Gorz the Emissary of Darkness",
+     "decks": 9,
+     "copies": 9
+    },
+    {
+     "name": "Mermail Abyssocea",
+     "decks": 9,
+     "copies": 9
+    },
+    {
+     "name": "Number 74: Master of Blades",
+     "decks": 9,
+     "copies": 9
+    },
+    {
+     "name": "Rescue Rabbit",
+     "decks": 9,
+     "copies": 9
+    },
+    {
+     "name": "Starliege Paladynamo",
+     "decks": 9,
+     "copies": 9
+    },
+    {
+     "name": "Sylvan Peaskeeper",
+     "decks": 9,
+     "copies": 9
+    },
+    {
+     "name": "The Transmigration Prophecy",
+     "decks": 9,
+     "copies": 9
+    },
+    {
+     "name": "Tri-Edge Levia",
+     "decks": 9,
+     "copies": 9
+    },
+    {
+     "name": "Diamond Core of Koa'ki Meiru",
+     "decks": 8,
+     "copies": 24
+    },
+    {
+     "name": "Evilswarm Kerykeion",
+     "decks": 8,
+     "copies": 24
+    },
+    {
+     "name": "Koa'ki Meiru Urnight",
+     "decks": 8,
+     "copies": 24
+    },
+    {
+     "name": "Reckoned Power",
+     "decks": 8,
+     "copies": 24
+    },
+    {
+     "name": "Iron Core of Koa'ki Meiru",
+     "decks": 8,
+     "copies": 23
+    },
+    {
+     "name": "Evilswarm Thunderbird",
+     "decks": 8,
+     "copies": 22
+    },
+    {
+     "name": "Kuribandit",
+     "decks": 8,
+     "copies": 18
+    },
+    {
+     "name": "Koa'ki Meiru Crusader",
+     "decks": 8,
+     "copies": 17
+    },
+    {
+     "name": "Silver's Cry",
+     "decks": 8,
+     "copies": 11
+    },
+    {
+     "name": "Fire Formation - Tensu",
+     "decks": 8,
+     "copies": 10
+    },
+    {
+     "name": "Terraforming",
+     "decks": 8,
+     "copies": 9
+    },
+    {
+     "name": "Infestation Infection",
+     "decks": 8,
+     "copies": 8
+    },
+    {
+     "name": "Koa'ki Meiru Ice",
+     "decks": 8,
+     "copies": 8
+    },
+    {
+     "name": "Night Beam",
+     "decks": 7,
+     "copies": 20
+    },
+    {
+     "name": "Cyber Dragon",
+     "decks": 7,
+     "copies": 19
+    },
+    {
+     "name": "Chaos Trap Hole",
+     "decks": 7,
+     "copies": 14
+    },
+    {
+     "name": "Chimeratech Fortress Dragon",
+     "decks": 7,
+     "copies": 14
+    },
+    {
+     "name": "Salvage",
+     "decks": 7,
+     "copies": 14
+    },
+    {
+     "name": "Super Solar Nutrient",
+     "decks": 7,
+     "copies": 12
+    },
+    {
+     "name": "Memory of an Adversary",
+     "decks": 7,
+     "copies": 11
+    },
+    {
+     "name": "Koa'ki Meiru Drago",
+     "decks": 7,
+     "copies": 9
+    },
+    {
+     "name": "Dark Armed Dragon",
+     "decks": 7,
+     "copies": 7
+    },
+    {
+     "name": "Dragunity Corsesca",
+     "decks": 7,
+     "copies": 7
+    },
+    {
+     "name": "Gauntlet Launcher",
+     "decks": 7,
+     "copies": 7
+    },
+    {
+     "name": "Mokey Mokey King",
+     "decks": 7,
+     "copies": 7
+    },
+    {
+     "name": "Constellar Algiedi",
+     "decks": 6,
+     "copies": 18
+    },
+    {
+     "name": "Constellar Kaus",
+     "decks": 6,
+     "copies": 18
+    },
+    {
+     "name": "Constellar Pollux",
+     "decks": 6,
+     "copies": 18
+    },
+    {
+     "name": "Constellar Sombre",
+     "decks": 6,
+     "copies": 18
+    },
+    {
+     "name": "Onslaught of the Fire Kings",
+     "decks": 6,
+     "copies": 18
+    },
+    {
+     "name": "Green Gadget",
+     "decks": 6,
+     "copies": 16
+    },
+    {
+     "name": "Necrovalley",
+     "decks": 6,
+     "copies": 15
+    },
+    {
+     "name": "Red Gadget",
+     "decks": 6,
+     "copies": 14
+    },
+    {
+     "name": "Yellow Gadget",
+     "decks": 6,
+     "copies": 14
+    },
+    {
+     "name": "Karakuri Shogun mdl 00 \"Burei\"",
+     "decks": 6,
+     "copies": 12
+    },
+    {
+     "name": "Magic Deflector",
+     "decks": 6,
+     "copies": 12
+    },
+    {
+     "name": "Aqua Spirit",
+     "decks": 6,
+     "copies": 11
+    },
+    {
+     "name": "Fire King High Avatar Garunix",
+     "decks": 6,
+     "copies": 11
+    },
+    {
+     "name": "Karakuri Watchdog mdl 313 \"Saizan\"",
+     "decks": 6,
+     "copies": 11
+    },
+    {
+     "name": "Fire King Avatar Yaksha",
+     "decks": 6,
+     "copies": 10
+    },
+    {
+     "name": "Chain Whirlwind",
+     "decks": 6,
+     "copies": 8
+    },
+    {
+     "name": "Karakuri Steel Shogun mdl 00X \"Bureido\"",
+     "decks": 6,
+     "copies": 8
+    },
+    {
+     "name": "Karakuri Strategist mdl 248 \"Nishipachi\"",
+     "decks": 6,
+     "copies": 8
+    },
+    {
+     "name": "Beelze of the Diabolic Dragons",
+     "decks": 6,
+     "copies": 7
+    },
+    {
+     "name": "Ancient Gear Box",
+     "decks": 6,
+     "copies": 6
+    },
+    {
+     "name": "Artifact Caduceus",
+     "decks": 6,
+     "copies": 6
+    },
+    {
+     "name": "Genex Ally Birdman",
+     "decks": 6,
+     "copies": 6
+    },
+    {
+     "name": "Heroic Champion - Excalibur",
+     "decks": 6,
+     "copies": 6
+    },
+    {
+     "name": "Number 12: Crimson Shadow Armor Ninja",
+     "decks": 6,
+     "copies": 6
+    },
+    {
+     "name": "Sylvan Cherubsprout",
+     "decks": 6,
+     "copies": 6
+    },
+    {
+     "name": "Gravekeeper's Commandant",
+     "decks": 5,
+     "copies": 15
+    },
+    {
+     "name": "Hieratic Dragon of Su",
+     "decks": 5,
+     "copies": 15
+    },
+    {
+     "name": "Hieratic Dragon of Tefnuit",
+     "decks": 5,
+     "copies": 15
+    },
+    {
+     "name": "Gravekeeper's Recruiter",
+     "decks": 5,
+     "copies": 14
+    },
+    {
+     "name": "Gravekeeper's Spy",
+     "decks": 5,
+     "copies": 14
+    },
+    {
+     "name": "Mistake",
+     "decks": 5,
+     "copies": 13
+    },
+    {
+     "name": "Hieratic Seal of Convocation",
+     "decks": 5,
+     "copies": 10
+    },
+    {
+     "name": "Labradorite Dragon",
+     "decks": 5,
+     "copies": 10
+    },
+    {
+     "name": "Lightning Chidori",
+     "decks": 5,
+     "copies": 7
+    },
+    {
+     "name": "Armades, Keeper of Boundaries",
+     "decks": 5,
+     "copies": 6
+    },
+    {
+     "name": "Common Charity",
+     "decks": 5,
+     "copies": 6
+    },
+    {
+     "name": "Brotherhood of the Fire Fist - Cardinal",
+     "decks": 5,
+     "copies": 5
+    },
+    {
+     "name": "CXyz Simon the Great Moral Leader",
+     "decks": 5,
+     "copies": 5
+    },
+    {
+     "name": "Maestroke the Symphony Djinn",
+     "decks": 5,
+     "copies": 5
+    },
+    {
+     "name": "Photon Strike Bounzer",
+     "decks": 5,
+     "copies": 5
+    },
+    {
+     "name": "E - Emergency Call",
+     "decks": 4,
+     "copies": 12
+    },
+    {
+     "name": "Hieratic Dragon of Eset",
+     "decks": 4,
+     "copies": 12
+    },
+    {
+     "name": "Tour Guide From the Underworld",
+     "decks": 4,
+     "copies": 12
+    },
+    {
+     "name": "Miracle Fusion",
+     "decks": 4,
+     "copies": 11
+    },
+    {
+     "name": "Elemental HERO Bubbleman",
+     "decks": 4,
+     "copies": 10
+    },
+    {
+     "name": "Elemental HERO Absolute Zero",
+     "decks": 4,
+     "copies": 9
+    },
+    {
+     "name": "Vortex Trooper",
+     "decks": 4,
+     "copies": 9
+    },
+    {
+     "name": "Dust Tornado",
+     "decks": 4,
+     "copies": 8
+    },
+    {
+     "name": "Hieratic Dragon King of Atum",
+     "decks": 4,
+     "copies": 8
+    },
+    {
+     "name": "Reasoning",
+     "decks": 4,
+     "copies": 8
+    },
+    {
+     "name": "Rose Archer",
+     "decks": 4,
+     "copies": 8
+    },
+    {
+     "name": "Tragoedia",
+     "decks": 4,
+     "copies": 8
+    },
+    {
+     "name": "My Body as a Shield",
+     "decks": 4,
+     "copies": 7
+    },
+    {
+     "name": "Number C101: Silent Honor DARK",
+     "decks": 4,
+     "copies": 7
+    },
+    {
+     "name": "Super Polymerization",
+     "decks": 4,
+     "copies": 7
+    },
+    {
+     "name": "Cursed Seal of the Forbidden Spell",
+     "decks": 4,
+     "copies": 6
+    },
+    {
+     "name": "Elemental HERO The Shining",
+     "decks": 4,
+     "copies": 6
+    },
+    {
+     "name": "Hieratic Dragon of Nebthet",
+     "decks": 4,
+     "copies": 6
+    },
+    {
+     "name": "Jowgen the Spiritualist",
+     "decks": 4,
+     "copies": 6
+    },
+    {
+     "name": "A Wingbeat of Giant Dragon",
+     "decks": 4,
+     "copies": 5
+    },
+    {
+     "name": "Gravekeeper's Shaman",
+     "decks": 4,
+     "copies": 5
+    },
+    {
+     "name": "Yamato-no-Kami",
+     "decks": 4,
+     "copies": 5
+    },
+    {
+     "name": "Coach King Giantrainer",
+     "decks": 4,
+     "copies": 4
+    },
+    {
+     "name": "Elemental HERO Escuridao",
+     "decks": 4,
+     "copies": 4
+    },
+    {
+     "name": "Elemental HERO Gaia",
+     "decks": 4,
+     "copies": 4
+    },
+    {
+     "name": "Elemental HERO Nova Master",
+     "decks": 4,
+     "copies": 4
+    },
+    {
+     "name": "Ice Beast Zerofyne",
+     "decks": 4,
+     "copies": 4
+    },
+    {
+     "name": "Slacker Magician",
+     "decks": 4,
+     "copies": 4
+    },
+    {
+     "name": "Blaze Fenix, the Burning Bombardment Bird",
+     "decks": 3,
+     "copies": 9
+    },
+    {
+     "name": "Chain Material",
+     "decks": 3,
+     "copies": 9
+    },
+    {
+     "name": "Cyber Dragon Core",
+     "decks": 3,
+     "copies": 9
+    },
+    {
+     "name": "Cyber Dragon Drei",
+     "decks": 3,
+     "copies": 9
+    },
+    {
+     "name": "Cyber Network",
+     "decks": 3,
+     "copies": 9
+    },
+    {
+     "name": "Rock Bombardment",
+     "decks": 3,
+     "copies": 9
+    },
+    {
+     "name": "Deck Devastation Virus",
+     "decks": 3,
+     "copies": 8
+    },
+    {
+     "name": "Legacy of Yata-Garasu",
+     "decks": 3,
+     "copies": 8
+    },
+    {
+     "name": "Tackle Crusader",
+     "decks": 3,
+     "copies": 8
+    },
+    {
+     "name": "Wind-Up Rabbit",
+     "decks": 3,
+     "copies": 8
+    },
+    {
+     "name": "Black Dragon Collapserpent",
+     "decks": 3,
+     "copies": 7
+    },
+    {
+     "name": "Threatening Roar",
+     "decks": 3,
+     "copies": 7
+    },
+    {
+     "name": "Double Summon",
+     "decks": 3,
+     "copies": 6
+    },
+    {
+     "name": "Fallen Angel of Roses",
+     "decks": 3,
+     "copies": 6
+    },
+    {
+     "name": "Fusion Gate",
+     "decks": 3,
+     "copies": 6
+    },
+    {
+     "name": "Kaiser Colosseum",
+     "decks": 3,
+     "copies": 6
+    },
+    {
+     "name": "Chain Summoning",
+     "decks": 3,
+     "copies": 5
+    },
+    {
+     "name": "Fire Formation - Gyokkou",
+     "decks": 3,
+     "copies": 5
+    },
+    {
+     "name": "Gozen Match",
+     "decks": 3,
+     "copies": 5
+    },
+    {
+     "name": "Rank-Up-Magic Quick Chaos",
+     "decks": 3,
+     "copies": 5
+    },
+    {
+     "name": "Star Drawing",
+     "decks": 3,
+     "copies": 5
+    },
+    {
+     "name": "Sylvan Flowerknight",
+     "decks": 3,
+     "copies": 5
+    },
+    {
+     "name": "System Down",
+     "decks": 3,
+     "copies": 5
+    },
+    {
+     "name": "White Dragon Wyverburster",
+     "decks": 3,
+     "copies": 4
+    },
+    {
+     "name": "Barbaroid, the Ultimate Battle Machine",
+     "decks": 3,
+     "copies": 3
+    },
+    {
+     "name": "Cyber Dragon Nova",
+     "decks": 3,
+     "copies": 3
+    },
+    {
+     "name": "Cyber Eltanin",
+     "decks": 3,
+     "copies": 3
+    },
+    {
+     "name": "Cyber Repair Plant",
+     "decks": 3,
+     "copies": 3
+    },
+    {
+     "name": "Dragon Ice",
+     "decks": 3,
+     "copies": 3
+    },
+    {
+     "name": "Eradicator Epidemic Virus",
+     "decks": 3,
+     "copies": 3
+    },
+    {
+     "name": "Horn of the Phantom Beast",
+     "decks": 3,
+     "copies": 3
+    },
+    {
+     "name": "Ignition Beast Volcannon",
+     "decks": 3,
+     "copies": 3
+    },
+    {
+     "name": "Number C80: Requiem in Berserk",
+     "decks": 3,
+     "copies": 3
+    },
+    {
+     "name": "Planet Pathfinder",
+     "decks": 3,
+     "copies": 3
+    },
+    {
+     "name": "Pot of Dichotomy",
+     "decks": 3,
+     "copies": 3
+    },
+    {
+     "name": "Sacred Sword of Seven Stars",
+     "decks": 3,
+     "copies": 3
+    },
+    {
+     "name": "Transmodify",
+     "decks": 3,
+     "copies": 3
+    },
+    {
+     "name": "Zombie World",
+     "decks": 3,
+     "copies": 3
+    },
+    {
+     "name": "Compulsory Escape Device",
+     "decks": 2,
+     "copies": 6
+    },
+    {
+     "name": "Elemental HERO Neos Alius",
+     "decks": 2,
+     "copies": 6
+    },
+    {
+     "name": "Evo-Singularity",
+     "decks": 2,
+     "copies": 6
+    },
+    {
+     "name": "Harpie Channeler",
+     "decks": 2,
+     "copies": 6
+    },
+    {
+     "name": "Harpie Queen",
+     "decks": 2,
+     "copies": 6
+    },
+    {
+     "name": "Heraldic Beast Aberconway",
+     "decks": 2,
+     "copies": 6
+    },
+    {
+     "name": "Hysteric Party",
+     "decks": 2,
+     "copies": 6
+    },
+    {
+     "name": "Hysteric Sign",
+     "decks": 2,
+     "copies": 6
+    },
+    {
+     "name": "Into the Void",
+     "decks": 2,
+     "copies": 6
+    },
+    {
+     "name": "Mask Change",
+     "decks": 2,
+     "copies": 6
+    },
+    {
+     "name": "Ninja Grandmaster Hanzo",
+     "decks": 2,
+     "copies": 6
+    },
+    {
+     "name": "Noble Knight Borz",
+     "decks": 2,
+     "copies": 6
+    },
+    {
+     "name": "Noble Knight Medraut",
+     "decks": 2,
+     "copies": 6
+    },
+    {
+     "name": "Nobleman of Extermination",
+     "decks": 2,
+     "copies": 6
+    },
+    {
+     "name": "Sacred Noble Knight of King Artorigus",
+     "decks": 2,
+     "copies": 6
+    },
+    {
+     "name": "Thunder Dragon",
+     "decks": 2,
+     "copies": 6
+    },
+    {
+     "name": "Archlord Kristya",
+     "decks": 2,
+     "copies": 5
+    },
+    {
+     "name": "Artorigus, King of the Noble Knights",
+     "decks": 2,
+     "copies": 5
+    },
+    {
+     "name": "Black Garden",
+     "decks": 2,
+     "copies": 5
+    },
+    {
+     "name": "Evoltile Lagosucho",
+     "decks": 2,
+     "copies": 5
+    },
+    {
+     "name": "Fossil Dig",
+     "decks": 2,
+     "copies": 5
+    },
+    {
+     "name": "Gemini Spark",
+     "decks": 2,
+     "copies": 5
+    },
+    {
+     "name": "Herald of Orange Light",
+     "decks": 2,
+     "copies": 5
+    },
+    {
+     "name": "Ninjitsu Art of Transformation",
+     "decks": 2,
+     "copies": 5
+    },
+    {
+     "name": "Xyz Encore",
+     "decks": 2,
+     "copies": 5
+    },
+    {
+     "name": "Advanced Heraldry Art",
+     "decks": 2,
+     "copies": 4
+    },
+    {
+     "name": "Creature Swap",
+     "decks": 2,
+     "copies": 4
+    },
+    {
+     "name": "Eccentric Boy",
+     "decks": 2,
+     "copies": 4
+    },
+    {
+     "name": "Electric Virus",
+     "decks": 2,
+     "copies": 4
+    },
+    {
+     "name": "Elemental HERO Ocean",
+     "decks": 2,
+     "copies": 4
+    },
+    {
+     "name": "Evilswarm Salamandra",
+     "decks": 2,
+     "copies": 4
+    },
+    {
+     "name": "Harpies' Hunting Ground",
+     "decks": 2,
+     "copies": 4
+    },
+    {
+     "name": "Heraldic Beast Leo",
+     "decks": 2,
+     "copies": 4
+    },
+    {
+     "name": "Masked HERO Acid",
+     "decks": 2,
+     "copies": 4
+    },
+    {
+     "name": "Mathematician",
+     "decks": 2,
+     "copies": 4
+    },
+    {
+     "name": "Mischief of the Yokai",
+     "decks": 2,
+     "copies": 4
+    },
+    {
+     "name": "Noble Arms - Arfeudutyr",
+     "decks": 2,
+     "copies": 4
+    },
+    {
+     "name": "Noble Arms - Excaliburn",
+     "decks": 2,
+     "copies": 4
+    },
+    {
+     "name": "Preparation of Rites",
+     "decks": 2,
+     "copies": 4
+    },
+    {
+     "name": "Upstart Golden Ninja",
+     "decks": 2,
+     "copies": 4
+    },
+    {
+     "name": "Angel of Zera",
+     "decks": 2,
+     "copies": 3
+    },
+    {
+     "name": "Cyber Harpie Lady",
+     "decks": 2,
+     "copies": 3
+    },
+    {
+     "name": "Evolzar Dolkka",
+     "decks": 2,
+     "copies": 3
+    },
+    {
+     "name": "Evolzar Solda",
+     "decks": 2,
+     "copies": 3
+    },
+    {
+     "name": "Fire King Avatar Barong",
+     "decks": 2,
+     "copies": 3
+    },
+    {
+     "name": "Harpie Dancer",
+     "decks": 2,
+     "copies": 3
+    },
+    {
+     "name": "Hero Blast",
+     "decks": 2,
+     "copies": 3
+    },
+    {
+     "name": "Necro Gardna",
+     "decks": 2,
+     "copies": 3
+    },
+    {
+     "name": "Noble Arms of Destiny",
+     "decks": 2,
+     "copies": 3
+    },
+    {
+     "name": "Rasetsu",
+     "decks": 2,
+     "copies": 3
+    },
+    {
+     "name": "Ryko, Lightsworn Hunter",
+     "decks": 2,
+     "copies": 3
+    },
+    {
+     "name": "Abyss-squall",
+     "decks": 2,
+     "copies": 2
+    },
+    {
+     "name": "Ally of Justice Catastor",
+     "decks": 2,
+     "copies": 2
+    },
+    {
+     "name": "Bujingi Centipede",
+     "decks": 2,
+     "copies": 2
+    },
+    {
+     "name": "Chaos Sorcerer",
+     "decks": 2,
+     "copies": 2
+    },
+    {
+     "name": "Dragoness the Wicked Knight",
+     "decks": 2,
+     "copies": 2
+    },
+    {
+     "name": "Elegant Egotist",
+     "decks": 2,
+     "copies": 2
+    },
+    {
+     "name": "Evigishki Merrowgeist",
+     "decks": 2,
+     "copies": 2
+    },
+    {
+     "name": "Evolzar Laggia",
+     "decks": 2,
+     "copies": 2
+    },
+    {
+     "name": "Fossil Dyna Pachycephalo",
+     "decks": 2,
+     "copies": 2
+    },
+    {
+     "name": "Gwenhwyfar, Queen of Noble Arms",
+     "decks": 2,
+     "copies": 2
+    },
+    {
+     "name": "Harpie Lady 1",
+     "decks": 2,
+     "copies": 2
+    },
+    {
+     "name": "Icarus Attack",
+     "decks": 2,
+     "copies": 2
+    },
+    {
+     "name": "Ignoble Knight of Black Laundsallyn",
+     "decks": 2,
+     "copies": 2
+    },
+    {
+     "name": "Madolchepalooza",
+     "decks": 2,
+     "copies": 2
+    },
+    {
+     "name": "Masked HERO Vapor",
+     "decks": 2,
+     "copies": 2
+    },
+    {
+     "name": "Muzurhythm the String Djinn",
+     "decks": 2,
+     "copies": 2
+    },
+    {
+     "name": "Noble Arms - Caliburn",
+     "decks": 2,
+     "copies": 2
+    },
+    {
+     "name": "Noble Arms - Gallatin",
+     "decks": 2,
+     "copies": 2
+    },
+    {
+     "name": "Noble Knight Brothers",
+     "decks": 2,
+     "copies": 2
+    },
+    {
+     "name": "Noble Knight Drystan",
+     "decks": 2,
+     "copies": 2
+    },
+    {
+     "name": "Noble Knight Gawayn",
+     "decks": 2,
+     "copies": 2
+    },
+    {
+     "name": "Number 17: Leviathan Dragon",
+     "decks": 2,
+     "copies": 2
+    },
+    {
+     "name": "Photon Papilloperative",
+     "decks": 2,
+     "copies": 2
+    },
+    {
+     "name": "Red Dragon Archfiend",
+     "decks": 2,
+     "copies": 2
+    },
+    {
+     "name": "Rite of Spirit",
+     "decks": 2,
+     "copies": 2
+    },
+    {
+     "name": "The Seal of Orichalcos",
+     "decks": 2,
+     "copies": 2
+    },
+    {
+     "name": "Volcanic Queen",
+     "decks": 2,
+     "copies": 2
+    },
+    {
+     "name": "Vulcan the Divine",
+     "decks": 2,
+     "copies": 2
+    },
+    {
+     "name": "Advance Draw",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Aztekipede, the Worm Warrior",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Baby Raccoon Ponpoko",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Baby Raccoon Tantan",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Battlin' Boxer Glassjaw",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Battlin' Boxer Lead Yoke",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Battlin' Boxer Sparrer",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Battlin' Boxer Switchitter",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Beautunaful Princess",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Beetron",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Bountiful Artemis",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Brotherhood of the Fire Fist - Leopard",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Core Transport Unit",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Des Frog",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Destiny HERO - Malicious",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Drastic Drop Off",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Dupe Frog",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Elemental HERO Captain Gold",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Emergency Teleport",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Enemy Controller",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Evo-Diversity",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Evo-Force",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Evolsaur Vulcano",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Evoltile Najasho",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Gearspring Spirit",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Ghostrick Jiangshi",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Ghostrick Mary",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Gimmick Puppet Dreary Doll",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Gimmick Puppet Magnet Doll",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Gimmick Puppet Shadow Feeler",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Gishki Abyss",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Gishki Aquamirror",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Gishki Shadow",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Gyakutenno Megami",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Herald of Perfection",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Inferno Reckless Summon",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Junk Synchron",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Karakuri Komachi mdl 224 \"Ninishi\"",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Karakuri Ninja mdl 7749 \"Nanashick\"",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Koa'ki Meiru Maximus",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Machine Duplication",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Manju of the Ten Thousand Hands",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Mezuki",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Mother Grizzly",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Nimble Angler",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Nimble Sunfish",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Number 64: Ronin Raccoon Sandayu",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Obedience Schooled",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Rank-Up-Magic Numeron Force",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Ronintoadin",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Sacred Crane",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Senju of the Thousand Hands",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Solar Wind Jammer",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Sonic Bird",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Spiritualism",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Stygian Dirge",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Swap Frog",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Synchron Explorer",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "The Fabled Cerburrel",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Tuning",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "W Nebula Meteorite",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Wind-Up Factory",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Wind-Up Shark",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Wind-Up Warrior",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Worm Xex",
+     "decks": 1,
+     "copies": 3
+    },
+    {
+     "name": "Advanced Ritual Art",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Battlin' Boxer Headgeared",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Chivalry",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Circle of the Fire Kings",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Consecrated Light",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Core Compression",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Creation Resonator",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Cyber Saurus",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Doom Dozer",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Dust Knight",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Escape from the Dark Dimension",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Evolsaur Cerato",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Forced Back",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Ghostrick Dullahan",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Ghostrick Specter",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Gishki Vision",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Kalantosa, Mystical Beast of the Forest",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Karakuri Soldier mdl 236 \"Nisamu\"",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Machina Cannon",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Magical Hats",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Mist Valley Apex Avian",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Mist Valley Thunderbird",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Mystic Box",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Mystic Tomato",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Nova Summoner",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Pahunder",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Phantom of Chaos",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Psychic Commander",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Rank-Up-Magic Limited Barian's Force",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Rebound",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Shared Ride",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Spell Striker",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "The Fabled Unicore",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Tyrant's Tummyache",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Van'Dalgyon the Dark Dragon Lord",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Wind-Up Rat",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Worm Yagan",
+     "decks": 1,
+     "copies": 2
+    },
+    {
+     "name": "Adreus, Keeper of Armageddon",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Ally of Justice Decisive Armor",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Ally of Justice Quarantine",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Apprentice Magician",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Arcanite Magician",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Artifact Aegis",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Barox",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Barrier Statue of the Stormwinds",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Beckoning Light",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Black and White Wave",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Blackwing - Steam the Cloak",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Brotherhood of the Fire Fist - Horse Prince",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Brotherhood of the Fire Fist - Lion Emperor",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Brotherhood of the Fire Fist - Rooster",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Brotherhood of the Fire Fist - Spirit",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Bujin Arasuda",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Bujingi Crow",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Bujingi Ophidian",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Bujinki Amaterasu",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Charubin the Fire Knight",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "D.D. Warrior Lady",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "D.D.R. - Different Dimension Reincarnation",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Dark Bribe",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Dark Dust Spirit",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Dark End Dragon",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Dark Necrofear",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Dark Nephthys",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Darkfire Dragon",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Different Dimension Ground",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Divine Wind of Mist Valley",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Dodger Dragon",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Evigishki Gustkraken",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Evigishki Mind Augus",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Evigishki Tetrogre",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Evilswarm Azzathoth",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Evolsaur Diplo",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Fabled Kushano",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Fabled Ragin",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Fairy King Albverdich",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Fairy Knight Ingunar",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Gellenduo",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Ghostrick Jackfrost",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Gimmick Puppet Twilight Joker",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Goblin Zombie",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Grave of the Super Ancient Organism",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Gravekeeper's Descendant",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Gundari",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Herald of Creation",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Hero's Rule 2",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Heroic Champion - Gandiva",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Ignoble Knight of High Laundsallyn",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Infestation Terminus",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Izanami",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Jain, Lightsworn Paladin",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Karakuri Ninja mdl 919 \"Kuick\"",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Karbonala Warrior",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Karma Cut",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Magical Android",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Masked Chameleon",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Masked Ninja Ebisu",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Mermail Abyssdine",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Mist Wurm",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Mystic Piper",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Naturia Landoise",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Nimble Manta",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Number 39: Utopia",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Number 39: Utopia Roots",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Number 40: Gimmick Puppet of Strings",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Number 72: Shogi Rook",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Number 73: Abyss Splash",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "One for One",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Pair Cycroid",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Psi-Impulse",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Queen Dragun Djinn",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Rank-Up-Magic - The Seventh One",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Red-Eyes Darkness Metal Dragon",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Robbin' Goblin",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Royal Tribute",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Scrap Archfiend",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Sea Lancer",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Skyscraper",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Spyder Spider",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Steelswarm Roach",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Stoic of Prophecy",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Swords of Revealing Light",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Synchro Fusionist",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "T.A.D.P.O.L.E.",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "T.G. Hyper Librarian",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "The Beginning of the End",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "The Dark Creator",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "The Fabled Catsith",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Thought Ruler Archfiend",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Treacherous Trap Hole",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Verdant Sanctuary",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Victoria",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Void Ogre Dragon",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "White Ninja",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Wind-Up Magician",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Worm King",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "ZERO-MAX",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Zombie Master",
+     "decks": 1,
+     "copies": 1
+    },
+    {
+     "name": "Zombie Warrior",
+     "decks": 1,
+     "copies": 1
+    }
+   ],
+   "top_n": 100
   }
- ]
+ }
 }
