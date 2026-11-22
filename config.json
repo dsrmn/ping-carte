@@ -41,8 +41,20 @@
     "token_warning_days": 7
   },
   "format_library": {
-    "format": "Edison",
-    "top_n": 200,
+    "formats": [
+      {
+        "format": "Edison",
+        "top_n": 200
+      },
+      {
+        "format": "Goat",
+        "top_n": 100
+      },
+      {
+        "format": "HAT",
+        "top_n": 100
+      }
+    ],
     "max_decks": 400,
     "extra_cards": [],
     "excluded_cards": []

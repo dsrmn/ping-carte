@@ -337,7 +337,7 @@ def format_message(card_name, deals, popularity):
     best = deals[0]
     title = f"🃏 <b>{html.escape(card_name)}</b>"
     if popularity:
-        title += f"  ⭐ n° {popularity} in Edison"
+        title += "  ⭐ " + " · ".join(f"n° {rank} in {fmt}" for fmt, rank in popularity)
     lines = [title,
              f"{n} occasion{'e' if n == 1 else 'i'} · la migliore a <b>{eur(best['price'])}</b> (−{best['discount']}%)"]
     for d in deals[:MAX_LISTINGS_PER_MESSAGE]:
@@ -443,6 +443,24 @@ def build_daily_summary(index, history, sent_alerts, cfg, near=None, settings=No
     return "\n".join(lines + near_lines)
 
 
+def load_popularity():
+    """{nome carta: [(formato, posizione), ...]} per le carte nelle prime top_n
+    posizioni di ogni formato di Format Library."""
+    stats = load_json(STATS_FILE, {})
+    formats = stats.get("formats")
+    if formats is None and "ranking" in stats:  # vecchio file con un solo formato
+        formats = {stats.get("format", "Edison"): {"ranking": stats["ranking"], "top_n": 200}}
+    pop = {}
+    for fmt, st in (formats or {}).items():
+        for i, r in enumerate(st.get("ranking", [])[:st.get("top_n", 200)], 1):
+            pop.setdefault(r["name"], []).append((fmt, i))
+    return pop
+
+
+def best_rank(popularity, card):
+    return min((rank for _, rank in popularity.get(card, [])), default=9999)
+
+
 # ---------------------------------------------------------------------------
 # Salute del bot
 # ---------------------------------------------------------------------------
@@ -520,9 +538,7 @@ def main():
             bot_state["last_token_warning"] = today()
     bot_state.pop("_token_warning_pending", None)
 
-    popularity = {}
-    for i, r in enumerate(load_json(STATS_FILE, {}).get("ranking", []), 1):
-        popularity.setdefault(r["name"], i)
+    popularity = load_popularity()
 
     # Carte aggiunte con /aggiungi ma non trovate su Cardtrader
     missing = [m for m in index.get("missing", []) if m not in bot_state.get("reported_missing", [])]
@@ -590,8 +606,8 @@ def main():
             # prima gli sconti "credibili" più alti, in fondo quelli sospetti
             best = max((x["discount"] for x in kv[1] if x["discount"] < SUSPICIOUS_DISCOUNT), default=None)
             if best is None:
-                return (1, 0, popularity.get(kv[0], 9999))
-            return (0, -best, popularity.get(kv[0], 9999))
+                return (1, 0, best_rank(popularity, kv[0]))
+            return (0, -best, best_rank(popularity, kv[0]))
         ordered = sorted(deals_by_card.items(), key=priority)
         for card, deals in ordered:
             if sent_msgs >= max_msgs:

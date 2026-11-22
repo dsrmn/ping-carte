@@ -1,15 +1,16 @@
 """
-Aggiorna la lista "cards" di config.json con le carte più giocate in un
-formato (default Edison), contate sulle decklist dei tornei pubblicate su
-Format Library (formatlibrary.com).
+Aggiorna la lista "cards" di config.json con le carte più giocate in uno o
+più formati, contate sulle decklist dei tornei pubblicate su Format Library
+(formatlibrary.com).
 
 Come conta: per ogni carta, in quanti mazzi compare (main, extra o side).
-A parità, vince chi ha più copie in totale.
+A parità, vince chi ha più copie in totale. La lista finale è l'unione delle
+prime top_n carte di ogni formato.
 
 Impostazioni in config.json -> "format_library":
-  format         nome del formato su Format Library (es. "Edison")
-  top_n          quante carte tenere (es. 200)
-  max_decks      quanti mazzi da torneo leggere, dai più recenti
+  formats        elenco di formati, es. [{"format": "Edison", "top_n": 200},
+                 {"format": "Goat", "top_n": 100}]
+  max_decks      quanti mazzi da torneo leggere per formato, dai più recenti
   extra_cards    carte da monitorare sempre, anche se non sono nella top
   excluded_cards carte da non monitorare mai
 
@@ -90,23 +91,12 @@ def rank_cards(details):
     return [{"name": n, "decks": in_decks[n], "copies": copies[n]} for n in ranking]
 
 
-def main():
-    with open(CONFIG_FILE, encoding="utf-8") as f:
-        config = json.load(f)
-    fl = config.get("format_library", {})
-    fmt = fl.get("format", "Edison")
-    top_n = fl.get("top_n", 200)
-    max_decks = fl.get("max_decks", 400)
-    extra = fl.get("extra_cards", [])
-    excluded = {c.lower() for c in fl.get("excluded_cards", [])}
-
-    session = requests.Session()
-    session.headers.update({"User-Agent": "ping-carte (monitor prezzi personale)", "Accept": "application/json"})
-
+def read_format(session, fmt, max_decks):
+    """Classifica delle carte di un formato, o None se i mazzi letti sono troppo pochi."""
+    print(f"\n=== {fmt} ===")
     print(f"Leggo i mazzi da torneo {fmt} su Format Library (max {max_decks})...")
     decks = list_event_decks(session, fmt, max_decks)
     print(f"  -> {len(decks)} mazzi trovati")
-
     details = []
     for i, d in enumerate(decks, 1):
         if i % 50 == 0 or i == len(decks):
@@ -116,13 +106,62 @@ def main():
             names = card_names(detail)
             if names:
                 details.append(names)
-
     if len(details) < MIN_DECKS_REQUIRED:
-        sys.exit(f"Letti solo {len(details)} mazzi validi (minimo {MIN_DECKS_REQUIRED}): "
-                 "lascio invariata la lista carte.")
+        print(f"  ! Letti solo {len(details)} mazzi validi (minimo {MIN_DECKS_REQUIRED}).")
+        return None
+    return {"decks_read": len(details), "ranking": rank_cards(details)}
 
-    ranking = [r for r in rank_cards(details) if r["name"].lower() not in excluded]
-    top = [r["name"] for r in ranking[:top_n]]
+
+def old_rankings():
+    """Classifiche dell'ultimo aggiornamento, per formato (anche dal vecchio formato del file)."""
+    try:
+        with open(STATS_FILE, encoding="utf-8") as f:
+            old = json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        return {}
+    if "formats" in old:
+        return old["formats"]
+    if "format" in old:
+        return {old["format"]: {"decks_read": old.get("decks_read"), "ranking": old.get("ranking", [])}}
+    return {}
+
+
+def main():
+    with open(CONFIG_FILE, encoding="utf-8") as f:
+        config = json.load(f)
+    fl = config.get("format_library", {})
+    formats = fl.get("formats") or [{"format": fl.get("format", "Edison"), "top_n": fl.get("top_n", 200)}]
+    max_decks = fl.get("max_decks", 400)
+    extra = fl.get("extra_cards", [])
+    excluded = {c.lower() for c in fl.get("excluded_cards", [])}
+
+    session = requests.Session()
+    session.headers.update({"User-Agent": "ping-carte (monitor prezzi personale)", "Accept": "application/json"})
+
+    previous = old_rankings()
+    stats = {}
+    for f in formats:
+        name, top_n = f["format"], f.get("top_n", 100)
+        result = read_format(session, name, max_decks)
+        if result is None:
+            if name in previous:
+                print(f"  Uso la classifica {name} dell'aggiornamento precedente.")
+                result = previous[name]
+            else:
+                print(f"  Salto {name}.")
+                continue
+        result["top_n"] = top_n
+        stats[name] = result
+
+    if not stats:
+        sys.exit("Nessun formato letto: lascio invariata la lista carte.")
+
+    top = []
+    for name, st in stats.items():
+        kept = [r["name"] for r in st["ranking"] if r["name"].lower() not in excluded][:st["top_n"]]
+        new_here = [n for n in kept if n not in top]
+        print(f"{name}: prime {len(kept)} carte, {len(new_here)} non già presenti nei formati precedenti")
+        top.extend(new_here)
     for name in extra:
         if name not in top:
             top.append(name)
@@ -141,12 +180,10 @@ def main():
         f.write("\n")
     with open(STATS_FILE, "w", encoding="utf-8") as f:
         json.dump({
-            "format": fmt,
-            "decks_read": len(details),
             "updated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-            "ranking": ranking,
+            "formats": stats,
         }, f, indent=1, ensure_ascii=False)
-    print(f"Classifica completa salvata in {STATS_FILE}")
+    print(f"Classifiche complete salvate in {STATS_FILE}")
 
 
 if __name__ == "__main__":

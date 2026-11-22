@@ -7,9 +7,11 @@ Gira su GitHub Actions, avviato da cron-job.org ogni 15 minuti.
 ## Come funziona
 
 1. **Lista carte** – ogni lunedì `update_card_list.py` legge le decklist dei
-   tornei Edison su Format Library e mette in `config.json → cards` le carte
-   più giocate (`format_library.top_n`). Classifica completa in
-   `format_library_stats.json`.
+   tornei su Format Library per ogni formato in `format_library.formats`
+   (Edison 200 carte, Goat 100, HAT 100) e mette in `config.json → cards`
+   l'unione delle carte più giocate. Classifiche complete in
+   `format_library_stats.json`; nei messaggi compare la posizione della carta
+   in ogni formato (es. "⭐ n° 12 in Edison · n° 3 in Goat").
 2. **Indice** – `build_card_index.py` trova su Cardtrader tutte le versioni
    (set/rarità, con immagine) di quelle carte (`cards_index.json`). Si rifà da
    solo se la lista cambia.
