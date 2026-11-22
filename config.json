@@ -28,12 +28,17 @@
     "hour": 20,
     "min_reference_eur": 2,
     "move_pct": 25,
-    "max_lines": 10
+    "max_lines": 10,
+    "near_deal_min_pct": 20
   },
   "notifications": {
     "max_messages_per_run": 50,
     "renotify_if_cheaper_pct": 10,
     "forget_after_days": 60
+  },
+  "health": {
+    "max_gap_minutes": 60,
+    "token_warning_days": 7
   },
   "format_library": {
     "format": "Edison",

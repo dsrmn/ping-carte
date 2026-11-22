@@ -27,12 +27,13 @@ import os
 import statistics
 import sys
 import time
-from datetime import timedelta
+from datetime import datetime, timedelta
 
 from cardtrader_api import CardTraderClient
-from state import (CONFIG_FILE, BOT_STATE_FILE, SENT_ALERTS_FILE, HISTORY_FILE,
+
+from state import (CONFIG_FILE, BOT_STATE_FILE, SENT_ALERTS_FILE, HISTORY_FILE, TZ,
                    now, today, load_json, save_json, load_bot_state, load_sent_alerts,
-                   prune_sent_alerts, effective_discount)
+                   load_wishlist, prune_sent_alerts, effective_discount)
 from telegram_bot import Telegram
 
 INDEX_FILE = "cards_index.json"
@@ -44,6 +45,9 @@ CONDITION_SHORT = {"Mint": "M", "Near Mint": "NM", "Slightly Played": "SP",
                    "Moderately Played": "MP", "Played": "PL", "Poor": "PO"}
 MAX_LISTINGS_PER_MESSAGE = 5
 SUSPICIOUS_DISCOUNT = 80  # oltre questo sconto il riferimento è probabilmente falsato
+# Classi di condizione con riferimento separato: una MP si confronta con le MP
+CONDITION_CLASS = {"Mint": "NM", "Near Mint": "NM", "Slightly Played": "SP",
+                   "Moderately Played": "MP", "Played": "PL", "Poor": "PO"}
 
 
 def condition_rank(condition_name):
@@ -142,26 +146,58 @@ def edition_key(product):
     return "?"
 
 
-def deals_for_group(bp_id, bp, exp, edition, eligible, settings, sent_alerts, history, d):
-    """Occasioni tra le inserzioni di UNA versione e UNA edizione."""
+def deals_for_group(bp_id, bp, exp, edition, eligible, settings, sent_alerts, history, d, near):
+    """Occasioni tra le inserzioni di UNA versione e UNA edizione.
+
+    Riferimento per classe di condizione (NM, SP, MP): un'inserzione MP si
+    confronta con la mediana delle MP. Se di quella condizione ci sono troppe
+    poche inserzioni, si usa la mediana di tutte le condizioni, ma solo per
+    le inserzioni Near Mint/Mint (per una MP sarebbe un confronto falsato)."""
     found = []
-    if len(eligible) < settings["min_listings"]:
+    if not eligible:
         return found
-    current = trimmed_median([x for x, _, _ in eligible], settings["trim_pct"])
-    hist_key = bp_id if edition == "?" else f"{bp_id}:{edition}"
-    series = history.setdefault(hist_key, {})
-    if d not in series:  # una registrazione al giorno (la prima del giorno)
-        series[d] = int(round(current * 100))
-    hist_ref = history_reference(series, settings["min_history_days"])
-    ref = min(current, hist_ref) if hist_ref else current
-    max_price = ref * (1 - settings["discount"] / 100)
+    base = f"{bp_id}:{edition}" if edition != "?" else bp_id
+
+    def reference(items, key):
+        current = trimmed_median([x for x, _, _ in items], settings["trim_pct"])
+        series = history.setdefault(key, {})
+        if d not in series:  # una registrazione al giorno (la prima del giorno)
+            series[d] = int(round(current * 100))
+        hist_ref = history_reference(series, settings["min_history_days"])
+        ref = min(current, hist_ref) if hist_ref else current
+        return ref, bool(hist_ref) and hist_ref < current
+
+    overall = reference(eligible, base) if len(eligible) >= settings["min_listings"] else None
+    by_class = {}
+    for item in eligible:
+        cls = CONDITION_CLASS.get((item[1].get("properties_hash") or {}).get("condition"), "?")
+        by_class.setdefault(cls, []).append(item)
+    refs = {}
+    for cls, items in by_class.items():
+        if len(items) >= settings["min_listings"]:
+            ref, from_hist = reference(items, f"{base}:{cls}")
+            refs[cls] = (ref, from_hist, len(items), cls)
+        elif cls == "NM" and overall:
+            refs[cls] = (overall[0], overall[1], len(eligible), None)
 
     for price, p, hub in eligible:
+        cls = CONDITION_CLASS.get((p.get("properties_hash") or {}).get("condition"), "?")
+        if cls not in refs:
+            continue
+        ref, from_hist, n_ref, ref_cls = refs[cls]
         if settings["ct_zero_only"] and not hub:
             continue
         if settings["deal_countries"] and (p.get("user") or {}).get("country_code") not in settings["deal_countries"]:
             continue
-        if price > max_price or ref - price < settings["min_saving"]:
+        if ref - price < settings["min_saving"]:
+            continue
+        discount = round((1 - price / ref) * 100)
+        if discount < settings["discount"]:
+            if discount >= settings["near_min"]:
+                near.append({"name": bp["name"], "expansion": exp["name"], "rarity": bp.get("rarity"),
+                             "price": price, "ref": round(ref, 2), "discount": discount,
+                             "condition": CONDITION_SHORT.get((p.get("properties_hash") or {}).get("condition"), "?"),
+                             "url": f"https://www.cardtrader.com/en/cards/{bp_id}"})
             continue
         alert_key = f"{bp_id}:{p.get('id')}"
         previous = sent_alerts.get(alert_key)
@@ -171,32 +207,67 @@ def deals_for_group(bp_id, bp, exp, edition, eligible, settings, sent_alerts, hi
             if not prev_cents or price * 100 > prev_cents * (1 - settings["renotify_pct"] / 100):
                 continue
             cheaper_than = prev_cents / 100
-        user = p.get("user") or {}
-        rarity = find_prop(p, "rarity") or bp.get("rarity")
-        found.append({
-            "price": price,
+        found.append(listing_info(p, price, bp_id, bp, exp) | {
             "ref": round(ref, 2),
-            "ref_is_history": bool(hist_ref) and hist_ref < current,
-            "discount": round((1 - price / ref) * 100),
-            "n_listings": len(eligible),
-            "expansion": exp["name"],
-            "number": bp.get("number"),
-            "rarity": str(rarity) if rarity else None,
-            "condition": (p.get("properties_hash") or {}).get("condition"),
-            "first_edition": find_prop(p, "first_edition", "1st"),
-            "seller": user.get("username", "?"),
-            "country": user.get("country_code"),
+            "ref_is_history": from_hist,
+            "ref_condition": ref_cls,
+            "discount": discount,
+            "n_listings": n_ref,
             "cheaper_than": cheaper_than,
             "alert_key": alert_key,
-            "url": f"https://www.cardtrader.com/en/cards/{bp_id}",
-            "image": bp.get("image"),
         })
     return found
 
 
-def check_expansion(exp, products_by_bp, settings, sent_alerts, history, stats):
-    """Ritorna {nome carta: [occasioni]} per una espansione e aggiorna lo storico."""
+def listing_info(p, price, bp_id, bp, exp):
+    user = p.get("user") or {}
+    rarity = find_prop(p, "rarity") or bp.get("rarity")
+    return {
+        "price": price,
+        "expansion": exp["name"],
+        "number": bp.get("number"),
+        "rarity": str(rarity) if rarity else None,
+        "condition": (p.get("properties_hash") or {}).get("condition"),
+        "first_edition": find_prop(p, "first_edition", "1st"),
+        "seller": user.get("username", "?"),
+        "country": user.get("country_code"),
+        "url": f"https://www.cardtrader.com/en/cards/{bp_id}",
+        "image": bp.get("image"),
+    }
+
+
+def wishlist_hits(bp_id, bp, exp, eligible, settings, wishlist, sent_alerts):
+    """Inserzioni sotto il prezzo obiettivo della lista desideri."""
+    w = wishlist.get(bp["name"].lower())
+    if not w:
+        return []
+    hits = []
+    for price, p, hub in eligible:
+        if price > w["max"]:
+            continue
+        if settings["ct_zero_only"] and not hub:
+            continue
+        if settings["deal_countries"] and (p.get("user") or {}).get("country_code") not in settings["deal_countries"]:
+            continue
+        key = f"w:{bp_id}:{p.get('id')}"
+        previous = sent_alerts.get(key)
+        cheaper_than = None
+        if previous is not None:
+            prev_cents = previous.get("p")
+            if not prev_cents or price * 100 > prev_cents * (1 - settings["renotify_pct"] / 100):
+                continue
+            cheaper_than = prev_cents / 100
+        hits.append(listing_info(p, price, bp_id, bp, exp) | {
+            "target": w["max"], "cheaper_than": cheaper_than, "alert_key": key, "discount": 0})
+    return hits
+
+
+def check_expansion(exp, products_by_bp, settings, sent_alerts, history, stats, wishlist=None):
+    """Ritorna {nome carta: [occasioni]} per una espansione e aggiorna lo storico.
+    Le quasi occasioni finiscono in stats["near"], i desideri in stats["wishes"]."""
     found = {}
+    stats.setdefault("near", [])
+    stats.setdefault("wishes", {})
     require_rarity_filter = exp.get("code", "") not in settings["old_expansion_codes"]
     d = today()
 
@@ -231,9 +302,13 @@ def check_expansion(exp, products_by_bp, settings, sent_alerts, history, stats):
         for item in eligible:
             by_edition.setdefault(edition_key(item[1]), []).append(item)
         for edition, items in by_edition.items():
-            deals = deals_for_group(bp_id, bp, exp, edition, items, settings, sent_alerts, history, d)
+            deals = deals_for_group(bp_id, bp, exp, edition, items, settings, sent_alerts, history, d,
+                                    stats["near"])
             if deals:
                 found.setdefault(bp["name"], []).extend(deals)
+        hits = wishlist_hits(bp_id, bp, exp, eligible, settings, wishlist or {}, sent_alerts)
+        if hits:
+            stats["wishes"].setdefault(bp["name"], []).extend(hits)
     return found
 
 
@@ -265,7 +340,9 @@ def format_message(card_name, deals, popularity):
              f"{n} occasion{'e' if n == 1 else 'i'} · la migliore a <b>{eur(best['price'])}</b> (−{best['discount']}%)"]
     for d in deals[:MAX_LISTINGS_PER_MESSAGE]:
         edition = " · ".join(html.escape(x) for x in (d["expansion"], d["number"], d["rarity"]) if x)
-        ref_note = "media ultime settimane" if d["ref_is_history"] else f"mediana su {d['n_listings']} inserzioni"
+        cond = f" {d['ref_condition']}" if d.get("ref_condition") else ""
+        ref_note = (f"media{cond} ultime settimane" if d["ref_is_history"]
+                    else f"mediana{cond} su {d['n_listings']} inserzioni")
         lines += ["", f"💰 <b>{eur(d['price'])}</b> invece di {eur(d['ref'])} (−{d['discount']}%) · {ref_note}"]
         if d["discount"] >= SUSPICIOUS_DISCOUNT:
             lines.append("⚠️ Sconto sospetto: forse la mediana è falsata da inserzioni a prezzo esagerato, controlla")
@@ -281,7 +358,44 @@ def format_message(card_name, deals, popularity):
     return "\n".join(lines)
 
 
-def build_daily_summary(index, history, sent_alerts, cfg):
+def format_wish_message(card_name, hits):
+    hits = sorted(hits, key=lambda h: h["price"])
+    lines = [f"🎯 <b>Desiderio: {html.escape(card_name)}</b>",
+             f"In vendita a <b>{eur(hits[0]['price'])}</b> · il tuo obiettivo era {eur(hits[0]['target'])}"]
+    for h in hits[:MAX_LISTINGS_PER_MESSAGE]:
+        edition = " · ".join(html.escape(x) for x in (h["expansion"], h["number"], h["rarity"]) if x)
+        lines += ["", f"💰 <b>{eur(h['price'])}</b>"]
+        if h["cheaper_than"]:
+            lines.append(f"⬇️ Ribassata: prima era {eur(h['cheaper_than'])}")
+        lines.append(f"📦 {edition}")
+        lines.append(f"✅ {html.escape(details_line(h))}")
+        country = h.get("country") or ""
+        lines.append(f"👤 {html.escape(str(h['seller']))} {flag(country)} {html.escape(country)}".rstrip())
+        lines.append(f"🔗 <a href=\"{html.escape(h['url'], quote=True)}\">Apri su Cardtrader</a>")
+    if len(hits) > MAX_LISTINGS_PER_MESSAGE:
+        lines += ["", f"…e altre {len(hits) - MAX_LISTINGS_PER_MESSAGE} inserzioni"]
+    lines += ["", "Per toglierla: /nonvoglio " + html.escape(card_name)]
+    return "\n".join(lines)
+
+
+def near_deals_section(near, cfg, settings):
+    if not near:
+        return []
+    best = {}
+    for n in near:  # una riga per carta/espansione: la migliore
+        k = (n["name"], n["expansion"])
+        if k not in best or n["discount"] > best[k]["discount"]:
+            best[k] = n
+    rows = sorted(best.values(), key=lambda n: -n["discount"])[:cfg.get("max_lines", 10)]
+    lines = ["", f"👀 <b>Quasi occasioni</b> (sconto {settings['near_min']}–{settings['discount'] - 1}%, ancora in vendita)"]
+    for n in rows:
+        label = " · ".join(html.escape(x) for x in (n["name"], n["expansion"], n["rarity"], n["condition"]) if x)
+        lines.append(f"• <a href=\"{html.escape(n['url'], quote=True)}\">{label}</a>: "
+                     f"{eur(n['price'])} invece di {eur(n['ref'])} (−{n['discount']}%)")
+    return lines
+
+
+def build_daily_summary(index, history, sent_alerts, cfg, near=None, settings=None):
     """Carte salite/scese di più rispetto a 7 giorni fa + occasioni del giorno."""
     d = today()
     moves = []
@@ -291,7 +405,10 @@ def build_daily_summary(index, history, sent_alerts, cfg):
             labels[bp_id] = " · ".join(x for x in (bp["name"], exp["name"], bp.get("rarity")) if x)
     ed_label = {"1st": "1ª ed.", "unl": "Unlimited"}
     for key, series in history.items():
-        bp_id, _, edition = key.partition(":")
+        parts = key.split(":")
+        if len(parts) > 2:  # serie per condizione: nel riepilogo usiamo quella complessiva
+            continue
+        bp_id, edition = parts[0], (parts[1] if len(parts) > 1 else "")
         if bp_id not in labels or d not in series:
             continue
         cur = series[d] / 100
@@ -305,13 +422,14 @@ def build_daily_summary(index, history, sent_alerts, cfg):
     n_today = sum(1 for v in sent_alerts.values() if v.get("d") == d and v.get("n"))
     lines = [f"📊 <b>Riepilogo del {now().strftime('%d/%m')}</b>",
              f"Occasioni notificate oggi: {n_today} (dettagli con /oggi)"]
+    near_lines = near_deals_section(near or [], cfg, settings) if settings else []
     if not moves:
         has_week = any(value_days_ago(s, 7) is not None for s in history.values())
         if has_week:
             lines.append(f"Nessuna carta salita o scesa di più del {cfg['move_pct']}% in una settimana.")
         else:
             lines.append("Il confronto con la settimana scorsa partirà quando avrò 7 giorni di prezzi.")
-        return "\n".join(lines)
+        return "\n".join(lines + near_lines)
     ups = sorted([m for m in moves if m[0] > 0], key=lambda m: -m[0])[:cfg["max_lines"]]
     downs = sorted([m for m in moves if m[0] < 0], key=lambda m: m[0])[:cfg["max_lines"]]
     if ups:
@@ -320,10 +438,36 @@ def build_daily_summary(index, history, sent_alerts, cfg):
     if downs:
         lines += ["", "📉 <b>In discesa</b>"]
         lines += [f"• {html.escape(l)}: {eur(o)} → {eur(c)} ({ch}%)" for ch, l, o, c in downs]
-    return "\n".join(lines)
+    return "\n".join(lines + near_lines)
 
 
 # ---------------------------------------------------------------------------
+# Salute del bot
+# ---------------------------------------------------------------------------
+
+def health_messages(bot_state, cfg):
+    """Avvisi da mandare all'inizio del giro: bot rimasto fermo, token in scadenza."""
+    msgs = []
+    last = bot_state.get("last_run_at")
+    if last:
+        last_dt = datetime.fromisoformat(last)
+        gap = (now() - last_dt).total_seconds() / 60
+        if gap > cfg.get("max_gap_minutes", 60):
+            hours = f"{int(gap // 60)} h {int(gap % 60)} min" if gap >= 60 else f"{int(gap)} min"
+            msgs.append(f"⚠️ <b>Il bot è rimasto fermo per {hours}</b>, dalle "
+                        f"{last_dt.astimezone(TZ).strftime('%H:%M del %d/%m')} a ora. "
+                        "Se succede spesso, controlla il job su cron-job.org.")
+    exp = bot_state.get("cron_token_expires")
+    if exp and bot_state.get("last_token_warning") != today():
+        days = (datetime.fromisoformat(exp).date() - now().date()).days
+        if days <= cfg.get("token_warning_days", 7):
+            when = "è scaduto" if days < 0 else ("scade oggi" if days == 0 else f"scade tra {days} giorni")
+            msgs.append(f"🔑 <b>Il token GitHub di cron-job.org {when}</b> ({exp}). Creane uno nuovo su "
+                        "github.com/settings/personal-access-tokens, mettilo come password su cron-job.org, "
+                        "poi scrivimi /scadenza con la nuova data.")
+            bot_state["_token_warning_pending"] = True
+    return msgs
+
 
 def main():
     dry_run = "--dry-run" in sys.argv
@@ -346,6 +490,7 @@ def main():
 
     bot_state = load_bot_state()
     sent_alerts = load_sent_alerts()
+    wishlist = load_wishlist()
     history = load_json(HISTORY_FILE, {})
     tg = Telegram(tg_token, tg_chat, dry_run)
     notif = config.get("notifications", {})
@@ -365,7 +510,13 @@ def main():
         "min_condition_rank": condition_rank(config.get("min_condition", "Moderately Played")),
         "min_history_days": ph.get("min_days_for_reference", 7),
         "renotify_pct": notif.get("renotify_if_cheaper_pct", 10),
+        "near_min": config.get("daily_summary", {}).get("near_deal_min_pct", 20),
     }
+
+    for msg in health_messages(bot_state, config.get("health", {})):
+        if tg.send(msg) and bot_state.pop("_token_warning_pending", False):
+            bot_state["last_token_warning"] = today()
+    bot_state.pop("_token_warning_pending", None)
 
     popularity = {}
     for i, r in enumerate(load_json(STATS_FILE, {}).get("ranking", []), 1):
@@ -386,7 +537,7 @@ def main():
           f" · sconto minimo {settings['discount']}% · solo CT Zero: {settings['ct_zero_only']}"
           f"{' · IN PAUSA' if bot_state['paused'] else ''}")
 
-    stats = {"listings": 0, "ct_zero": 0}
+    stats = {"listings": 0, "ct_zero": 0, "near": [], "wishes": {}}
     sample_printed = False
     deals_by_card = {}
     for i, (exp_id, exp) in enumerate(expansions.items(), 1):
@@ -404,7 +555,7 @@ def main():
                     print(f"  Campi di un'inserzione: {sorted(p)}; venditore: {sorted((p.get('user') or {}))}")
                     sample_printed = True
                     break
-        for card, deals in check_expansion(exp, products, settings, sent_alerts, history, stats).items():
+        for card, deals in check_expansion(exp, products, settings, sent_alerts, history, stats, wishlist).items():
             deals_by_card.setdefault(card, []).extend(deals)
 
     print(f"Inserzioni idonee: {stats['listings']}, di cui CT Zero: {stats['ct_zero']}")
@@ -420,6 +571,19 @@ def main():
     if bot_state["paused"]:
         print("Bot in pausa: nessuna notifica inviata.")
     else:
+        # Prima la lista desideri
+        for card, hits in sorted(stats["wishes"].items()):
+            if sent_msgs >= max_msgs:
+                break
+            if not tg.send(format_wish_message(card, hits), image_url=hits[0].get("image")):
+                break
+            for h in hits:
+                sent_alerts[h["alert_key"]] = {"p": int(round(h["price"] * 100)), "d": today(), "n": card, "s": 0}
+            sent_msgs += 1
+            print(f"  -> Desiderio notificato: {card} ({len(hits)})")
+            if not dry_run:
+                time.sleep(1)
+
         def priority(kv):
             # prima gli sconti "credibili" più alti, in fondo quelli sospetti
             best = max((x["discount"] for x in kv[1] if x["discount"] < SUSPICIOUS_DISCOUNT), default=None)
@@ -447,7 +611,7 @@ def main():
         summary_cfg = config.get("daily_summary", {})
         if (summary_cfg and bot_state.get("last_summary_date") != today()
                 and now().hour >= summary_cfg.get("hour", 20)):
-            if tg.send(build_daily_summary(index, history, sent_alerts, summary_cfg)):
+            if tg.send(build_daily_summary(index, history, sent_alerts, summary_cfg, stats["near"], settings)):
                 bot_state["last_summary_date"] = today()
                 print("  -> Inviato il riepilogo giornaliero")
 
@@ -455,6 +619,8 @@ def main():
         prune_history(history, ph.get("keep_days", 60))
         save_json(HISTORY_FILE, history, compact=True)
         save_json(SENT_ALERTS_FILE, prune_sent_alerts(sent_alerts, notif.get("forget_after_days", 60)), indent=0)
+        bot_state["last_run_at"] = now().isoformat(timespec="seconds")
+        bot_state["failures_in_a_row"] = 0
         save_json(BOT_STATE_FILE, bot_state)
     print(f"Scansione completata in {round(time.time() - start)}s. "
           f"Messaggi: {sent_msgs}, occasioni notificate: {total}.")

@@ -13,6 +13,10 @@ Comandi:
   /aggiungi Nome carta aggiunge una carta da monitorare (nome inglese esatto)
   /rimuovi Nome carta  smette di monitorare una carta
   /oggi                le migliori occasioni notificate oggi
+  /voglio Nome 15      avvisa quando la carta scende sotto 15 € (lista desideri)
+  /nonvoglio Nome      toglie la carta dalla lista desideri
+  /desideri            mostra la lista desideri
+  /scadenza 2027-11-20 data di scadenza del token di cron-job.org (avviso 7 giorni prima)
   /aiuto               questo elenco
 
 Uso dal workflow:  python telegram_bot.py   (elabora i comandi in attesa)
@@ -23,8 +27,11 @@ import sys
 
 import requests
 
-from state import (CONFIG_FILE, BOT_STATE_FILE, load_json, save_json, load_bot_state,
-                   load_sent_alerts, effective_discount, today)
+import re
+from datetime import date
+
+from state import (CONFIG_FILE, BOT_STATE_FILE, WISHLIST_FILE, load_json, save_json, load_bot_state,
+                   load_sent_alerts, load_wishlist, effective_discount, today)
 
 API = "https://api.telegram.org/bot{token}/{method}"
 
@@ -37,6 +44,10 @@ HELP = (
     "/aggiungi Nome carta — monitora una carta in più\n"
     "/rimuovi Nome carta — smetti di monitorare una carta\n"
     "/oggi — migliori occasioni di oggi\n"
+    "/voglio Nome carta 15 — avvisami quando scende sotto 15 €\n"
+    "/nonvoglio Nome carta — toglila dalla lista desideri\n"
+    "/desideri — la lista desideri\n"
+    "/scadenza 2027-11-20 — scadenza del token di cron-job.org\n"
     "/aiuto — questo elenco\n\n"
     "Il bot legge i comandi a ogni giro (ogni 20 minuti circa)."
 )
@@ -94,7 +105,23 @@ def _find_card(name, cards):
     return None
 
 
-def handle_command(text, config, bot_state, sent_alerts):
+def _eur(v):
+    return f"{v:.2f} €".replace(".", ",")
+
+
+def _add_card(name, config):
+    """Aggiunge la carta alla lista monitorata (se manca). True se aggiunta."""
+    fl = config["format_library"]
+    if _find_card(name, config["cards"]):
+        return False
+    config["cards"].append(name)
+    if not _find_card(name, fl["extra_cards"]):
+        fl["extra_cards"].append(name)
+    fl["excluded_cards"] = [c for c in fl["excluded_cards"] if c.lower() != name.lower()]
+    return True
+
+
+def handle_command(text, config, bot_state, sent_alerts, wishlist=None):
     """Applica un comando e ritorna (risposta, config_cambiata)."""
     parts = text.strip().split(maxsplit=1)
     cmd = parts[0].split("@")[0].lower()
@@ -126,15 +153,48 @@ def handle_command(text, config, bot_state, sent_alerts):
         bot_state["overrides"]["discount_below_average_pct"] = value
         return f"✅ Sconto minimo impostato al {value}%.", False
 
+    if wishlist is None:
+        wishlist = {}
+
+    if cmd == "/voglio":
+        m = re.match(r"^(.*\S)\s+(\d+(?:[.,]\d{1,2})?)\s*€?$", arg)
+        if not m:
+            return "Scrivi nome inglese e prezzo massimo, es. /voglio Dark Armed Dragon 15", False
+        name, price = m.group(1).strip(), float(m.group(2).replace(",", "."))
+        name = _find_card(name, config["cards"]) or name
+        added = _add_card(name, config)
+        wishlist[name.lower()] = {"name": name, "max": price, "since": today()}
+        extra = " L'ho aggiunta anche alle carte monitorate: la cerco su Cardtrader al prossimo giro." if added else ""
+        return (f"🎯 Ti avviso quando <b>{html.escape(name)}</b> è in vendita a {_eur(price)} o meno "
+                f"(CT Zero, qualsiasi versione).{extra}"), added
+
+    if cmd == "/nonvoglio":
+        item = wishlist.pop(arg.strip().lower(), None) if arg else None
+        if not item:
+            return f"«{html.escape(arg)}» non è nella lista desideri. Vedi /desideri", False
+        return f"Tolta <b>{html.escape(item['name'])}</b> dalla lista desideri.", False
+
+    if cmd == "/desideri":
+        if not wishlist:
+            return "La lista desideri è vuota. Aggiungi con /voglio Nome carta 15", False
+        lines = ["🎯 <b>Lista desideri</b>"]
+        for w in sorted(wishlist.values(), key=lambda w: w["name"]):
+            lines.append(f"• {html.escape(w['name'])} — fino a {_eur(w['max'])}")
+        return "\n".join(lines), False
+
+    if cmd == "/scadenza":
+        try:
+            d = date.fromisoformat(arg.strip())
+        except ValueError:
+            return "Scrivi la data come AAAA-MM-GG, es. /scadenza 2027-11-20", False
+        bot_state["cron_token_expires"] = d.isoformat()
+        return f"✅ Ti avviso 7 giorni prima del {d.strftime('%d/%m/%Y')}, quando scade il token.", False
+
     if cmd == "/aggiungi":
         if not arg:
             return "Scrivi il nome inglese della carta, es. /aggiungi Dark Armed Dragon", False
-        if _find_card(arg, config["cards"]):
+        if not _add_card(arg, config):
             return f"{html.escape(arg)} è già monitorata.", False
-        config["cards"].append(arg)
-        if not _find_card(arg, fl["extra_cards"]):
-            fl["extra_cards"].append(arg)
-        fl["excluded_cards"] = [c for c in fl["excluded_cards"] if c.lower() != arg.lower()]
         return (f"✅ Aggiunta <b>{html.escape(arg)}</b>. La cerco su Cardtrader al prossimo giro: "
                 "se il nome non è esatto te lo dico."), True
 
@@ -157,7 +217,9 @@ def handle_command(text, config, bot_state, sent_alerts):
                 f"Carte monitorate: {len(config['cards'])}\n"
                 f"Sconto minimo: {effective_discount(config, bot_state)}%\n"
                 f"Solo CT Zero: {'sì' if config.get('ct_zero_only', True) else 'no'}\n"
-                f"Occasioni notificate oggi: {n_today}"), False
+                f"Occasioni notificate oggi: {n_today}\n"
+                f"Lista desideri: {len(wishlist)} carte\n"
+                f"Scadenza token cron-job.org: {bot_state.get('cron_token_expires') or 'non impostata (/scadenza)'}"), False
 
     if cmd == "/oggi":
         d = today()
@@ -174,7 +236,7 @@ def handle_command(text, config, bot_state, sent_alerts):
     return "Comando non riconosciuto. Scrivi /aiuto per l'elenco.", False
 
 
-def process_commands(tg, config, bot_state, sent_alerts):
+def process_commands(tg, config, bot_state, sent_alerts, wishlist=None):
     """Legge i messaggi arrivati dall'ultimo giro. Ritorna True se config
     è cambiato (carte aggiunte/rimosse)."""
     try:
@@ -192,7 +254,7 @@ def process_commands(tg, config, bot_state, sent_alerts):
         if not text.startswith("/"):
             continue
         print(f"Comando ricevuto: {text}")
-        reply, cfg_changed = handle_command(text, config, bot_state, sent_alerts)
+        reply, cfg_changed = handle_command(text, config, bot_state, sent_alerts, wishlist)
         changed = changed or cfg_changed
         tg.send(reply)
     return changed
@@ -205,10 +267,12 @@ def main():
     config = load_json(CONFIG_FILE, None)
     bot_state = load_bot_state()
     sent_alerts = load_sent_alerts()
+    wishlist = load_wishlist()
     tg = Telegram(token, chat_id)
-    if process_commands(tg, config, bot_state, sent_alerts):
+    if process_commands(tg, config, bot_state, sent_alerts, wishlist):
         save_json(CONFIG_FILE, config)
     save_json(BOT_STATE_FILE, bot_state)
+    save_json(WISHLIST_FILE, wishlist)
 
 
 if __name__ == "__main__":
