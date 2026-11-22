@@ -46,7 +46,7 @@ CONDITION_SHORT = {"Mint": "M", "Near Mint": "NM", "Slightly Played": "SP",
 MAX_LISTINGS_PER_MESSAGE = 5
 SUSPICIOUS_DISCOUNT = 80  # oltre questo sconto il riferimento è probabilmente falsato
 # Emoji della condizione nei messaggi
-CONDITION_EMOJI = {"Mint": "🟢", "Near Mint": "🟢", "Slightly Played": "💚", "Moderately Played": "🟠"}
+CONDITION_EMOJI = {"Mint": "✅", "Near Mint": "✅", "Slightly Played": "🟢", "Moderately Played": "🟠"}
 # Classi di condizione con riferimento separato: una MP si confronta con le MP
 CONDITION_CLASS = {"Mint": "NM", "Near Mint": "NM", "Slightly Played": "SP",
                    "Moderately Played": "MP", "Played": "PL", "Poor": "PO"}
