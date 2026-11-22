@@ -45,6 +45,8 @@ CONDITION_SHORT = {"Mint": "M", "Near Mint": "NM", "Slightly Played": "SP",
                    "Moderately Played": "MP", "Played": "PL", "Poor": "PO"}
 MAX_LISTINGS_PER_MESSAGE = 5
 SUSPICIOUS_DISCOUNT = 80  # oltre questo sconto il riferimento è probabilmente falsato
+# Emoji della condizione nei messaggi
+CONDITION_EMOJI = {"Mint": "🟢", "Near Mint": "🟢", "Slightly Played": "💚", "Moderately Played": "🟠"}
 # Classi di condizione con riferimento separato: una MP si confronta con le MP
 CONDITION_CLASS = {"Mint": "NM", "Near Mint": "NM", "Slightly Played": "SP",
                    "Moderately Played": "MP", "Played": "PL", "Poor": "PO"}
@@ -349,7 +351,7 @@ def format_message(card_name, deals, popularity):
         if d["cheaper_than"]:
             lines.append(f"⬇️ Ribassata: prima era {eur(d['cheaper_than'])}")
         lines.append(f"📦 {edition}")
-        lines.append(f"✅ {html.escape(details_line(d))}")
+        lines.append(f"{CONDITION_EMOJI.get(d['condition'], '✅')} {html.escape(details_line(d))}")
         country = d.get("country") or ""
         lines.append(f"👤 {html.escape(str(d['seller']))} {flag(country)} {html.escape(country)}".rstrip())
         lines.append(f"🔗 <a href=\"{html.escape(d['url'], quote=True)}\">Apri su Cardtrader</a>")
@@ -368,7 +370,7 @@ def format_wish_message(card_name, hits):
         if h["cheaper_than"]:
             lines.append(f"⬇️ Ribassata: prima era {eur(h['cheaper_than'])}")
         lines.append(f"📦 {edition}")
-        lines.append(f"✅ {html.escape(details_line(h))}")
+        lines.append(f"{CONDITION_EMOJI.get(h['condition'], '✅')} {html.escape(details_line(h))}")
         country = h.get("country") or ""
         lines.append(f"👤 {html.escape(str(h['seller']))} {flag(country)} {html.escape(country)}".rstrip())
         lines.append(f"🔗 <a href=\"{html.escape(h['url'], quote=True)}\">Apri su Cardtrader</a>")
