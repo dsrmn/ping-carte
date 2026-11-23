@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-22T05:37:46+00:00",
+ "updated_at": "2026-11-23T13:32:01+00:00",
  "formats": {
   "Edison": {
    "decks_read": 399,
@@ -51,13 +51,13 @@
     },
     {
      "name": "D.D. Crow",
-     "decks": 346,
-     "copies": 649
+     "decks": 347,
+     "copies": 648
     },
     {
      "name": "Trap Dustshoot",
-     "decks": 337,
-     "copies": 337
+     "decks": 338,
+     "copies": 338
     },
     {
      "name": "Brain Control",
@@ -66,7 +66,7 @@
     },
     {
      "name": "Colossal Fighter",
-     "decks": 330,
+     "decks": 331,
      "copies": 353
     },
     {
@@ -86,123 +86,138 @@
     },
     {
      "name": "Chimeratech Fortress Dragon",
-     "decks": 295,
-     "copies": 419
+     "decks": 297,
+     "copies": 421
     },
     {
      "name": "Cyber Dragon",
-     "decks": 288,
-     "copies": 528
+     "decks": 289,
+     "copies": 531
     },
     {
      "name": "Bottomless Trap Hole",
-     "decks": 286,
-     "copies": 559
+     "decks": 288,
+     "copies": 563
     },
     {
      "name": "Dust Tornado",
-     "decks": 273,
-     "copies": 604
+     "decks": 274,
+     "copies": 607
     },
     {
      "name": "Solemn Judgment",
-     "decks": 271,
-     "copies": 271
+     "decks": 273,
+     "copies": 273
     },
     {
      "name": "Dark End Dragon",
-     "decks": 240,
-     "copies": 240
+     "decks": 242,
+     "copies": 242
     },
     {
      "name": "Armory Arm",
      "decks": 227,
-     "copies": 258
+     "copies": 257
     },
     {
      "name": "Royal Oppression",
-     "decks": 224,
-     "copies": 425
+     "decks": 226,
+     "copies": 429
     },
     {
      "name": "Magical Android",
-     "decks": 223,
-     "copies": 224
+     "decks": 221,
+     "copies": 222
     },
     {
      "name": "Dark Armed Dragon",
-     "decks": 219,
-     "copies": 219
+     "decks": 221,
+     "copies": 221
     },
     {
      "name": "Allure of Darkness",
-     "decks": 215,
-     "copies": 215
+     "decks": 217,
+     "copies": 217
     },
     {
      "name": "Caius the Shadow Monarch",
      "decks": 201,
-     "copies": 456
+     "copies": 454
     },
     {
      "name": "Blackwing - Gale the Whirlwind",
+     "decks": 190,
+     "copies": 190
+    },
+    {
+     "name": "Reinforcement of the Army",
      "decks": 188,
      "copies": 188
     },
     {
-     "name": "Reinforcement of the Army",
-     "decks": 187,
-     "copies": 187
-    },
-    {
      "name": "Blackwing Armor Master",
-     "decks": 184,
-     "copies": 313
+     "decks": 186,
+     "copies": 317
     },
     {
      "name": "Blackwing - Sirocco the Dawn",
-     "decks": 182,
-     "copies": 535
+     "decks": 184,
+     "copies": 541
     },
     {
      "name": "Blackwing Armed Wing",
-     "decks": 175,
-     "copies": 361
+     "decks": 177,
+     "copies": 365
     },
     {
      "name": "Blackwing - Vayu the Emblem of Honor",
-     "decks": 174,
-     "copies": 404
+     "decks": 176,
+     "copies": 410
     },
     {
      "name": "Blackwing - Silverwind the Ascendant",
-     "decks": 172,
-     "copies": 183
+     "decks": 174,
+     "copies": 185
     },
     {
      "name": "Deck Devastation Virus",
-     "decks": 171,
-     "copies": 283
+     "decks": 173,
+     "copies": 287
     },
     {
      "name": "Fossil Dyna Pachycephalo",
-     "decks": 170,
-     "copies": 267
+     "decks": 172,
+     "copies": 269
     },
     {
      "name": "Pulling the Rug",
-     "decks": 169,
-     "copies": 330
+     "decks": 171,
+     "copies": 334
     },
     {
      "name": "Mist Wurm",
-     "decks": 156,
-     "copies": 156
+     "decks": 154,
+     "copies": 154
     },
     {
      "name": "Plaguespreader Zombie",
-     "decks": 151,
-     "copies": 151
+     "decks": 153,
+     "copies": 153
+    },
+    {
+     "name": "Card Trooper",
+     "decks": 145,
+     "copies": 145
+    },
+    {
+     "name": "Ryko, Lightsworn Hunter",
+     "decks": 144,
+     "copies": 358
+    },
+    {
+     "name": "Necro Gardna",
+     "decks": 144,
+     "copies": 144
     },
     {
      "name": "Book of Moon",
@@ -210,29 +225,14 @@
      "copies": 287
     },
     {
-     "name": "Card Trooper",
-     "decks": 143,
-     "copies": 143
-    },
-    {
-     "name": "Ryko, Lightsworn Hunter",
-     "decks": 142,
-     "copies": 352
-    },
-    {
-     "name": "Necro Gardna",
-     "decks": 142,
-     "copies": 142
-    },
-    {
      "name": "Lightning Vortex",
-     "decks": 133,
-     "copies": 144
+     "decks": 135,
+     "copies": 146
     },
     {
      "name": "Mind Control",
-     "decks": 127,
-     "copies": 127
+     "decks": 129,
+     "copies": 129
     },
     {
      "name": "Kycoo the Ghost Destroyer",
@@ -240,24 +240,24 @@
      "copies": 153
     },
     {
+     "name": "Dark Grepher",
+     "decks": 121,
+     "copies": 286
+    },
+    {
+     "name": "Return from the Different Dimension",
+     "decks": 121,
+     "copies": 121
+    },
+    {
      "name": "Starlight Road",
      "decks": 120,
      "copies": 129
     },
     {
-     "name": "Dark Grepher",
-     "decks": 119,
-     "copies": 280
-    },
-    {
-     "name": "Return from the Different Dimension",
-     "decks": 119,
-     "copies": 119
-    },
-    {
      "name": "Armageddon Knight",
-     "decks": 116,
-     "copies": 226
+     "decks": 118,
+     "copies": 230
     },
     {
      "name": "Icarus Attack",
@@ -266,13 +266,13 @@
     },
     {
      "name": "Flamvell Uruquizas",
-     "decks": 107,
-     "copies": 107
+     "decks": 105,
+     "copies": 105
     },
     {
      "name": "Burial from a Different Dimension",
-     "decks": 102,
-     "copies": 102
+     "decks": 104,
+     "copies": 104
     },
     {
      "name": "Trap Stun",
@@ -281,22 +281,27 @@
     },
     {
      "name": "Compulsory Evacuation Device",
-     "decks": 95,
-     "copies": 180
-    },
-    {
-     "name": "Legacy of Yata-Garasu",
-     "decks": 92,
-     "copies": 179
+     "decks": 96,
+     "copies": 181
     },
     {
      "name": "Charge of the Light Brigade",
-     "decks": 90,
-     "copies": 90
+     "decks": 92,
+     "copies": 92
+    },
+    {
+     "name": "Legacy of Yata-Garasu",
+     "decks": 91,
+     "copies": 178
     },
     {
      "name": "Breaker the Magical Warrior",
      "decks": 89,
+     "copies": 136
+    },
+    {
+     "name": "Super-Nimble Mega Hamster",
+     "decks": 88,
      "copies": 136
     },
     {
@@ -305,29 +310,24 @@
      "copies": 248
     },
     {
-     "name": "Super-Nimble Mega Hamster",
-     "decks": 86,
-     "copies": 134
-    },
-    {
      "name": "Elemental HERO Stratos",
-     "decks": 85,
-     "copies": 85
+     "decks": 84,
+     "copies": 84
     },
     {
      "name": "Foolish Burial",
-     "decks": 83,
-     "copies": 83
-    },
-    {
-     "name": "Vanity's Fiend",
      "decks": 82,
-     "copies": 169
+     "copies": 82
     },
     {
      "name": "Blackwing - Kalut the Moon Shadow",
      "decks": 81,
      "copies": 235
+    },
+    {
+     "name": "Vanity's Fiend",
+     "decks": 81,
+     "copies": 167
     },
     {
      "name": "Blackwing - Blizzard the Far North",
@@ -346,33 +346,33 @@
     },
     {
      "name": "Substitoad",
-     "decks": 79,
-     "copies": 237
-    },
-    {
-     "name": "Swap Frog",
-     "decks": 79,
+     "decks": 77,
      "copies": 231
     },
     {
+     "name": "Swap Frog",
+     "decks": 77,
+     "copies": 225
+    },
+    {
      "name": "Raigeki Break",
-     "decks": 79,
-     "copies": 200
+     "decks": 77,
+     "copies": 194
     },
     {
      "name": "Treeborn Frog",
-     "decks": 79,
-     "copies": 156
-    },
-    {
-     "name": "Dupe Frog",
-     "decks": 78,
-     "copies": 192
+     "decks": 77,
+     "copies": 152
     },
     {
      "name": "Pot of Avarice",
-     "decks": 78,
-     "copies": 153
+     "decks": 77,
+     "copies": 150
+    },
+    {
+     "name": "Dupe Frog",
+     "decks": 76,
+     "copies": 187
     },
     {
      "name": "Smashing Ground",
@@ -380,19 +380,19 @@
      "copies": 127
     },
     {
-     "name": "Unifrog",
-     "decks": 73,
-     "copies": 73
+     "name": "Red Dragon Archfiend",
+     "decks": 71,
+     "copies": 71
     },
     {
-     "name": "Red Dragon Archfiend",
-     "decks": 72,
-     "copies": 72
+     "name": "Unifrog",
+     "decks": 71,
+     "copies": 71
     },
     {
      "name": "One for One",
-     "decks": 70,
-     "copies": 70
+     "decks": 68,
+     "copies": 68
     },
     {
      "name": "Call of the Haunted",
@@ -401,13 +401,13 @@
     },
     {
      "name": "Soul Exchange",
-     "decks": 63,
-     "copies": 116
+     "decks": 61,
+     "copies": 112
     },
     {
      "name": "Giant Trunade",
-     "decks": 61,
-     "copies": 61
+     "decks": 60,
+     "copies": 60
     },
     {
      "name": "Consecrated Light",
@@ -425,14 +425,14 @@
      "copies": 107
     },
     {
-     "name": "Elemental HERO Absolute Zero",
-     "decks": 55,
-     "copies": 144
-    },
-    {
      "name": "Nobleman of Crossout",
      "decks": 55,
      "copies": 75
+    },
+    {
+     "name": "Elemental HERO Absolute Zero",
+     "decks": 54,
+     "copies": 141
     },
     {
      "name": "My Body as a Shield",
@@ -451,13 +451,8 @@
     },
     {
      "name": "Dandylion",
-     "decks": 50,
-     "copies": 86
-    },
-    {
-     "name": "Raiza the Storm Monarch",
      "decks": 49,
-     "copies": 95
+     "copies": 84
     },
     {
      "name": "Gladiator Beast Bestiari",
@@ -470,6 +465,11 @@
      "copies": 92
     },
     {
+     "name": "Raiza the Storm Monarch",
+     "decks": 47,
+     "copies": 89
+    },
+    {
      "name": "Rescue Cat",
      "decks": 47,
      "copies": 47
@@ -480,19 +480,9 @@
      "copies": 129
     },
     {
-     "name": "Salvage",
-     "decks": 46,
-     "copies": 120
-    },
-    {
      "name": "Lyla, Lightsworn Sorceress",
      "decks": 46,
      "copies": 89
-    },
-    {
-     "name": "Elemental HERO Gaia",
-     "decks": 46,
-     "copies": 51
     },
     {
      "name": "Cold Wave",
@@ -500,24 +490,19 @@
      "copies": 46
     },
     {
-     "name": "Reckless Greed",
-     "decks": 45,
-     "copies": 135
-    },
-    {
      "name": "Test Tiger",
      "decks": 45,
      "copies": 135
     },
     {
-     "name": "Miracle Fusion",
-     "decks": 45,
-     "copies": 131
-    },
-    {
      "name": "Gladiator Beast War Chariot",
      "decks": 45,
      "copies": 125
+    },
+    {
+     "name": "Salvage",
+     "decks": 45,
+     "copies": 117
     },
     {
      "name": "Gladiator Beast Equeste",
@@ -540,6 +525,11 @@
      "copies": 58
     },
     {
+     "name": "Elemental HERO Gaia",
+     "decks": 45,
+     "copies": 50
+    },
+    {
      "name": "Gladiator Beast Murmillo",
      "decks": 45,
      "copies": 46
@@ -548,6 +538,16 @@
      "name": "Gladiator Beast Secutor",
      "decks": 45,
      "copies": 45
+    },
+    {
+     "name": "Reckless Greed",
+     "decks": 44,
+     "copies": 132
+    },
+    {
+     "name": "Miracle Fusion",
+     "decks": 44,
+     "copies": 128
     },
     {
      "name": "Gladiator Beast Samnite",
@@ -561,13 +561,13 @@
     },
     {
      "name": "E - Emergency Call",
-     "decks": 44,
-     "copies": 50
+     "decks": 43,
+     "copies": 49
     },
     {
      "name": "Flip Flop Frog",
-     "decks": 43,
-     "copies": 43
+     "decks": 42,
+     "copies": 42
     },
     {
      "name": "Future Fusion",
@@ -591,18 +591,13 @@
     },
     {
      "name": "Junk Synchron",
-     "decks": 40,
-     "copies": 54
+     "decks": 39,
+     "copies": 53
     },
     {
      "name": "Evil HERO Infernal Prodigy",
-     "decks": 40,
-     "copies": 44
-    },
-    {
-     "name": "Elemental HERO Neos Alius",
      "decks": 39,
-     "copies": 44
+     "copies": 43
     },
     {
      "name": "Soul Release",
@@ -615,19 +610,24 @@
      "copies": 62
     },
     {
-     "name": "Elemental HERO Ocean",
+     "name": "Elemental HERO Neos Alius",
      "decks": 38,
-     "copies": 42
+     "copies": 43
+    },
+    {
+     "name": "Elemental HERO Ocean",
+     "decks": 37,
+     "copies": 41
     },
     {
      "name": "Des Frog",
-     "decks": 37,
-     "copies": 82
+     "decks": 36,
+     "copies": 79
     },
     {
      "name": "Junk Warrior",
-     "decks": 37,
-     "copies": 41
+     "decks": 36,
+     "copies": 40
     },
     {
      "name": "Tragoedia",
@@ -665,24 +665,24 @@
      "copies": 33
     },
     {
-     "name": "Fishborg Blaster",
-     "decks": 32,
-     "copies": 77
-    },
-    {
      "name": "Royal Decree",
      "decks": 32,
      "copies": 60
     },
     {
-     "name": "Gaia Knight, the Force of Earth",
+     "name": "Sangan",
      "decks": 32,
      "copies": 32
     },
     {
-     "name": "Sangan",
-     "decks": 32,
-     "copies": 32
+     "name": "Fishborg Blaster",
+     "decks": 31,
+     "copies": 74
+    },
+    {
+     "name": "Gaia Knight, the Force of Earth",
+     "decks": 31,
+     "copies": 31
     },
     {
      "name": "Gold Sarcophagus",
@@ -705,14 +705,14 @@
      "copies": 41
     },
     {
-     "name": "Evil HERO Malicious Edge",
-     "decks": 27,
-     "copies": 27
-    },
-    {
      "name": "Jain, Lightsworn Paladin",
      "decks": 26,
      "copies": 32
+    },
+    {
+     "name": "Evil HERO Malicious Edge",
+     "decks": 26,
+     "copies": 26
     },
     {
      "name": "Solar Recharge",
@@ -780,12 +780,12 @@
      "copies": 23
     },
     {
-     "name": "Moray of Greed",
-     "decks": 21,
-     "copies": 63
+     "name": "Machina Gearframe",
+     "decks": 20,
+     "copies": 60
     },
     {
-     "name": "Machina Gearframe",
+     "name": "Moray of Greed",
      "decks": 20,
      "copies": 60
     },
@@ -1010,11 +1010,6 @@
      "copies": 15
     },
     {
-     "name": "Needle Ceiling",
-     "decks": 12,
-     "copies": 13
-    },
-    {
      "name": "Elemental HERO Mariner",
      "decks": 12,
      "copies": 12
@@ -1048,6 +1043,11 @@
      "name": "Possessed Dark Soul",
      "decks": 11,
      "copies": 14
+    },
+    {
+     "name": "Needle Ceiling",
+     "decks": 11,
+     "copies": 12
     },
     {
      "name": "Dark Illusion",
@@ -2078,7 +2078,7 @@
     {
      "name": "Dark Balter the Terrible",
      "decks": 374,
-     "copies": 482
+     "copies": 480
     },
     {
      "name": "Tribe-Infecting Virus",
@@ -2088,7 +2088,7 @@
     {
      "name": "Ryu Senshi",
      "decks": 361,
-     "copies": 433
+     "copies": 431
     },
     {
      "name": "Delinquent Duo",
@@ -2098,7 +2098,7 @@
     {
      "name": "Gatling Dragon",
      "decks": 351,
-     "copies": 404
+     "copies": 402
     },
     {
      "name": "Black Luster Soldier - Envoy of the Beginning",
@@ -2108,7 +2108,12 @@
     {
      "name": "Sakuretsu Armor",
      "decks": 338,
-     "copies": 902
+     "copies": 901
+    },
+    {
+     "name": "Fiend Skull Dragon",
+     "decks": 334,
+     "copies": 359
     },
     {
      "name": "Torrential Tribute",
@@ -2116,19 +2121,19 @@
      "copies": 334
     },
     {
-     "name": "Fiend Skull Dragon",
-     "decks": 333,
-     "copies": 358
-    },
-    {
      "name": "Dark Blade the Dragon Knight",
-     "decks": 332,
-     "copies": 346
+     "decks": 333,
+     "copies": 347
     },
     {
      "name": "Darkfire Dragon",
-     "decks": 327,
-     "copies": 332
+     "decks": 328,
+     "copies": 333
+    },
+    {
+     "name": "Reaper on the Nightmare",
+     "decks": 325,
+     "copies": 327
     },
     {
      "name": "Trap Dustshoot",
@@ -2136,14 +2141,9 @@
      "copies": 709
     },
     {
-     "name": "Reaper on the Nightmare",
-     "decks": 324,
-     "copies": 326
-    },
-    {
      "name": "Sangan",
-     "decks": 322,
-     "copies": 322
+     "decks": 323,
+     "copies": 323
     },
     {
      "name": "Magician of Faith",
@@ -2152,38 +2152,43 @@
     },
     {
      "name": "King Dragun",
-     "decks": 304,
-     "copies": 316
+     "decks": 305,
+     "copies": 317
     },
     {
      "name": "Gravekeeper's Spy",
-     "decks": 303,
-     "copies": 778
+     "decks": 304,
+     "copies": 781
     },
     {
      "name": "The Last Warrior from Another Planet",
-     "decks": 295,
-     "copies": 297
+     "decks": 296,
+     "copies": 298
     },
     {
      "name": "Dust Tornado",
-     "decks": 277,
-     "copies": 605
+     "decks": 276,
+     "copies": 603
     },
     {
      "name": "Master of Oz",
      "decks": 276,
-     "copies": 315
+     "copies": 313
     },
     {
      "name": "Ojama King",
-     "decks": 268,
-     "copies": 276
+     "decks": 269,
+     "copies": 277
     },
     {
      "name": "Jar of Greed",
-     "decks": 267,
-     "copies": 639
+     "decks": 268,
+     "copies": 641
+    },
+    {
+     "name": "Book of Moon",
+     "decks": 259,
+     "copies": 307
     },
     {
      "name": "Mind Control",
@@ -2191,29 +2196,24 @@
      "copies": 419
     },
     {
-     "name": "Book of Moon",
-     "decks": 258,
-     "copies": 306
-    },
-    {
      "name": "Tsukuyomi",
      "decks": 248,
-     "copies": 296
+     "copies": 295
     },
     {
      "name": "Chaos Sorcerer",
-     "decks": 242,
-     "copies": 397
+     "decks": 243,
+     "copies": 399
     },
     {
      "name": "Kycoo the Ghost Destroyer",
-     "decks": 240,
-     "copies": 389
+     "decks": 239,
+     "copies": 387
     },
     {
      "name": "Dragoness the Wicked Knight",
-     "decks": 238,
-     "copies": 242
+     "decks": 239,
+     "copies": 243
     },
     {
      "name": "Cipher Soldier",
@@ -2222,13 +2222,8 @@
     },
     {
      "name": "Sinister Serpent",
-     "decks": 217,
-     "copies": 217
-    },
-    {
-     "name": "Solemn Judgment",
-     "decks": 209,
-     "copies": 585
+     "decks": 218,
+     "copies": 218
     },
     {
      "name": "Mystik Wok",
@@ -2236,19 +2231,19 @@
      "copies": 292
     },
     {
+     "name": "Solemn Judgment",
+     "decks": 208,
+     "copies": 582
+    },
+    {
      "name": "D.D. Warrior Lady",
-     "decks": 207,
-     "copies": 207
+     "decks": 206,
+     "copies": 206
     },
     {
      "name": "Dekoichi the Battlechanted Locomotive",
-     "decks": 204,
-     "copies": 415
-    },
-    {
-     "name": "Premature Burial",
-     "decks": 203,
-     "copies": 203
+     "decks": 205,
+     "copies": 417
     },
     {
      "name": "Mobius the Frost Monarch",
@@ -2256,39 +2251,44 @@
      "copies": 224
     },
     {
+     "name": "Premature Burial",
+     "decks": 202,
+     "copies": 202
+    },
+    {
      "name": "Exiled Force",
-     "decks": 197,
-     "copies": 197
+     "decks": 196,
+     "copies": 196
     },
     {
      "name": "Thunder Dragon",
-     "decks": 190,
-     "copies": 570
+     "decks": 191,
+     "copies": 573
     },
     {
      "name": "Zombyra the Dark",
      "decks": 182,
-     "copies": 269
+     "copies": 270
     },
     {
      "name": "Reinforcement of the Army",
-     "decks": 181,
-     "copies": 343
+     "decks": 180,
+     "copies": 341
     },
     {
      "name": "Blade Knight",
-     "decks": 177,
-     "copies": 409
+     "decks": 176,
+     "copies": 407
     },
     {
      "name": "Call of the Haunted",
-     "decks": 177,
-     "copies": 177
+     "decks": 176,
+     "copies": 176
     },
     {
      "name": "Raigeki Break",
-     "decks": 170,
-     "copies": 369
+     "decks": 171,
+     "copies": 371
     },
     {
      "name": "Flame Ghost",
@@ -2297,28 +2297,28 @@
     },
     {
      "name": "Upstart Goblin",
-     "decks": 159,
-     "copies": 310
+     "decks": 160,
+     "copies": 312
     },
     {
      "name": "Mystic Swordsman LV2",
-     "decks": 149,
-     "copies": 150
+     "decks": 148,
+     "copies": 149
     },
     {
      "name": "Ninja Grandmaster Sasuke",
-     "decks": 147,
-     "copies": 160
+     "decks": 146,
+     "copies": 159
     },
     {
      "name": "Don Zaloog",
-     "decks": 143,
-     "copies": 143
+     "decks": 142,
+     "copies": 142
     },
     {
      "name": "Card Destruction",
-     "decks": 140,
-     "copies": 140
+     "decks": 141,
+     "copies": 141
     },
     {
      "name": "Asura Priest",
@@ -2337,23 +2337,23 @@
     },
     {
      "name": "Swords of Revealing Light",
-     "decks": 120,
-     "copies": 120
+     "decks": 121,
+     "copies": 121
     },
     {
      "name": "Night Assailant",
-     "decks": 114,
-     "copies": 222
+     "decks": 115,
+     "copies": 224
+    },
+    {
+     "name": "Scapegoat",
+     "decks": 112,
+     "copies": 287
     },
     {
      "name": "Twin-Headed Thunder Dragon",
      "decks": 112,
      "copies": 112
-    },
-    {
-     "name": "Scapegoat",
-     "decks": 111,
-     "copies": 285
     },
     {
      "name": "Xing Zhen Hu",
@@ -2367,8 +2367,8 @@
     },
     {
      "name": "Metamorphosis",
-     "decks": 100,
-     "copies": 207
+     "decks": 101,
+     "copies": 209
     },
     {
      "name": "Amazoness Archer",
@@ -2626,14 +2626,14 @@
      "copies": 16
     },
     {
-     "name": "Time Seal",
-     "decks": 15,
-     "copies": 38
-    },
-    {
      "name": "Thousand Dragon",
      "decks": 14,
      "copies": 36
+    },
+    {
+     "name": "Time Seal",
+     "decks": 14,
+     "copies": 35
     },
     {
      "name": "Dark Magician of Chaos",
@@ -2656,11 +2656,6 @@
      "copies": 19
     },
     {
-     "name": "Mask of Darkness",
-     "decks": 12,
-     "copies": 18
-    },
-    {
      "name": "Desert Sunlight",
      "decks": 12,
      "copies": 15
@@ -2674,6 +2669,11 @@
      "name": "Milus Radiant",
      "decks": 11,
      "copies": 21
+    },
+    {
+     "name": "Mask of Darkness",
+     "decks": 11,
+     "copies": 15
     },
     {
      "name": "Gigantes",
@@ -2866,11 +2866,6 @@
      "copies": 6
     },
     {
-     "name": "Swift Gaia the Fierce Knight",
-     "decks": 6,
-     "copies": 6
-    },
-    {
      "name": "Toon Table of Contents",
      "decks": 5,
      "copies": 15
@@ -2907,6 +2902,11 @@
     },
     {
      "name": "Reckless Greed",
+     "decks": 5,
+     "copies": 5
+    },
+    {
+     "name": "Swift Gaia the Fierce Knight",
      "decks": 5,
      "copies": 5
     },
@@ -3411,11 +3411,6 @@
      "copies": 1
     },
     {
-     "name": "Mind Crush",
-     "decks": 1,
-     "copies": 1
-    },
-    {
      "name": "Necrovalley",
      "decks": 1,
      "copies": 1
@@ -3549,17 +3544,17 @@
     {
      "name": "Maxx \"C\"",
      "decks": 381,
-     "copies": 1100
+     "copies": 1101
     },
     {
      "name": "D.D. Crow",
      "decks": 368,
-     "copies": 963
+     "copies": 964
     },
     {
      "name": "Number 101: Silent Honor ARK",
      "decks": 345,
-     "copies": 438
+     "copies": 439
     },
     {
      "name": "Evilswarm Exciton Knight",
@@ -3577,34 +3572,34 @@
      "copies": 340
     },
     {
-     "name": "Torrential Tribute",
-     "decks": 308,
-     "copies": 308
+     "name": "Solemn Warning",
+     "decks": 307,
+     "copies": 307
     },
     {
-     "name": "Solemn Warning",
+     "name": "Torrential Tribute",
      "decks": 307,
      "copies": 307
     },
     {
      "name": "Soul Charge",
      "decks": 299,
-     "copies": 694
+     "copies": 693
     },
     {
      "name": "Breakthrough Skill",
      "decks": 299,
-     "copies": 677
+     "copies": 678
     },
     {
      "name": "Bottomless Trap Hole",
-     "decks": 296,
-     "copies": 296
+     "decks": 297,
+     "copies": 297
     },
     {
      "name": "Mystical Space Typhoon",
-     "decks": 285,
-     "copies": 805
+     "decks": 284,
+     "copies": 802
     },
     {
      "name": "Mind Control",
@@ -3613,18 +3608,18 @@
     },
     {
      "name": "Number 50: Blackship of Corn",
-     "decks": 262,
-     "copies": 262
+     "decks": 263,
+     "copies": 263
     },
     {
      "name": "Debunk",
-     "decks": 245,
-     "copies": 561
+     "decks": 246,
+     "copies": 564
     },
     {
      "name": "Black Horn of Heaven",
-     "decks": 241,
-     "copies": 502
+     "decks": 242,
+     "copies": 504
     },
     {
      "name": "Number 80: Rhapsody in Berserk",
@@ -3633,33 +3628,33 @@
     },
     {
      "name": "Number 103: Ragnazero",
-     "decks": 185,
-     "copies": 186
+     "decks": 186,
+     "copies": 187
     },
     {
      "name": "Traptrix Trap Hole Nightmare",
-     "decks": 166,
-     "copies": 236
+     "decks": 167,
+     "copies": 238
     },
     {
      "name": "Pot of Duality",
-     "decks": 157,
-     "copies": 446
+     "decks": 158,
+     "copies": 449
     },
     {
      "name": "Fire Hand",
-     "decks": 156,
-     "copies": 353
+     "decks": 158,
+     "copies": 358
     },
     {
      "name": "Ice Hand",
-     "decks": 156,
-     "copies": 347
+     "decks": 158,
+     "copies": 352
     },
     {
      "name": "Ghostrick Alucard",
-     "decks": 151,
-     "copies": 153
+     "decks": 150,
+     "copies": 152
     },
     {
      "name": "Compulsory Evacuation Device",
@@ -3668,53 +3663,53 @@
     },
     {
      "name": "Gaia Dragon, the Thunder Charger",
-     "decks": 144,
-     "copies": 149
+     "decks": 146,
+     "copies": 151
     },
     {
      "name": "Constellar Pleiades",
-     "decks": 142,
-     "copies": 225
-    },
-    {
-     "name": "Daigusto Emeral",
-     "decks": 140,
-     "copies": 140
-    },
-    {
-     "name": "Wiretap",
-     "decks": 139,
-     "copies": 276
+     "decks": 144,
+     "copies": 228
     },
     {
      "name": "Artifact Sanctum",
-     "decks": 138,
-     "copies": 414
+     "decks": 140,
+     "copies": 420
     },
     {
      "name": "Artifact Moralltach",
+     "decks": 140,
+     "copies": 404
+    },
+    {
+     "name": "Daigusto Emeral",
+     "decks": 139,
+     "copies": 139
+    },
+    {
+     "name": "Wiretap",
      "decks": 138,
-     "copies": 398
+     "copies": 274
     },
     {
      "name": "Gagaga Cowboy",
-     "decks": 133,
-     "copies": 133
+     "decks": 132,
+     "copies": 132
+    },
+    {
+     "name": "Artifact Ignition",
+     "decks": 131,
+     "copies": 390
     },
     {
      "name": "Fiendish Chain",
      "decks": 131,
-     "copies": 349
+     "copies": 350
     },
     {
      "name": "Tiras, Keeper of Genesis",
-     "decks": 130,
-     "copies": 130
-    },
-    {
-     "name": "Artifact Ignition",
-     "decks": 129,
-     "copies": 384
+     "decks": 131,
+     "copies": 131
     },
     {
      "name": "Upstart Goblin",
@@ -3723,68 +3718,68 @@
     },
     {
      "name": "Call of the Haunted",
-     "decks": 126,
-     "copies": 286
+     "decks": 127,
+     "copies": 289
     },
     {
      "name": "Artifact Beagalltach",
-     "decks": 125,
-     "copies": 170
-    },
-    {
-     "name": "Traptrix Myrmeleo",
-     "decks": 123,
-     "copies": 341
+     "decks": 127,
+     "copies": 172
     },
     {
      "name": "Double Cyclone",
-     "decks": 123,
-     "copies": 275
+     "decks": 125,
+     "copies": 280
     },
     {
-     "name": "Diamond Dire Wolf",
-     "decks": 120,
-     "copies": 135
+     "name": "Traptrix Myrmeleo",
+     "decks": 124,
+     "copies": 345
     },
     {
      "name": "Number 82: Heartlandraco",
-     "decks": 120,
-     "copies": 120
+     "decks": 121,
+     "copies": 121
+    },
+    {
+     "name": "Diamond Dire Wolf",
+     "decks": 119,
+     "copies": 134
     },
     {
      "name": "Mecha Phantom Beast Dracossack",
-     "decks": 119,
-     "copies": 137
-    },
-    {
-     "name": "Number 11: Big Eye",
-     "decks": 116,
-     "copies": 117
+     "decks": 118,
+     "copies": 136
     },
     {
      "name": "Number 61: Volcasaurus",
-     "decks": 116,
-     "copies": 117
+     "decks": 118,
+     "copies": 119
+    },
+    {
+     "name": "Number 11: Big Eye",
+     "decks": 115,
+     "copies": 116
     },
     {
      "name": "Artifact Scythe",
-     "decks": 112,
-     "copies": 126
+     "decks": 114,
+     "copies": 128
     },
     {
      "name": "Forbidden Lance",
-     "decks": 109,
-     "copies": 244
+     "decks": 108,
+     "copies": 242
     },
     {
      "name": "Dimensional Fissure",
-     "decks": 109,
-     "copies": 109
+     "decks": 108,
+     "copies": 108
     },
     {
      "name": "Lavalval Chain",
-     "decks": 108,
-     "copies": 122
+     "decks": 107,
+     "copies": 121
     },
     {
      "name": "Wind-Up Zenmaines",
@@ -3792,24 +3787,24 @@
      "copies": 104
     },
     {
+     "name": "Nobleman of Crossout",
+     "decks": 99,
+     "copies": 169
+    },
+    {
      "name": "Acid Trap Hole",
      "decks": 99,
      "copies": 108
     },
     {
-     "name": "Nobleman of Crossout",
-     "decks": 98,
-     "copies": 167
-    },
-    {
      "name": "Artifact Durendal",
-     "decks": 95,
-     "copies": 95
+     "decks": 96,
+     "copies": 96
     },
     {
      "name": "Book of Moon",
-     "decks": 93,
-     "copies": 93
+     "decks": 92,
+     "copies": 92
     },
     {
      "name": "Soul of Silvermountain",
@@ -3818,28 +3813,28 @@
     },
     {
      "name": "Traptrix Dionaea",
-     "decks": 86,
-     "copies": 165
+     "decks": 88,
+     "copies": 168
     },
     {
      "name": "Leviair the Sea Dragon",
-     "decks": 80,
-     "copies": 105
+     "decks": 79,
+     "copies": 104
     },
     {
      "name": "Soul Drain",
-     "decks": 80,
-     "copies": 80
-    },
-    {
-     "name": "Ally of Justice Cycle Reader",
-     "decks": 77,
-     "copies": 86
+     "decks": 79,
+     "copies": 79
     },
     {
      "name": "Gear Gigant X",
      "decks": 76,
      "copies": 208
+    },
+    {
+     "name": "Ally of Justice Cycle Reader",
+     "decks": 76,
+     "copies": 85
     },
     {
      "name": "Constellar Ptolemy M7",
@@ -3852,24 +3847,19 @@
      "copies": 79
     },
     {
-     "name": "Macro Cosmos",
-     "decks": 75,
-     "copies": 75
-    },
-    {
      "name": "Cairngorgon, Antiluminescent Knight",
      "decks": 74,
      "copies": 74
     },
     {
-     "name": "Number 30: Acid Golem of Destruction",
-     "decks": 72,
-     "copies": 72
+     "name": "Macro Cosmos",
+     "decks": 74,
+     "copies": 74
     },
     {
-     "name": "Black Rose Dragon",
-     "decks": 70,
-     "copies": 70
+     "name": "Number 30: Acid Golem of Destruction",
+     "decks": 71,
+     "copies": 71
     },
     {
      "name": "Geargiarmor",
@@ -3887,6 +3877,11 @@
      "copies": 202
     },
     {
+     "name": "Black Rose Dragon",
+     "decks": 69,
+     "copies": 69
+    },
+    {
      "name": "Geargiagear",
      "decks": 68,
      "copies": 204
@@ -3902,9 +3897,9 @@
      "copies": 66
     },
     {
-     "name": "Mechquipped Angineer",
+     "name": "Cardcar D",
      "decks": 65,
-     "copies": 65
+     "copies": 151
     },
     {
      "name": "Number 85: Crazy Box",
@@ -3912,9 +3907,14 @@
      "copies": 65
     },
     {
-     "name": "Cardcar D",
+     "name": "Mechquipped Angineer",
      "decks": 64,
-     "copies": 149
+     "copies": 64
+    },
+    {
+     "name": "Needle Ceiling",
+     "decks": 60,
+     "copies": 88
     },
     {
      "name": "Foolish Burial",
@@ -3922,14 +3922,9 @@
      "copies": 60
     },
     {
-     "name": "Needle Ceiling",
-     "decks": 59,
-     "copies": 86
-    },
-    {
      "name": "Mind Crush",
-     "decks": 56,
-     "copies": 128
+     "decks": 55,
+     "copies": 126
     },
     {
      "name": "Vanity's Emptiness",
@@ -3937,9 +3932,9 @@
      "copies": 126
     },
     {
-     "name": "Tidal, Dragon Ruler of Waterfalls",
+     "name": "Flying \"C\"",
      "decks": 54,
-     "copies": 54
+     "copies": 109
     },
     {
      "name": "Instant Fusion",
@@ -3947,9 +3942,9 @@
      "copies": 121
     },
     {
-     "name": "Flying \"C\"",
+     "name": "Tidal, Dragon Ruler of Waterfalls",
      "decks": 53,
-     "copies": 106
+     "copies": 53
     },
     {
      "name": "Stardust Dragon",
@@ -3958,8 +3953,8 @@
     },
     {
      "name": "Leo, the Keeper of the Sacred Tree",
-     "decks": 51,
-     "copies": 52
+     "decks": 50,
+     "copies": 51
     },
     {
      "name": "Reinforcement of the Army",
@@ -3973,13 +3968,13 @@
     },
     {
      "name": "Forbidden Chalice",
-     "decks": 49,
-     "copies": 112
+     "decks": 48,
+     "copies": 110
     },
     {
      "name": "Allure of Darkness",
-     "decks": 46,
-     "copies": 46
+     "decks": 45,
+     "copies": 45
     },
     {
      "name": "Fire Formation - Tenki",
@@ -4007,14 +4002,14 @@
      "copies": 85
     },
     {
-     "name": "Malevolent Catastrophe",
-     "decks": 39,
-     "copies": 54
-    },
-    {
      "name": "Redox, Dragon Ruler of Boulders",
      "decks": 39,
      "copies": 39
+    },
+    {
+     "name": "Malevolent Catastrophe",
+     "decks": 38,
+     "copies": 53
     },
     {
      "name": "Divine Dragon Knight Felgrand",
@@ -4057,59 +4052,34 @@
      "copies": 33
     },
     {
-     "name": "Abyss-sphere",
-     "decks": 32,
-     "copies": 96
-    },
-    {
-     "name": "Mermail Abyssteus",
-     "decks": 32,
-     "copies": 96
-    },
-    {
-     "name": "Mermail Abysspike",
-     "decks": 32,
-     "copies": 95
-    },
-    {
-     "name": "Mermail Abysslinde",
-     "decks": 32,
-     "copies": 93
-    },
-    {
-     "name": "Atlantean Marksman",
-     "decks": 32,
-     "copies": 86
-    },
-    {
-     "name": "Atlantean Heavy Infantry",
-     "decks": 32,
-     "copies": 44
-    },
-    {
-     "name": "Mermail Abyssmegalo",
-     "decks": 32,
-     "copies": 40
-    },
-    {
-     "name": "Atlantean Dragoons",
-     "decks": 32,
-     "copies": 32
-    },
-    {
      "name": "Constellar Omega",
      "decks": 32,
      "copies": 32
     },
     {
-     "name": "Mermail Abyssgaios",
-     "decks": 32,
-     "copies": 32
+     "name": "Abyss-sphere",
+     "decks": 31,
+     "copies": 93
     },
     {
-     "name": "Mermail Abyssgunde",
-     "decks": 32,
-     "copies": 32
+     "name": "Mermail Abyssteus",
+     "decks": 31,
+     "copies": 93
+    },
+    {
+     "name": "Mermail Abysspike",
+     "decks": 31,
+     "copies": 92
+    },
+    {
+     "name": "Mermail Abysslinde",
+     "decks": 31,
+     "copies": 90
+    },
+    {
+     "name": "Atlantean Marksman",
+     "decks": 31,
+     "copies": 84
     },
     {
      "name": "Skull Meister",
@@ -4122,6 +4092,16 @@
      "copies": 56
     },
     {
+     "name": "Atlantean Heavy Infantry",
+     "decks": 31,
+     "copies": 42
+    },
+    {
+     "name": "Mermail Abyssmegalo",
+     "decks": 31,
+     "copies": 39
+    },
+    {
      "name": "Ghostrick Socuteboss",
      "decks": 31,
      "copies": 33
@@ -4132,7 +4112,22 @@
      "copies": 32
     },
     {
+     "name": "Atlantean Dragoons",
+     "decks": 31,
+     "copies": 31
+    },
+    {
      "name": "Gachi Gachi Gantetsu",
+     "decks": 31,
+     "copies": 31
+    },
+    {
+     "name": "Mermail Abyssgaios",
+     "decks": 31,
+     "copies": 31
+    },
+    {
+     "name": "Mermail Abyssgunde",
      "decks": 31,
      "copies": 31
     },
@@ -4157,11 +4152,6 @@
      "copies": 89
     },
     {
-     "name": "Genex Undine",
-     "decks": 30,
-     "copies": 79
-    },
-    {
      "name": "Justice of Prophecy",
      "decks": 30,
      "copies": 74
@@ -4170,11 +4160,6 @@
      "name": "Spellbook of Wisdom",
      "decks": 30,
      "copies": 68
-    },
-    {
-     "name": "Genex Controller",
-     "decks": 30,
-     "copies": 67
     },
     {
      "name": "Spellbook of Eternity",
@@ -4207,11 +4192,6 @@
      "copies": 30
     },
     {
-     "name": "Mermail Abyssleed",
-     "decks": 30,
-     "copies": 30
-    },
-    {
      "name": "Shining Elf",
      "decks": 30,
      "copies": 30
@@ -4222,6 +4202,16 @@
      "copies": 30
     },
     {
+     "name": "Genex Undine",
+     "decks": 29,
+     "copies": 76
+    },
+    {
+     "name": "Genex Controller",
+     "decks": 29,
+     "copies": 65
+    },
+    {
      "name": "Rivalry of Warlords",
      "decks": 29,
      "copies": 55
@@ -4230,6 +4220,11 @@
      "name": "Mirror Force",
      "decks": 29,
      "copies": 44
+    },
+    {
+     "name": "Mermail Abyssleed",
+     "decks": 29,
+     "copies": 29
     },
     {
      "name": "Skill Drain",
@@ -4247,17 +4242,17 @@
      "copies": 27
     },
     {
-     "name": "Moulinglacia the Elemental Lord",
-     "decks": 27,
-     "copies": 27
-    },
-    {
      "name": "Number 106: Giant Hand",
      "decks": 27,
      "copies": 27
     },
     {
      "name": "Mavelus",
+     "decks": 26,
+     "copies": 26
+    },
+    {
+     "name": "Moulinglacia the Elemental Lord",
      "decks": 26,
      "copies": 26
     },
@@ -4427,19 +4422,9 @@
      "copies": 50
     },
     {
-     "name": "Light-Imprisoning Mirror",
-     "decks": 17,
-     "copies": 35
-    },
-    {
      "name": "Tin Goldfish",
      "decks": 17,
      "copies": 25
-    },
-    {
-     "name": "Twister",
-     "decks": 17,
-     "copies": 19
     },
     {
      "name": "Thunder King Rai-Oh",
@@ -4462,6 +4447,16 @@
      "copies": 46
     },
     {
+     "name": "Light-Imprisoning Mirror",
+     "decks": 16,
+     "copies": 34
+    },
+    {
+     "name": "Twister",
+     "decks": 16,
+     "copies": 18
+    },
+    {
      "name": "Azure-Eyes Silver Dragon",
      "decks": 16,
      "copies": 16
@@ -4478,11 +4473,6 @@
     },
     {
      "name": "Colossal Fighter",
-     "decks": 16,
-     "copies": 16
-    },
-    {
-     "name": "M-X-Saber Invoker",
      "decks": 16,
      "copies": 16
     },
@@ -4538,6 +4528,11 @@
     },
     {
      "name": "Charge of the Light Brigade",
+     "decks": 15,
+     "copies": 15
+    },
+    {
+     "name": "M-X-Saber Invoker",
      "decks": 15,
      "copies": 15
     },
@@ -4717,11 +4712,6 @@
      "copies": 12
     },
     {
-     "name": "Gungnir, Dragon of the Ice Barrier",
-     "decks": 12,
-     "copies": 12
-    },
-    {
      "name": "Aratama",
      "decks": 11,
      "copies": 33
@@ -4753,6 +4743,11 @@
     },
     {
      "name": "Bujingi Sinyou",
+     "decks": 11,
+     "copies": 11
+    },
+    {
+     "name": "Gungnir, Dragon of the Ice Barrier",
      "decks": 11,
      "copies": 11
     },
@@ -4897,17 +4892,7 @@
      "copies": 9
     },
     {
-     "name": "Goblindbergh",
-     "decks": 9,
-     "copies": 9
-    },
-    {
      "name": "Gorz the Emissary of Darkness",
-     "decks": 9,
-     "copies": 9
-    },
-    {
-     "name": "Mermail Abyssocea",
      "decks": 9,
      "copies": 9
     },
@@ -4997,12 +4982,22 @@
      "copies": 9
     },
     {
+     "name": "Goblindbergh",
+     "decks": 8,
+     "copies": 8
+    },
+    {
      "name": "Infestation Infection",
      "decks": 8,
      "copies": 8
     },
     {
      "name": "Koa'ki Meiru Ice",
+     "decks": 8,
+     "copies": 8
+    },
+    {
+     "name": "Mermail Abyssocea",
      "decks": 8,
      "copies": 8
     },
@@ -5063,6 +5058,11 @@
     },
     {
      "name": "Mokey Mokey King",
+     "decks": 7,
+     "copies": 7
+    },
+    {
+     "name": "Number 12: Crimson Shadow Armor Ninja",
      "decks": 7,
      "copies": 7
     },
@@ -5182,7 +5182,7 @@
      "copies": 6
     },
     {
-     "name": "Number 12: Crimson Shadow Armor Ninja",
+     "name": "Maestroke the Symphony Djinn",
      "decks": 6,
      "copies": 6
     },
@@ -5253,11 +5253,6 @@
     },
     {
      "name": "CXyz Simon the Great Moral Leader",
-     "decks": 5,
-     "copies": 5
-    },
-    {
-     "name": "Maestroke the Symphony Djinn",
      "decks": 5,
      "copies": 5
     },
@@ -5588,11 +5583,6 @@
     },
     {
      "name": "Transmodify",
-     "decks": 3,
-     "copies": 3
-    },
-    {
-     "name": "Zombie World",
      "decks": 3,
      "copies": 3
     },
@@ -5988,6 +5978,11 @@
     },
     {
      "name": "Vulcan the Divine",
+     "decks": 2,
+     "copies": 2
+    },
+    {
+     "name": "Zombie World",
      "decks": 2,
      "copies": 2
     },
